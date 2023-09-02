@@ -6,7 +6,7 @@ const express = require("express");
 
 let topMovies = [
     {
-        title: "Inglourious Basterds",
+        title: "Inglorious Basterds",
         director: "Quentin Tarantino",
         year: "2009"
     },
@@ -17,7 +17,7 @@ let topMovies = [
     },
     {
         title: "The Lord of the Rings: The Return of the King",
-        directpr: "Peter Jackson",
+        director: "Peter Jackson",
         year: "2003"
     },
     {
@@ -66,8 +66,7 @@ app.use(morgan("combined", { stream: accessLogStream })); // morgan middleware f
 
 
 app.use(
-    express.static("public") // routes all requests made to the root path to the files in the "public" folder
-);
+    express.static("public")); // serves static files from the "public" folder
 
 // GET requests
 app.get("/", (req, res) => {
@@ -82,13 +81,12 @@ app.get("/movies", (req, res) => {
     res.json(topMovies);
 });
 
-// listen for requests
-app.listen(8080, () => {
-    console.log("Your app is listening on port 8080.");
-});
-
-
 app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).send('Something broke!'); // 500 is the HTTP status code for "Internal server error"
   });
+
+// listen for requests
+app.listen(8080, () => {
+    console.log("Your app is listening on port 8080.");
+});
