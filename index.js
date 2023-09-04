@@ -24,37 +24,37 @@ let topMovies = [
         title: "The Silence of the Lambs",
         director: "Jonathan Demme",
         year: "1991"
-    }
+    },
     {
         title: "Halloween",
         director: "John Carpenter",
         year: "1978"
-    }
+    },
     {
         title: "Star Wars: Episode VVI - Return of the Jedi",
         director: "Richard Marquand",
         year: "1983"
-    }
+    },
     { 
         title: "Jurassic Park",
         director: "Steven Spielberg",
         year: "1993"
-    }
+    },
     {
         title: "Guardians of the Galaxy",
         director: "James Gunn",
         year: "2014"
-    }
+    },
     {
         title: "Saving Private Ryan",
         director: "Steven Spielberg",
         year: "1998"
-    }
+    },
     {
         title: "No Country for Old Men",
         director: "Ethan Coen, Joel Coen",
         year: "2007"
-    }
+    },
 ];
 
 // setup logging
