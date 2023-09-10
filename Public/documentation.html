@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
-  <body>
+  <body>  
     <h1>myFlix Documentation</h1>
     <p>
       This application will provide users with access to information about
@@ -16,5 +16,91 @@
       update their personal information, and create a list of their favorite
       movies.
     </p>
+  <table>
+    <thead>
+  <tr>
+  <td>Business Logic</td>
+  <td>URL</td>
+  <td>HTTP Method</td>
+  <td>Query Parameters</td>
+  <td>Request Body</td>
+  <td>Response Body</td>
+ </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td>Return a list of ALL movies to the user</td>
+  <td>/movies</td>
+  <td>GET / Read</td>
+  <td>N/A</td>
+  <td>N/A</td>
+  <td></td>
+  </tr>
+  <tr>
+      <td>Return data (description, genres, year of release, image URL) about a single movie by title to the user</td>
+     <td>/movies/:title</td>
+    <td>GET / Read</td>
+    <td>[title]</td>
+    <td>N/A</td>
+    <td></td>
+  </tr>
+
+      <td>Return data about a genre (description) by the name or title ("Halloween")</td>
+      <td>/movies/genres/:genreName</td>
+      <td>GET / Read</td>
+      <td>[genreName]</td>
+      <td>N/A</td>
+      <td></td>
+      <tr>
+        <td>Returns data about a director (short bio) by name</td>
+        <td>/movies/directors/:directorName</td>
+        <td>GET / Read</td>
+        <td>[directorName]</td>
+        <td>N/A</td>
+        <td></td>
+      </tr>
+      <tr>
+            <td>Allows new users to register</td>
+            <td>/users</td>
+            <td>Post / Create</td>
+            <td>N/A</td>
+            <td>JSON object with username, password, email, birthday</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Allows users to update their user info (username)</td>
+            <td>/users/:username</td>
+            <td>PUT / Update</td>
+            <td>[username]</td>
+            <td>JSON object with username, password, email, birthday</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+              <td>Allows users to add a movie to their list of favorites</td>
+              <td>/users/:username/movies/:movieTitle</td>
+              <td>POST / Create</td>
+              <td>[username, movieTitle]</td>
+              <td>N/A</td>
+              <td></td>
+            </tr>
+            <tr>
+                <td>Allows users to remove a movie from their list of favorites</td>
+                <td>/users/:username/movies/:movieTitle</td>
+                <td>DELETE / Delete</td>
+                <td>[username, movieTitle]</td>
+                <td>N/A</td>
+                <td></td> 
+              </tr>
+              <tr>
+                  <td>Allows existing users to deregister</td>
+                  <td>/users/:username</td>
+                  <td>DELETE / Delete</td>
+                  <td>[username]</td>
+                  <td>N/A</td>
+                  <td></td>
+             </tr>
+       </tbody>
+  </table>
   </body>
 </html>
