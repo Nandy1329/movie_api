@@ -1,10 +1,10 @@
-const bodyParser = require('body-parser');
-const express = require('express');
+const express = require('express'),
 const morgan = require('morgan');
 const fs = require('fs');
 const path = require('path');
+const bodyParser = require('body-parser');
 const uuid = require('uuid');
-    
+
 const app = express();
 
 app.use(bodyParser.json());
@@ -35,7 +35,7 @@ let users = [
 ];
 let Movies = [
     {
-       "Title": "Jurassic Park',
+       "Title": "Jurassic Park",
         "Description": "A theme park showcasing genetically-engineered dinosaurs turns into a nightmare for its tourists when one of the dinosaurs escapes its enclosure.",
         "Genre": {
             "Name": "Science Fiction",
@@ -82,15 +82,15 @@ app.put('/users/:id', (req, res) => {
 //CREATE- add a movie to a user's list of favorites
 app.post('/users/:id/movies/:movieTitle', (req, res) => {
     const { id, moveTitle} = req.params;
-
+    
     let user = users.find(user => users.id ==id);
-
+}
     if (users) {
         user.favoriteMovies.push(movieTitle);
-        res.status(200).json('${movieTitle) has been added to ${user.name} list of favorite movies.');
+      res.status(200).json('${movieTitle} has been added to ${user.name} list of favorite movies.');
     } else {
-        res.status(404).send(`Error: User ID ${id} not found.`);
-
+        res.status(400).send(`Error: no such user.`);
+    }
 
 // DELETE- remove a movie from a user's list of favorites
 app.delete('/users/:id/movieTitle', (req, res) => {
