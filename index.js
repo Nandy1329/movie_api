@@ -306,13 +306,13 @@ app.get('/movies/genres/:genreName', (req, res) => {
     // res.send('Welcome to myFlix!');
 // });
 
+// listen for requests
+
+app.listen(8080 () => {
+    console.log('Your app is listening on port 8080.');
+});
+
 app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).send('Something broke!'); // 500 is the HTTP status code for 'Internal server error'
   });
-
-// listen for requests
-
-app.listen(5500, () => {
-    console.log('Your app is listening on port 5500.');
-});

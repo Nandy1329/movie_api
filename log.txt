@@ -28,3 +28,21 @@ Timestamp: Sat Sep 16 2023 13:55:59 GMT-0700 (Pacific Daylight Time)
 URL: /
 Timestamp: Sat Sep 16 2023 13:59:03 GMT-0700 (Pacific Daylight Time)
 
+URL: /movies
+Timestamp: Sat Sep 16 2023 14:00:40 GMT-0700 (Pacific Daylight Time)
+
+URL: /
+Timestamp: Sat Sep 16 2023 14:28:54 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies
+Timestamp: Sat Sep 16 2023 14:37:47 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies
+Timestamp: Sat Sep 16 2023 14:43:05 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies
+Timestamp: Sat Sep 16 2023 14:46:08 GMT-0700 (Pacific Daylight Time)
+
+URL: /
+Timestamp: Sat Sep 16 2023 15:04:37 GMT-0700 (Pacific Daylight Time)
+
