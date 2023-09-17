@@ -30,7 +30,7 @@ let
         favoriteMovies : ['Jurassic Park']
     },
 
-let movies = [
+let movies = [ -
     {
         'Title': 'Inglourious Basterds',
         'Description': 'In Nazi-occupied France during World War II, a plan to assassinate Nazi leaders by a group of Jewish U.S. soldiers coincides with a theatre owner's vengeful plans for the same
