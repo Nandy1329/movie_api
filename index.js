@@ -1,7 +1,7 @@
 const express = require("express");
 const morgan = require("morgan");
 bodyParser = require("body-parser"),
-    uuid = require("uuid");
+uuid = require("uuid");
 morgan = require("morgan");
 const app = express();
 
@@ -96,8 +96,7 @@ let ,movies = [
         "Director": "John Carpenter",
         "Description": "Fifteen years after murdering his sister on Halloween night 1963, Michael Myers escapes from a mental hospital and returns to the small town of Haddonfield, Illinois to kill again.",
         "Genre": {
-            "Name": "Horror",
-            "Description": 
+            "Name": "Horror"
         },
         "Director": {
             "Name": "John Carpenter",
@@ -253,11 +252,11 @@ app.delete("users/:id/movieTitle", (req, res) => {
 
 let users = users.find(user => users.id ==id);
 
-if(user) {
+if (user) {
     users.favoriteMovies = user.favoriteMovies.filter(title => title !== movieTitle);
     res.status(200).send("${movieTitle} has been removed from ${id}s array");;
-}
- else 
+} else { 
+    
 // DELETE- remove a user by ID
 app.delete("/users/id", (req, res) => {
     const { id } = req.params;
@@ -308,5 +307,7 @@ app.use((err, req, res, next) => {
 // listen for requests
 
 app.listen(8080, () => {
-    console.log("Your app is listening on port 8080.");
-})}
+    console.log("Your app is listening on port 8080.")
+}
+)}
+)
