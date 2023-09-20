@@ -6,7 +6,7 @@
     "configurations": [
         {
             "name": "Launch Program",
-            "program": "${workspaceFolder}/app.js",
+            "program": "${movie_api}/server.js",
             "request": "launch",
             "skipFiles": [
                 "<node_internals>/**"
@@ -24,8 +24,8 @@
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
-            "url": "http:// :8080",
-            "webRoot": "${workspaceFolder}"
+            "url": "http:// :5500",
+            "webRoot": "${movie_api}"
         }
     ]
 }
