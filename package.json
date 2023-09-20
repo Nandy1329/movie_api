@@ -4,7 +4,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
+    "start": "node server .js index.js",
     "dev": "nodemon index.js"
   },
   "keywords": [],
@@ -14,6 +14,8 @@
     "axios": "^1.5.0",
     "body-parser": "^1.20.2",
     "express": "^4.18.2",
+    "live": "^0.1.25-beta.0",
+    "live-server": "^1.2.2",
     "lodash": "^4.17.21",
     "morgan": "^1.10.0",
     "npm": "^10.1.0",

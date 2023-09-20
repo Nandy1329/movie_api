@@ -4,9 +4,10 @@ const express = require('express');
 morgan = require('morgan');
 app = express();
 path = require ('path'),
-PORT = process.env.PORT || 5500;
+PORT = process.env.PORT || 8080;
 
-app.use(bodyParser());
+app.use(bodyParser.urlencoded());
+app.use(bodyParser.json());
 
 
 let users = [
@@ -36,7 +37,7 @@ let movies = [
             birth: "03-27-1963",
         },
         imageURL: "https://upload.wikimedia.org/wikipedia/en/c/c3/Inglourious_Basterds_poster.jpg",
-        featured: yes
+        featured: true
     },
     {
         title: "The Dark Knight",
@@ -51,7 +52,7 @@ let movies = [
             birth: "07-30-1970", 
         },
         imageURL: "https://upload.wikimedia.org/wikipedia/en/8/8a/Dark_Knight.jpg",
-        featured: yes
+        featured: true
     },
     {
         title: "The Lord of the Rings: Return of the King",
@@ -66,7 +67,7 @@ let movies = [
             birth: "10-31-1961",
         },
         imageURL: "https://upload.wikimedia.org/wikipedia/en/9/9d/Lord_of_the_Rings_-_The_Return_of_the_King.jpg",
-        featured: yes
+        featured:true
     },
     {
         title: "The Silence of the Lambs",
@@ -81,7 +82,7 @@ let movies = [
             birth: "02-22-1944",
         },
         imageURL: "https://upload.wikimedia.org/wikipedia/en/8/86/The_Silence_of_the_Lambs_poster.jpg",
-        featured: yes
+        featured:true
     },
     {
         title: "Halloween",
@@ -97,7 +98,7 @@ let movies = [
             birth: "01-16-1948",
         },
         imageURL: "https://upload.wikimedia.org/wikipedia/en/8/8b/Halloween_%281978%29_theatrical_poster.jpg",
-        featured: yes
+        featured:true
     },
     {
         title: "No Country for Old Men",
@@ -112,7 +113,7 @@ let movies = [
             birth: "09-21-1957",
         },
         imageURL: "https://upload.wikimedia.org/wikipedia/en/8/8b/Halloween_%281978%29_theatrical_poster.jpg",
-        featured: yes
+        featured:true
     },
     {
         title: "Start Wars: Episode VVI - Return of the Jedi",
@@ -127,7 +128,7 @@ let movies = [
             birth: "09-22-1937",
         },
         imageURL: "https://upload.wikimedia.org/wikipedia/en/b/b2/ReturnOfTheJediPoster1983.jpg",
-        featured: yes
+        featured:true
     },
     {
 
@@ -143,7 +144,7 @@ let movies = [
             birth: "12-18-1946",
         },
         imageURL: "https://upload.wikimedia.org/wikipedia/en/e/e7/Jurassic_Park_poster.jpg",
-        featured: yes
+        featured:true
     },
     {
         title: "Guardians of the Galaxy",
@@ -158,7 +159,7 @@ let movies = [
             birth: "08-05-1970",
         },
         imageURL: "https://upload.wikimedia.org/wikipedia/en/8/8f/GOTG-poster.jpg",
-        featured: yes
+        featured:true
     },
     {
         title: "Saving Private Ryan",
@@ -173,7 +174,7 @@ let movies = [
             birth: "12-18-1946",
         },
         imageURL: "https://upload.wikimedia.org/wikipedia/en/a/ac/Saving_Private_Ryan_poster.jpg",
-        featured: yes
+        featured:true
     },
 ];
 
@@ -223,20 +224,7 @@ app.get('/movies/:title', (req, res) => {
 
 })
 
-
-// READ- return data about a genre by name/title
-app.get('/movies/genres/:genreName', (req, res) => {
-    const { genreName } = re.params;
-    const genre = movies.find(m => m.genre.name === genreName);
-
-    if (genre) {
-        rest.statues(200).json(genre);
-    } else {
-        res.status(400).send(`no such genre.`)
-    }
- })
-
-//CREATE- add a movie to a user"s list of favorites
+//CREATE- add a movie to a user's list of favorites
 app.post('users/:id/movieTitle', (req, res) => {
     const { id, moveTitle } = req.params;
 
@@ -250,6 +238,7 @@ app.post('users/:id/movieTitle', (req, res) => {
     }
 })
 
+
 // DELETE- remove a movie from a user"s list of favorites
 app.delete('users/:id/movieTitle', (req, res) => {
     const { id, movieTitle } = req.params;
@@ -262,6 +251,35 @@ if (user) {
 } else { 
     res.status(400).send('no such user')
 }
+})
+
+// READ- return data about a genre by name/title
+app.get('/movies/genres/:genreName', (req, res) => {
+    const { genreName } = re.params;
+    const genre = genre.find(m => m.Genre.Name === genreName).Genre;
+
+    if (genre) {
+        rest.statues(200).json(genre);
+    } else {
+        res.status(400).send(`no such genre.`)
+    }
+ });
+
+
+
+// UPDATE- Allows users to update their personal info
+app.put('/users/:id', (req, res) => {
+    const { id } = req.params;
+    const updatedUser = req.body;
+
+    let user = user.find( user => user.id == id);
+
+    if (user) {
+        user.name = updated.user.name;
+        res.status(200).json(user);
+    } else {
+        rest.status(400).send(`Error: User ID ${id} not found.`)
+    }
 })
 
 // DELETE- remove a user by ID
@@ -279,20 +297,7 @@ app.delete('/users/:id/:movieTitle', (req, res) => {
 
 })
 
-// UPDATE- Allows users to update their personal info
-app.put('/users/:id', (req, res) => {
-    const { id } = req.params;
-    const updatedUser = req.body;
 
-    let user = user.find( user => user.id == id);
-
-    if (user) {
-        user.name = updated.user.name;
-        res.status(200).json(user);
-    } else {
-        rest.status(400).send(`Error: User ID ${id} not found.`)
-    }
-})
  // READ- return data about a director by name
  app.get('/movies/directors/:directorName', (req, res) => {
     const { directorName } = re.params;
@@ -313,6 +318,6 @@ app.use((err, req, res, next) => {
 
 // listen for requests
 
-app.listen(5500, () => {
-    console.log("Your app is listening on port 5500.");
+app.listen(8080, () => {
+    console.log("Your app is listening on port 8080.");
 });

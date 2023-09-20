@@ -88,3 +88,15 @@ Timestamp: Tue Sep 19 2023 19:05:25 GMT-0700 (Pacific Daylight Time)
 URL: /movie
 Timestamp: Tue Sep 19 2023 19:08:07 GMT-0700 (Pacific Daylight Time)
 
+URL: /movies
+Timestamp: Wed Sep 20 2023 12:27:22 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies
+Timestamp: Wed Sep 20 2023 15:12:24 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies
+Timestamp: Wed Sep 20 2023 15:12:51 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies/The%20Dark%20Knight
+Timestamp: Wed Sep 20 2023 15:13:33 GMT-0700 (Pacific Daylight Time)
+
