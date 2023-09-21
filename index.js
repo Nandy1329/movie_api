@@ -6,7 +6,6 @@ app = express();
 path = require ('path'),
 PORT = process.env.PORT || 8080;
 
-app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
 
 
@@ -178,33 +177,10 @@ let movies = [
     },
 ];
 
-// CREATE- add a user account
-app.post('/users', (req, res) => {
-    const newUser = req.body;
-
-    if (newUser.name) {
-      newUser.id = uuid.v9();
-      users.push(newUser);
-      res.status(200).json(newUser)
-    } else {
-        res.status(400).send('users need names')
-    }
-})
-
-// UPDATE- Allows users to update their personal info
-app.put('/users/:id', (req, res) => {
-    const { id } = req.params;
-    const updatedUser = req.body;
-
-    let user = user.find( user => user.id == id);
-
-    if (user) {
-        user.name = updated.user.name;
-        res.status(200).json(user);
-    } else {
-        rest.status(400).send(`no such user`)
-    }
-})
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  });
+  
 
 // READ- return a list of all movies
 app.get('/movies', (req, res) => {
@@ -224,39 +200,10 @@ app.get('/movies/:title', (req, res) => {
 
 })
 
-//CREATE- add a movie to a user's list of favorites
-app.post('users/:id/movieTitle', (req, res) => {
-    const { id, moveTitle } = req.params;
-
-    let user = users.find(user => users.id == id);
-
-    if (user) {
-        user.favoriteMovies.push(movieTitle);
-      res.status(200).send('${movieTitle} has been added to ${id}s array');;
-    } else {
-       res.status(400).send(`no such user.`)
-    }
-})
-
-
-// DELETE- remove a movie from a user"s list of favorites
-app.delete('users/:id/movieTitle', (req, res) => {
-    const { id, movieTitle } = req.params;
-
-let users = users.find(user => users.id ==id);
-
-if (user) {
-    users.favoriteMovies = user.favoriteMovies.filter(title => title !== movietitle);
-    res.status(200).send('${movieTitle} has been removed from ${id}s array');;
-} else { 
-    res.status(400).send('no such user')
-}
-})
-
 // READ- return data about a genre by name/title
 app.get('/movies/genres/:genreName', (req, res) => {
-    const { genreName } = re.params;
-    const genre = genre.find(m => m.Genre.Name === genreName).Genre;
+    const { genreName } = req.params;
+    const genre = movies.find(movie => movie.Genre.Name === genreName);
 
     if (genre) {
         rest.statues(200).json(genre);
@@ -265,7 +212,16 @@ app.get('/movies/genres/:genreName', (req, res) => {
     }
  });
 
-
+ // READ- return data about a director by name
+ app.get('/movies/directors/:directorName', (req, res) => {
+    const { directorName } = req.params;
+    const director = movies.find(m => m.Director.Name === directorName);
+    if (director) {
+        res.status(200).json(director); 
+    } else {
+        res.status(400).send(`no such director.`)
+    }
+    })
 
 // UPDATE- Allows users to update their personal info
 app.put('/users/:id', (req, res) => {
@@ -281,34 +237,59 @@ app.put('/users/:id', (req, res) => {
         rest.status(400).send(`Error: User ID ${id} not found.`)
     }
 })
+// CREATE- add a user account
+app.post('/users', (req, res) => {
+    const newUser = req.body;
 
-// DELETE- remove a user by ID
-app.delete('/users/:id/:movieTitle', (req, res) => {
-    const { id,movieTitle } = req.params;
+    if (newUser.name) {
+      newUser.id = uuid.v9();
+      users.push(newUser);
+      res.status(200).json(newUser)
+    } else {
+        res.status(400).send('users need names')
+    }
+})
 
-     let user = users.find(user => users.id ==id);
-     
-     if (users) {
-        users = users.filter(users => users.id !== id);
-         rest.status(200).send('${id} has been removed from the list of users.');
-     } else {
-        res.status(400).send(`Error: User ID ${id} not found.`)
-     }
+//CREATE- add a movie to a user's list of favorites
+app.post('/users/:id/movieTitle', (req, res) => {
+    const { id, moveTitle } = req.params;
 
+    let user = users.find(user => users.id == id);
+
+    if (user) {
+        user.favoriteMovies.push(movieTitle);
+      res.status(200).send('${movieTitle} has been added to ${id}s array');;
+    } else {
+       res.status(400).send(`no such user.`)
+    }
 })
 
 
- // READ- return data about a director by name
- app.get('/movies/directors/:directorName', (req, res) => {
-    const { directorName } = re.params;
-    const director = movies.find(m => m.Director.Name === directorName);
-    if (director) {
-        res.status(200).json(director); 
-    } else {
-        res.status(400).send(`no such director.`)
-    }
-    })
+// DELETE- remove a movie from a user's list of favorites
+app.delete('/users/:id/movieTitle', (req, res) => {
+    const { id, movieTitle } = req.params;
 
+let users = users.find(user => users.id ==id);
+
+if (user) {
+    users.favoriteMovies = user.favoriteMovies.filter(title => title !== movietitle);
+    res.status(200).send('${movieTitle} has been removed from ${id}s array');;
+} else { 
+    res.status(400).send('no such user')
+}
+})
+
+
+// DELETE- remove a user by ID
+app.delete ('/users/:id/movieTitle', (req, res) => {
+    const { id } = req.params;
+    let user = users.find(user => user.id ==id);
+    if (user) {
+      users = users.filter( user => user.id !== id);
+      rest.status(200).send('${id} has been removed from the list of users.');
+    } else {
+        res.status(400).send(`Error: User ID ${id} not found.`)
+     }
 
 
 app.use((err, req, res, next) => {
@@ -321,3 +302,4 @@ app.use((err, req, res, next) => {
 app.listen(8080, () => {
     console.log("Your app is listening on port 8080.");
 });
+})
