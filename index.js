@@ -177,10 +177,7 @@ let movies = [
     },
 ];
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
-  });
-  
+
 
 // READ- return a list of all movies
 app.get('/movies', (req, res) => {
@@ -302,4 +299,4 @@ app.use((err, req, res, next) => {
 app.listen(8080, () => {
     console.log("Your app is listening on port 8080.");
 });
-})
+
