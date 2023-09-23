@@ -198,21 +198,21 @@ app.get('/movies/:title', (req, res) => {
 })
 
 // READ- return data about a genre by name/title
-app.get('/movies/genres/:genreName', (req, res) => {
+app.get('/movies/genre/:genreName', (req, res) => {
     const { genreName } = req.params;
-    const genre = movies.find(movie => movie.Genre.Name === genreName);
+    const genre = movies.find(movie => movie.genre.Name === genre.Name);
 
     if (genre) {
         rest.statues(200).json(genre);
     } else {
         res.status(400).send(`no such genre.`)
     }
- });
+ })
 
  // READ- return data about a director by name
  app.get('/movies/directors/:directorName', (req, res) => {
     const { directorName } = req.params;
-    const director = movies.find(m => m.Director.Name === directorName);
+    const director = movies.find(m => m.director.name === directorName);
     if (director) {
         res.status(200).json(director); 
     } else {
@@ -287,7 +287,7 @@ app.delete ('/users/:id/movieTitle', (req, res) => {
     } else {
         res.status(400).send(`Error: User ID ${id} not found.`)
      }
-
+    })
 
 app.use((err, req, res, next) => {
     console.error(err.stack);
@@ -299,4 +299,3 @@ app.use((err, req, res, next) => {
 app.listen(5500, () => {
     console.log("Your app is listening on port 5500.");
 });
-})
