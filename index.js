@@ -1,26 +1,35 @@
-const bodyParser = require('body-parser');
 const express = require('express');
-    uuid = require('uuid');
-morgan = require('morgan');
-app = express();
-path = require ('path'),
-PORT = process.env.PORT || 8080;
+const morgan = require('morgan');
+const fs = require('fs');
+const path = require('path');
+const bodyParser = require('body-parser');
+const uuid = require('uuid');
+const app = express();
 
 app.use(bodyParser.json());
+
+const accessLogStream = fs.createWriteStream(path.join(__dirname, 'log.txt'), {flags: 'a'})
+
+app.use(express.static('public'));
+
+app.use(morgan('common'));
 
 
 let users = [
     {
         id: 1,
         username: "Nicholas",
-        favoriteMovies : []
+        favoriteMovies : ["The Dark Knight"]
     },
     {
         id: 2,
         name: "Heather",
         favoriteMovies : ["Jurassic Park"]
     },
-]
+];
+
+
+
 let movies = [
     {
         title: "Inglorious Basterds",
@@ -30,7 +39,7 @@ let movies = [
             name: "Action",
            description: "Action film is a film genre in which the protagonist or protagonists are thrust into a series of events that typically include violence, extended fighting, physical feats, rescues and frantic chases."
         },
-        director: {
+        director:{
             name: "Quentin Tarantino",
             bio: "Quentin Jerome Tarantino (born March 27, 1963) is an American film director, screenwriter, producer, and actor. His films are characterized by nonlinear storylines, dark humor, aestheticization of violence, extended scenes of dialogue, ensemble casts, references to popular culture and a wide variety of other films, eclectic soundtracks primarily containing songs and score pieces from the 1960s to the 1980s, alternate history, and features of neo-noir film.",
             birth: "03-27-1963",
@@ -177,125 +186,123 @@ let movies = [
     },
 ];
 
+// CREATE - allow users to register
+app.post('/users', (req, res)=> {
+  const newUser = req.body;
 
+  if (newUser.name) {
+    newUser.id = uuid.v4();
+    users.push(newUser);
+    res.status(201).json(newUser);
+  }else {
+    res.status(400).send('users need names')
+  }
 
-// READ- return a list of all movies
-app.get('/movies', (req, res) => {
-    res.status(200).json(movies);
-})
+});
 
-// READ- return data about a single movie by title
-app.get('/movies/:title', (req, res) => {
-    const { title } = req.params;
-    const movie = movies.find(m => m.title === title);
+//UPDATE - Allow users to update their user info (username)
+app.put('/users/:id', (req,res)=> {
+  const { id } = req.params;
+  const updatedUser = req.body;
 
-    if (movie) {
-        res.status(200).json(movie);
-    } else {
-        res.status(400).send(`no such movie`)
-}
+  let user = users.find( user => user.id == id);
 
-})
+  if (user) {
+    user.name = updatedUser.name;
+    res.status(200).json(user);
+  } else {
+    res.status(400).send('no such user');
+  }
+});
 
-// READ- return data about a genre by name/title
-app.get('/movies/genre/:genreName', (req, res) => {
-    const { genreName } = req.params;
-    const genre = movies.find(movie => movie.genre.Name === genre.Name);
+//CREATE - Allow users to add a movie to their list of favorites 
+app.post('/users/:id/:movieTitle', (req, res)=> {
+  const { id, movieTitle} = req.params;
 
-    if (genre) {
-        rest.statues(200).json(genre);
-    } else {
-        res.status(400).send(`no such genre.`)
-    }
- })
+  let user = users.find(user => user.id == id);
 
- // READ- return data about a director by name
- app.get('/movies/directors/:directorName', (req, res) => {
-    const { directorName } = req.params;
-    const director = movies.find(m => m.director.name === directorName);
-    if (director) {
-        res.status(200).json(director); 
-    } else {
-        res.status(400).send(`no such director.`)
-    }
-    })
-
-// UPDATE- Allows users to update their personal info
-app.put('/users/:id', (req, res) => {
-    const { id } = req.params;
-    const updatedUser = req.body;
-
-    let user = user.find( user => user.id == id);
-
-    if (user) {
-        user.name = updated.user.name;
-        res.status(200).json(user);
-    } else {
-        rest.status(400).send(`Error: User ID ${id} not found.`)
-    }
-})
-// CREATE- add a user account
-app.post('/users', (req, res) => {
-    const newUser = req.body;
-
-    if (newUser.name) {
-      newUser.id = uuid.v9();
-      users.push(newUser);
-      res.status(200).json(newUser)
-    } else {
-        res.status(400).send('users need names')
-    }
-})
-
-//CREATE- add a movie to a user's list of favorites
-app.post('/users/:id/movieTitle', (req, res) => {
-    const { id, moveTitle } = req.params;
-
-    let user = users.find(user => users.id == id);
-
-    if (user) {
-        user.favoriteMovies.push(movieTitle);
-      res.status(200).send('${movieTitle} has been added to ${id}s array');;
-    } else {
-       res.status(400).send(`no such user.`)
-    }
-})
-
-
-// DELETE- remove a movie from a user's list of favorites
-app.delete('/users/:id/movieTitle', (req, res) => {
-    const { id, movieTitle } = req.params;
-
-let users = users.find(user => users.id ==id);
-
-if (user) {
-    users.favoriteMovies = user.favoriteMovies.filter(title => title !== movietitle);
-    res.status(200).send('${movieTitle} has been removed from ${id}s array');;
-} else { 
+  if (user) {
+    user.favoriteMovies.push(movieTitle);
+    res.status(200).json(`${movieTitle} has been added to user ${id}'s array`);
+  } else {
     res.status(400).send('no such user')
-}
-})
+  }
+});
+
+//DELETE - Allow users to remove a movie from their list of favorites
+app.delete('/users/:id/:movieTitle', (req, res)=> {
+  const { id, movieTitle} = req.params;
+
+  let user = users.find(user => user.id == id);
+
+  if (user) {
+    user.favoriteMovies = user.favoriteMovies.filter( title => title !== movieTitle);
+    res.status(200).json(`${movieTitle} has been removed from user ${id}'s array`);
+  } else {
+    res.status(400).send('no such user')
+  }
+});
+
+//DELETE - Allow existing users to deregister
+app.delete('/users/:id', (req, res)=> {
+  const { id } = req.params;
+
+  let user = users.find(user => user.id == id);
+
+  if (user) {
+    users = users.filter( user => user.id != id);
+    res.status(200).json(`user ${id} has been deleted`);
+  } else {
+    res.status(400).send('no such user')
+  }
+});
+
+//READ - return a list of all movies 
+app.get('/movies', (req, res)=>{
+  res.status(200).json(movies);
+});
+
+//READ - return data about a single movie by name
+app.get('/movies/:title', (req, res)=>{
+  const { title } = req.params;
+  const movie = movies.find(movie => movie.Title === title );
+
+  if (movie) {
+    res.status(200).json(movie);
+  } else {
+    res.status(400).send('no such movie')
+  }
+});
+
+//READ - return data about a genre by name
+app.get('/movies/genre/:genreName', (req, res)=>{
+  const { genreName } = re.params;
+  const genre = movies.find(movie => movie.genre.Name === genreName).Genre;
+
+  if (genre) {
+    res.status(200).json(genre);
+  } else {
+    res.status(400).send('no such genre')
+  }
+});
+
+//READ - return data about a director by name 
+app.get('/movies/directors/:directorName', (req, res)=>{
+  const { directorName } = req.params;
+  const director = movies.find(movie => movie.Director.Name === directorName).Director;
+
+  if (director) {
+    res.status(200).json(director);
+  } else {
+    res.status(400).send('no such director')
+  }
+});
 
 
-// DELETE- remove a user by ID
-app.delete ('/users/:id/movieTitle', (req, res) => {
-    const { id } = req.params;
-    let user = users.find(user => user.id ==id);
-    if (user) {
-      users = users.filter( user => user.id !== id);
-      rest.status(200).send('${id} has been removed from the list of users.');
-    } else {
-        res.status(400).send(`Error: User ID ${id} not found.`)
-     }
-    })
-
+//error handling middleware function
 app.use((err, req, res, next) => {
     console.error(err.stack);
-    res.status(500).send("Something broke!"); // 500 is the HTTP status code for "Internal server error"
+    res.status(500).send('Something broke!');
 });
 
-// listen for requests
-
-app.listen(5500, () => {
-    console.log("Your app is listening on port 5500.");
-});
+app.listen(8080, () => console.log("listening on 8080"))

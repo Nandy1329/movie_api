@@ -190,3 +190,16 @@ Timestamp: Thu Sep 21 2023 17:13:14 GMT-0700 (Pacific Daylight Time)
 URL: /movies
 Timestamp: Thu Sep 21 2023 17:14:46 GMT-0700 (Pacific Daylight Time)
 
+::1 - - [24/Sep/2023:00:44:10 +0000] "GET /movies HTTP/1.1" 200 10607 "-" "PostmanRuntime/7.33.0"
+::1 - - [24/Sep/2023:00:44:14 +0000] "GET /movies/directors/James%20Gunn HTTP/1.1" 500 1189 "-" "PostmanRuntime/7.33.0"
+::1 - - [24/Sep/2023:00:44:17 +0000] "GET /movies/directors/James%20Gunn HTTP/1.1" 500 1189 "-" "PostmanRuntime/7.33.0"
+::1 - - [24/Sep/2023:00:46:57 +0000] "GET /movies HTTP/1.1" 200 10607 "-" "PostmanRuntime/7.33.0"
+::1 - - [24/Sep/2023:00:47:05 +0000] "GET /movies HTTP/1.1" 200 10607 "-" "PostmanRuntime/7.33.0"
+::1 - - [24/Sep/2023:00:47:19 +0000] "GET /movies HTTP/1.1" 200 10607 "-" "PostmanRuntime/7.33.0"
+::1 - - [24/Sep/2023:00:47:20 +0000] "GET /movies3 HTTP/1.1" 404 146 "-" "PostmanRuntime/7.33.0"
+::1 - - [24/Sep/2023:00:47:21 +0000] "GET /movies HTTP/1.1" 200 10607 "-" "PostmanRuntime/7.33.0"
+::1 - - [24/Sep/2023:00:47:25 +0000] "GET /movies HTTP/1.1" 200 10607 "-" "PostmanRuntime/7.33.0"
+::1 - - [24/Sep/2023:00:47:34 +0000] "GET /movies HTTP/1.1" 200 10607 "-" "PostmanRuntime/7.33.0"
+::1 - - [24/Sep/2023:00:47:43 +0000] "GET /movies/genre HTTP/1.1" 400 13 "-" "PostmanRuntime/7.33.0"
+::1 - - [24/Sep/2023:00:47:50 +0000] "GET /movies/genre/Horror HTTP/1.1" 500 1189 "-" "PostmanRuntime/7.33.0"
+::1 - - [24/Sep/2023:00:57:42 +0000] "GET /movies/genre/Horror HTTP/1.1" 500 1189 "-" "PostmanRuntime/7.33.0"
