@@ -16,6 +16,7 @@
     "express": "^4.18.2",
     "morgan": "^1.10.0",
     "npm": "^10.1.0",
+    "stacktracey": "^2.1.8",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
@@ -31,5 +32,4 @@
     "url": "https://github.com/Nandy1329/movie_api/issues"
   },
   "homepage": "https://github.com/Nandy1329/movie_api#readme"
-
 }
