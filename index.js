@@ -4,16 +4,19 @@ const fs = require("fs");
 const path = require("path");
 const bodyParser = require("body-parser");
 const uuid = require("uuid");
+
 const app = express();
+
+
 app.use(bodyParser.json());
-const accessLogStream = fs.createWriteStream(
-	path.join("log.txt"), 
-	{flags: "a"}
-);
+
+const accessLogStream = fs.createWriteStream(path.join(__dirname, 'log.txt'), {flags: 'a'})
+
+app.use(morgan('combined', {stream: accessLogStream}));
 
 app.use(express.static("public"));
-// setup the logger
-app.use(morgan("common"));
+
+
 
 let users = [
     {
@@ -276,30 +279,30 @@ app.get("/movies/:title", (req, res)=>{
 app.get("/movies/:genres/:genreName", (req, res) => {
   const { genreName } = req.params;
   const genre = movies.find((movie => movie.genre.name === genreName).genre)
-
+  
   if (genre) {
-      res.status(200).json(genre);
+  res.status(200).json(genre);
   } else {
-      res.status(400).send("no such genre")
-  };
-
-//READ - return data about a director by name
-app.get("/movies/directors/:directorName", (req, res)=>{
+  res.status(400).send("no such genre")
+  }
+  });
+  
+  //READ - return data about a director by name
+  app.get("/movies/directors/:directorName", (req, res)=>{
   const { directorName } = req.params;
- const director = movies.find(movie => movie.director.name === directorName).director
-
+  const director = movies.find(movie => movie.director.name === directorName).director
+  
   if (director) {
-    res.status(200).json(director);
+  res.status(200).json(director);
   } else {
-    res.status(400).send("no such director")
-  };
-
-
-//error handling middleware function
-app.use((err, req, res, next) => {
+  res.status(400).send("no such director")
+  }
+  });
+  
+  //error handling middleware function
+  app.use(function (err, req, res, next) {
     console.error(err.stack);
-    res.status(500).send("Something broke!")
-});
-
-app.listen(8080, () => console.log("listening on 8080"))}
-)});
+    res.status(500).send("Something broke!");
+  });
+  
+  app.listen(8082, () => console.log("listening on 8080"));
