@@ -298,11 +298,10 @@ app.get("/movies/:genres/:genreName", (req, res) => {
   res.status(400).send("no such director")
   }
   });
-  
-  //error handling middleware function
-  app.use(function (err, req, res, next) {
-    console.error(err.stack);
-    res.status(500).send("Something broke!");
+//error handling middleware function
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send("Something broke!")
   });
   
   app.listen(8082, () => console.log("listening on 8080"));
