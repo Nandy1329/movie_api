@@ -29,7 +29,7 @@ let users = [
         Name: "Heather",
         favoriteMovies : ["Jurassic Park"]
     }
-];
+]
 
 
 
@@ -186,7 +186,7 @@ let movies = [
         imageURL: "https://upload.wikimedia.org/wikipedia/en/a/ac/Saving_Private_Ryan_poster.jpg",
         Featured:true
     }
-];
+]
 
 // CREATE - allow users to register
 app.post("/users", (req, res)=> {
@@ -264,9 +264,9 @@ app.get("/movies", (req, res)=>{
 });
 
 //READ - return data about a single movie by Name
-app.get("/movies/:Title", (req, res)=>{
-  const { Title } = req.params;
-  const movie = movies.find(movie => movie.Title === Title );
+app.get("/movies/:title", (req, res)=>{
+  const { title } = req.params;
+  const movie = movies.find(movie => movie.Title === title );
 
   if (movie) {
     res.status(200).json(movie);
@@ -276,14 +276,14 @@ app.get("/movies/:Title", (req, res)=>{
 }) 
 
 //READ - return data about a Genre by Name
-app.get("/movies/:Genres/:GenreName", (req, res) => {
-  const { GenreName } = req.params;
-  const Genre = movies.find( movie => movie.Genre.Name === GenreName).Genre;
+app.get("/movies/genre/:genreName", (req, res) => {
+  const { genreName } = req.params;
+  const genre = movies.find( movie => movie.Genre.Name === genreName).Genre;
   
-  if (Genre) {
-  res.status(200).json(Genre);
+  if (genre) {
+  res.status(200).json(genre);
   } else {
-  res.status(400).send("no such Genre")
+  res.status(400).send("no such genre")
   }
   })
 
@@ -302,6 +302,6 @@ app.get("/movies/:Genres/:GenreName", (req, res) => {
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send("Something broke!")
-  });
+  })
   
-  app.listen(8080, () => console.log("listening on 8080"));
+  app.listen(8080, () => console.log("listening on 8080"))
