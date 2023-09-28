@@ -136,7 +136,7 @@ Timestamp: Wed Sep 20 2023 19:10:46 GMT-0700 (Pacific Daylight Time)
 URL: /movies
 Timestamp: Wed Sep 20 2023 19:10:50 GMT-0700 (Pacific Daylight Time)
 
-URL: /moviesd
+URL: /movies
 Timestamp: Wed Sep 20 2023 19:10:55 GMT-0700 (Pacific Daylight Time)
 
 URL: /movies/The%20Dark%20Knight
@@ -212,7 +212,12 @@ Timestamp: Thu Sep 21 2023 17:14:46 GMT-0700 (Pacific Daylight Time)
 ::1 - - [27/Sep/2023:17:52:01 +0000] "GET /movies/genre/:Horror HTTP/1.1" 500 16 "-" "PostmanRuntime/7.33.0"
 ::1 - - [27/Sep/2023:17:52:03 +0000] "GET /movies/genre/: HTTP/1.1" 500 16 "-" "PostmanRuntime/7.33.0"
 ::1 - - [27/Sep/2023:17:52:13 +0000] "GET /movies/:genre/:action HTTP/1.1" 500 16 "-" "PostmanRuntime/7.33.0"
-::1 - - [27/Sep/2023:17:52:17 +0000] "GET /movies/:genre/Actio HTTP/1.1" 500 16 "-" "PostmanRuntime/7.33.0"
+::1 - - [27/Sep/2023:17:52:17 +0000] "GET /movies/:genre/Action HTTP/1.1" 500 16 "-" "PostmanRuntime/7.33.0"
 ::1 - - [27/Sep/2023:17:52:18 +0000] "GET /movies/:genre/Action HTTP/1.1" 500 16 "-" "PostmanRuntime/7.33.0"
-::ffff:127.0.0.1 - - [28/Sep/2023:02:52:28 +0000] "GET /index.js HTTP/1.1" 404 147 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
-::ffff:127.0.0.1 - - [28/Sep/2023:02:52:33 +0000] "GET / HTTP/1.1" 404 139 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+::ffff:127.0.0.1 - - [28/Sep/2023:02:52:28 +0000] "GET /index.js HTTP/1.1" 404 147 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (HTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+::ffff:127.0.0.1 - - [28/Sep/2023:02:52:33 +0000] "GET / HTTP/1.1" 404 139 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (HTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+::ffff:127.0.0.1 - - [28/Sep/2023:22:58:55 +0000] "GET http://localhost:8080/movies/:Genres/Thriller HTTP/1.1" 404 162 "-" "PostmanRuntime/7.33.0"
+::ffff:127.0.0.1 - - [28/Sep/2023:23:00:28 +0000] "GET http://localhost:8080/movies/:Genres/Thriller HTTP/1.1" 404 162 "-" "PostmanRuntime/7.33.0"
+::ffff:127.0.0.1 - - [28/Sep/2023:23:00:40 +0000] "GET http://localhost:8080/movies/:Genres/Action HTTP/1.1" 404 160 "-" "PostmanRuntime/7.33.0"
+::ffff:127.0.0.1 - - [28/Sep/2023:23:01:28 +0000] "GET http://localhost:8080/movies/:Genres/Action HTTP/1.1" 404 160 "-" "PostmanRuntime/7.33.0"
+::ffff:127.0.0.1 - - [28/Sep/2023:23:01:47 +0000] "GET http://localhost:8080/movies/:genres/Action HTTP/1.1" 404 160 "-" "PostmanRuntime/7.33.0"
