@@ -73,7 +73,7 @@
        </td>
   </tr>
   <tr>
-    <td>Get data about a genre by name</td>
+    <td>Get data about a genre by genre's name</td>
     <td>/movies/genres/:genreName</td>
     <td>GET</td>
     <td>none</td>
@@ -87,75 +87,120 @@
     </td>
   </tr>
   <tr>
-    <td>Get data about a director by name</td>
+    <td>Get data about a director by director's name</td>
     <td>/movies/directors/:directorName</td>
     <td>GET</td>
     <td>none</td>
-    <td>A JSON object holding data about a director, including name, bio, birth year, and death year.</td>
+    <td>A JSON object holding data about a director. Example:
+      <code>
+        
+        {
+            "Name": "John Carpenter",
+            "Bio": "John Howard Carpenter is an American filmmaker, screenwriter, and composer. Although Carpenter has worked with various film genres, he is associated most commonly with horror, action, and science fiction films of the 1970s and 1980s.",
+            "Birth": "1948"
+        }
+      </code>
+      </td>
        
   </tr>
   <tr>
   <td>Add new user</td>
   <td>/users</td>
   <td>POST</td>
-  <td>A JSON object holding user data like this
+  <td>A JSON object holding user data like this:
     <code>
       {
-        name: "Nicholas"
-        favoriteMovies: []
+        "Username": "Ron",
+        "Password": "1a2b3c",
+        "Email": "ronturn@gmail.com ",
+        "Birthday": "1989-06-18"
       }
-    </code>
+ </code>
   </td>
-  <td>A JSON object holding user data plus an ID: 
+  <td>A JSON object holding user data, ID, and an array for placing favorite movies: 
     <code>
       {
-        id: 1
-        name: "Nicholas",
-        favoriteMovies: []
+        "Username": "Ron",
+        "Password": "1a2b3c",
+        "Email": "ronturn@gmail.com ",
+        "Birthday": "1989-06-18"
+        "FavoriteMovies": [],
+        " _id: "653819826d372e6341926277",
+        "__v"" 0
       }
     </code>
   </td>
   </tr>
 
 <tr>
-  <td>Update username</td>
-  <td>/users/:id</td>
+  <td>Update user info</td>
+  <td>users/:Username</td>
 <td>PUT</td>
-<td>A JSON object holding user data, structured like this:
+<td>A JSON object holding the user info that should be changed It should contain at least one of the following key/value pairs:
   <code>
     {
-      name: "Nicholas",
-      favoriteMovies: []
+        "Username": String,
+        "Password": String,
+        "Email": String,
+        "Birthday" Data 
     }
   </code>
 </td>
-  <td>A JSON object holding user data, structured like this:
+  <td>A JSON object holding all user info with all key/values pair updated:
     <code>
       {
-        name: "Nicholas",
-        favoriteMovies: []
+        "Username": "Ron",
+        "Password": "1a2b3c",
+        "Email": "ronturn@gmail.com",
+        "Birthday": 1989-06-18",
+        "Favorite Movies": [],
+        "_id: "653819826d372e6341926277",
+        "__v"" 0
       }
     </code>
   </td>
 </tr>
 <tr>
 
-   <td>Add movie to user's list of favorites</td>
-    <td>/users/:id/:movieTitle</td>
+   <td>Add movie to user favorite list</td>
+    <td>/Username/movies/:movieTitle</td>
     <td>POST</td>
     <td>none</td>
-    <td>A text message showing the movie was successfully added to the favorite list</td>
+    <td>A JSON object holding all user info with all key/values pair updated:
+      <code>
+        {
+          Username": "Ron",
+          "Password": "1a2b3c",
+          "Email": "ronturn@gmail.com",
+          "Birthday": 1989-06-18",
+          "Favorite Movies": [],
+          "_id: "653819826d372e6341926277",
+          "__v"" 0
+        }
+      </code>
+    </td>
     </tr>
     <tr>
       <td>Remove movie from user's list of favorites</td>
-      <td>/users/:id/:movieTitle</td>
+      <td>/users/:Username/mvoies/:movieID</td>
       <td>DELETE</td>
       <td>none</td>
-      <td>A text message showing the movie was successfully removed from the favorite list</td>
-    </tr>
+      <td>A JSON object holding all user info with all key/values pair updated:
+        <code>
+          Username": "Ron",
+        "Password": "1a2b3c",
+        "Email": "ronturn@gmail.com",
+        "Birthday": 1989-06-18",
+        "Favorite Movies": [],
+        "_id: "653819826d372e6341926277",
+        "__v"" 0
+          }
+        </code>
+        </td>
+  </tr>
   <tr>
     <td>Delete user information</td>
-    <td>/users/:id</td>
+    <td>/users/:Username</td>
     <td>DELETE</td>
     <td>none</td>
     <td>A text message showing the user was successfully deleted</td>
