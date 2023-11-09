@@ -18,13 +18,13 @@ app.use(morgan('combined', {stream: accessLogStream}));
 
 
 mongoose.connect('mongodb://localhost:27017/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true});
-mongoose.connect(process.env.CONNECTION_URI, {userNewUrlParser:true, useUnifiedTopology:true});
+
 
 
 
 app.use(bodyParser.json());
 app.use(express.json());
-app.use(express.urlencoded({ extended: tue }));
+app.use(express.urlencoded({ extended: true }));
 app.use*(morgan('common'));
 
 // 1 Return a list of ALL movies

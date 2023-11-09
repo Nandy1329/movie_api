@@ -221,3 +221,4 @@ Timestamp: Thu Sep 21 2023 17:14:46 GMT-0700 (Pacific Daylight Time)
 ::ffff:127.0.0.1 - - [28/Sep/2023:23:00:40 +0000] "GET http://localhost:8080/movies/:Genres/Action HTTP/1.1" 404 160 "-" "PostmanRuntime/7.33.0"
 ::ffff:127.0.0.1 - - [28/Sep/2023:23:01:28 +0000] "GET http://localhost:8080/movies/:Genres/Action HTTP/1.1" 404 160 "-" "PostmanRuntime/7.33.0"
 ::ffff:127.0.0.1 - - [28/Sep/2023:23:01:47 +0000] "GET http://localhost:8080/movies/:genres/Action HTTP/1.1" 404 160 "-" "PostmanRuntime/7.33.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:00:29:12 +0000] "GET http://localhost:8080/movies/genres/Thriller HTTP/1.1" 404 161 "-" "PostmanRuntime/7.33.0"
