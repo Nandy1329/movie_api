@@ -98,11 +98,11 @@ app.get('/movies/directors/:directorName', passport.authenticate('jwt', { sessio
 
 //  Allow new users to register
 
-app.post('/users', async (req, res) => {
-  await Users.findOne({ Username: req.body.Username })
+app.post('/users', (req, res) => {
+  Users.findOne({ Username: req.body.Username })
     .then((user) => {
       if (user) {
-        return res.status(400).send(req.body.Username + 'already exists');
+       return res.status(400).send(req.body.Username + 'already exists');
       } else {
         Users
           .create({
