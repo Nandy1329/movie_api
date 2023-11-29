@@ -6,11 +6,11 @@ const bodyParser = require('body-parser');
 const uuid = require('uuid');
 const mongoose = require('mongoose');
 const Models = require('./models.js');
+const cors = require('cors');
+const {check, validationResults} = require('express-validator'); 
 
-  
 const Movies = Models.Movie;
 const Users = Models.User;
-
 const app = express();
 
 const accessLogStream = fs.createWriteStream(path.join(__dirname, 'log.txt'), { flags: 'a' })
@@ -23,6 +23,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.use(morgan('common'));
 app.use(morgan('combined', { stream: accessLogStream }));
+app.use(cors());
 
 let auth = require('./auth')(app);
 const passport = require('passport');
@@ -96,26 +97,36 @@ app.get('/movies/directors/:directorName', passport.authenticate('jwt', { sessio
 });
 
 //  Allow new users to register
-
-app.post('/users', (req, res) => {
+app.post('/users', [
+  check('Username', 'Username is required').isLength({min:5}),
+  check('Username', 'Username contains non alphanumeric characters- not allowed').isAlphanumeric(),
+  check('Password', 'Password is required').not().isEmpty(),
+  check('Email', 'Email does not appear to be valid').isEmail()
+], (req, res) => {
+  let errors = validationResult(req);
+  
+  if (!errors.isEmpty()) {
+    return res.status(422).json({errors: errors.array()});
+  }
+  let hashedPassword = Users.hashPassword(req.body.Password);
   Users.findOne({ Username: req.body.Username })
     .then((user) => {
       if (user) {
-       return res.status(400).send(req.body.Username + 'already exists');
+        return res.status(400).send(req.body.Username + ' already exists');
       } else {
         Users
           .create({
             Username: req.body.Username,
-            Password: req.body.Password,
+            Password: hashedPassword,
             Email: req.body.Email,
             Birthday: req.body.Birthday
           })
-          .then((user) =>{res.status(201).json(user) })
-        .catch((error) => {
-          console.error(error);
-          res.status(500).send('Error: ' + error);
-        })
-      }
+          .then((user) =>{res.status(201).json(user)})
+          .catch((error) => {
+            console.error(error);
+            res.status(500).send('Error: ' + error);
+          })
+        }
     })
     .catch((error) => {
       console.error(error);
@@ -124,22 +135,31 @@ app.post('/users', (req, res) => {
 });
 
 // Allow users to update their user info (username, password, email, date of birth)
-app.put('/users/:Username', passport.authenticate('jwt', { session: false }), async (req, res) => {
-  if(req.user.Username !== req.params.Username){
-     return res.status(400).send('Permission denied');
+app.put('/users/:Username', 
+  passport.authenticate('jwt', { session: false }),
+  async (req, res) => {
+
+    if(req.user.Username !== req.params.Username){
+     return res.status(400).send('Permission denied.');
   }
-  await Users.findOneAndUpdate({ Username: req.params.Username }, { $set:
-    {
+
+  let data = {
       Username: req.body.Username,
       Password: req.body.Password,
       Email: req.body.Email,
       Birthday: req.body.Birthday
     }
-  },
-  { new: true }) // This line makes sure that the updated document is returned
+ if (req.body.Password){
+    let hashedPassword = Users.hashPassword(req.body.Password);
+    data['Password']= hashedPassword;
+ }
+  Users.findOneAndUpdate({ Username: req.params.Username },   
+    { $set: data},
+    { new: true })
     .then(updatedUser => {
-      res.json(updatedUser);
-    })
+          res.json(updatedUser);
+        })
+        
     .catch(err => {
       console.error(err);
       res.status(500).send('Error: ' + err);
@@ -204,6 +224,7 @@ app.use((err, req, res, next) => {
 });
 
 // listen for requests
-app.listen(8080, () => {
-  console.log('Your app is listening on port 8080.');
+const port = process.env.PORT || 8080;
+app.listen(port, '0.0.0.0', () => {
+  console.log('Listening on Port ' + port);
 });
