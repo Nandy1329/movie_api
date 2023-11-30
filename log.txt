@@ -526,3 +526,4 @@ Timestamp: Thu Sep 21 2023 17:14:46 GMT-0700 (Pacific Daylight Time)
 ::ffff:127.0.0.1 - - [21/Nov/2023:00:21:00 +0000] "DELETE http://localhost:8080/users/redhead1329/movies/653819826d372e6341926277 HTTP/1.1" 200 148 "-" "PostmanRuntime/7.35.0"
 ::ffff:127.0.0.1 - - [21/Nov/2023:00:22:20 +0000] "DELETE http://localhost:8080/users/nickis1329 HTTP/1.1" 400 24 "-" "PostmanRuntime/7.35.0"
 ::ffff:127.0.0.1 - - [21/Nov/2023:00:22:57 +0000] "DELETE http://localhost:8080/users/redhead1329 HTTP/1.1" 200 24 "-" "PostmanRuntime/7.35.0"
+127.0.0.1 - - [29/Nov/2023:19:24:22 +0000] "GET http://localhost:8080/users HTTP/1.1" 201 1332 "-" "PostmanRuntime/7.35.0"
