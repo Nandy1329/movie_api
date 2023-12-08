@@ -15,7 +15,8 @@ const app = express();
 
 const accessLogStream = fs.createWriteStream(path.join(__dirname, 'log.txt'), { flags: 'a' })
 
-mongoose.connect(process.env.CONNECTION_URI,  { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb+srv://nickis1329:Nandyham1329!@myflixdb.2bvsnhv.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
+
 
 app.use(bodyParser.json());
 app.use(express.json());
@@ -136,30 +137,36 @@ app.post('/users', [
 
 // Allow users to update their user info (username, password, email, date of birth)
 app.put('/users/:Username', 
-  passport.authenticate('jwt', { session: false }),
-  async (req, res) => {
-
-    if(req.user.Username !== req.params.Username){
-     return res.status(400).send('Permission denied.');
-  }
-
-  let data = {
-      Username: req.body.Username,
-      Password: req.body.Password,
-      Email: req.body.Email,
-      Birthday: req.body.Birthday
+check('Username', 'Username is required').isLength({min:5}),
+  check('Username', 'Username contains non alphanumeric chacters - not allowed').isAlphanumeric(),
+  check('Password', 'Password is required').not().isEmpty(),
+  check('Email', 'Email does not appear to be valid').isEmail()
+  ], 
+  passport.authenticate('jwt', { session: false }), 
+  (req, res) => {
+    let errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(422).json({errors: errors.array()});
     }
- if (req.body.Password){
+
     let hashedPassword = Users.hashPassword(req.body.Password);
-    data['Password']= hashedPassword;
- }
-  Users.findOneAndUpdate({ Username: req.params.Username },   
-    { $set: data},
-    { new: true })
+    
+    if(req.user.Username !== req.params.Username){
+      return res.status(400).send('Permission denied.');
+    }
+
+    Users.findOneAndUpdate({ Username: req.params.Username }, { $set:
+      {
+        Username: req.body.Username,
+        Password: hashedPassword,
+        Email: req.body.Email,
+        Birthday: req.body.Birthday
+      }
+    },
+    { new: true }) 
     .then(updatedUser => {
-          res.json(updatedUser);
-        })
-        
+        res.json(updatedUser);
+    })
     .catch(err => {
       console.error(err);
       res.status(500).send('Error: ' + err);
