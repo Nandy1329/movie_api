@@ -15,8 +15,7 @@ const app = express();
 
 const accessLogStream = fs.createWriteStream(path.join(__dirname, 'log.txt'), { flags: 'a' })
 
-mongoose.connect('mongodb+srv://nickis1329:Nandyham1329!@myflixdb.2bvsnhv.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
-
+mongoose.connect( process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 app.use(bodyParser.json());
 app.use(express.json());
@@ -136,8 +135,8 @@ app.post('/users', [
 });
 
 // Allow users to update their user info (username, password, email, date of birth)
-app.put('/users/:Username', 
-check('Username', 'Username is required').isLength({min:5}),
+app.put('/users/:Username', [
+  check('Username', 'Username is required').isLength({min:5}),
   check('Username', 'Username contains non alphanumeric chacters - not allowed').isAlphanumeric(),
   check('Password', 'Password is required').not().isEmpty(),
   check('Email', 'Email does not appear to be valid').isEmail()
