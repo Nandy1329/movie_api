@@ -46,17 +46,6 @@ app.get('/movies', passport.authenticate('jwt', { session: false }), async (req,
     });
 });
 
-app.get('/users', async (req, res) => {
-  await Users.find()
-    .then((users) => {
-      res.status(201).json(users);
-    })
-    .catch((err) => {
-      console.error(err);
-      res.status(500).send('Error: ' + err);
-    });
-});
-
 // Return data about a single movie by Title
 app.get('/movies/:Title', passport.authenticate('jwt', { session: false }), async (req, res) => {
   await Movies.findOne({ Title: req.params.Title })
@@ -103,7 +92,7 @@ app.post('/users', [
   check('Password', 'Password is required').not().isEmpty(),
   check('Email', 'Email does not appear to be valid').isEmail()
 ], (req, res) => {
-  let errors = validationResult(req);
+  let errors = validationResults(req);
   
   if (!errors.isEmpty()) {
     return res.status(422).json({errors: errors.array()});
@@ -137,7 +126,7 @@ app.post('/users', [
 // Allow users to update their user info (username, password, email, date of birth)
 app.put('/users/:Username', [
   check('Username', 'Username is required').isLength({min:5}),
-  check('Username', 'Username contains non alphanumeric chacters - not allowed').isAlphanumeric(),
+  check('Username', 'Username contains non alphanumeric characters - not allowed').isAlphanumeric(),
   check('Password', 'Password is required').not().isEmpty(),
   check('Email', 'Email does not appear to be valid').isEmail()
   ], 
