@@ -5,17 +5,18 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const uuid = require('uuid');
 const mongoose = require('mongoose');
-const Models = require('./models.js');
 const cors = require('cors');
+const punycode = require('punycode/');
 const {check, validationResults} = require('express-validator'); 
-
+const Models = require('./models.js');
 const Movies = Models.Movie;
 const Users = Models.User;
 const app = express();
 
 const accessLogStream = fs.createWriteStream(path.join(__dirname, 'log.txt'), { flags: 'a' })
 
-mongoose.connect( process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+// allows Mongoose to connect to 
+mongoose.connect('mongodb+srv://nickis1329:Nandyham1329!@myflixdb.2bvsnhv.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
 
 app.use(bodyParser.json());
 app.use(express.json());
