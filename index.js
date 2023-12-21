@@ -1,34 +1,58 @@
-const express = require('express');
-const morgan = require('morgan');
-const fs = require('fs');
-const path = require('path');
-const bodyParser = require('body-parser');
-const uuid = require('uuid');
-const mongoose = require('mongoose');
-const Models = require('./models.js');
-const cors = require('cors');
-const punycode = require('punycode/');
+// setup requirements and constants
+const express = require('express'),
+    morgan = require('morgan'),
+    fs = require('fs'),
+    path = require('path'),
+    bodyParser = require('body-parser'),
+    uuid = require('uuid'),
+    mongoose = require('mongoose'),
+    Models = require('./models.js');
+
 const {check, validationResults} = require('express-validator'); 
 
+const Models = require('./models.js');
 const Movies = Models.Movie;
 const Users = Models.User;
+
 const app = express();
 
-const accessLogStream = fs.createWriteStream(path.join(__dirname, 'log.txt'), { flags: 'a' })
-
-mongoose.connect('mongodb+srv://nickis1329:Nandyham1329!@myflixdb.2bvsnhv.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
-
 app.use(bodyParser.json());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static('public'));
-app.use(morgan('common'));
-app.use(morgan('combined', { stream: accessLogStream }));
-app.use(cors());
+app.use(bodyParser.urlencoded({ extended: true}));
+
+const cors = require('cors');
+app.use(cors({
+  origin: (origin, callback) => {
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.indexOf(origin) === -1) {
+          // If a specific origin isn't found on the list of allowed origins
+          let message = 'The CORS policy for this application does not allow access from origin ' + origin;
+          return callback(new Error(message), false);
+      }
+      return callback(null, true);
+  }
+}));
 
 let auth = require('./auth')(app);
 const passport = require('passport');
 require('./passport');
+
+//  Connect to a database on Mongodb Atlas
+mongoose.connect( process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+
+// Set up logging
+const accessLogStream = fs.createWriteStream( // create a write stream
+    path.join(__dirname, 'log.text'), //a 'log.txt' file is created in the root directory
+    { flags: 'a' } // path.join appends it to 'log.text'
+);
+
+app.use(
+  morgan('combined', { stream: accessLogStream }) // enable morgan logging to 'log.txt'
+);
+
+// setup Static Files
+app.use(
+  express.static('public') // routes all requests for static files to the 'public' folder
+);
 
 // default text response when at /
 app.get("/", (req, res) => {
@@ -87,52 +111,62 @@ app.get('/movies/directors/:directorName', passport.authenticate('jwt', { sessio
 });
 
 //  Allow new users to register
-app.post('/users', [
-  check('Username', 'Username is required').isLength({min:5}),
-  check('Username', 'Username contains non alphanumeric characters- not allowed').isAlphanumeric(),
-  check('Password', 'Password is required').not().isEmpty(),
-  check('Email', 'Email does not appear to be valid').isEmail()
-], (req, res) => {
-  let errors = validationResults(req);
-  
-  if (!errors.isEmpty()) {
-    return res.status(422).json({errors: errors.array()});
-  }
-  let hashedPassword = Users.hashPassword(req.body.Password);
-  Users.findOne({ Username: req.body.Username })
-    .then((user) => {
-      if (user) {
-        return res.status(400).send(req.body.Username + ' already exists');
-      } else {
-        Users
-          .create({
-            Username: req.body.Username,
-            Password: hashedPassword,
-            Email: req.body.Email,
-            Birthday: req.body.Birthday
-          })
-          .then((user) =>{res.status(201).json(user)})
-          .catch((error) => {
-            console.error(error);
-            res.status(500).send('Error: ' + error);
-          })
-        }
-    })
-    .catch((error) => {
-      console.error(error);
-      res.status(500).send('Error: ' + error);
-    });
-});
+app.post('/users', 
+[
+  // requests validation
+  check('Username', 'The user name is required and must be at least 5 characters long').isLength({ min: 5 }),
+check('Username', 'Username contains non alphanumeric characters - not allowed.').isAlphanumeric(),
+check('Password', 'Please type a password').not().isEmpty(),
+check('Email', 'Please type a valid email').isEmail(),
+], 
+async (req, res) => {
+ 
 
+    let hashedPassword = Users.hashPassword(req.body.Password);
+    await Users.findOne({ Username: req.body.Username })  // checks to see if the requested username already exists
+
+        .then((user) => {
+            if (user) { // if the user is found, send a response that it already exists 
+              return res.status(400)
+              .send('User with ' + req.body.Username + ' already exist');
+            } else { // if it doesn't exist, it will create a user with the given username
+                Users.create({
+                    Username: req.body.Username,
+                    Password: hashedPassword,
+                    Email: req.body.Email,
+                    Birthday: req.body.Birthday
+                })
+                    .then((user) => {
+                      res.status(201)
+                      .json(user)
+              })
+              .catch((error) => {
+                  console.error(error);
+                  res.status(500)
+                      .send('Error: ' + error);
+              });
+      }
+  })
+  .catch((error) => {
+      console.error(error);
+      res.status(500)
+          .send('Error: ' + error);
+  });
+}
+);
 // Allow users to update their user info (username, password, email, date of birth)
-app.put('/users/:Username', [
+app.put('/users/:Username', 
+passport.authenticate('jwt', { session: false }), 
+[
+  // validation logic here for request
   check('Username', 'Username is required').isLength({min:5}),
   check('Username', 'Username contains non alphanumeric characters - not allowed').isAlphanumeric(),
   check('Password', 'Password is required').not().isEmpty(),
   check('Email', 'Email does not appear to be valid').isEmail()
   ], 
-  passport.authenticate('jwt', { session: false }), 
-  (req, res) => {
+
+ async (req, res) => {
+  // checks validation object for errors
     let errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(422).json({errors: errors.array()});
