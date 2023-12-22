@@ -1,0 +1,595 @@
+URL: /
+Timestamp: Fri Sep 15 2023 11:39:10 GMT-0700 (Pacific Daylight Time)
+
+URL: /
+Timestamp: Fri Sep 15 2023 12:07:19 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies
+Timestamp: Fri Sep 15 2023 15:41:04 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies
+Timestamp: Fri Sep 15 2023 15:53:42 GMT-0700 (Pacific Daylight Time)
+
+URL: /
+Timestamp: Fri Sep 15 2023 15:54:46 GMT-0700 (Pacific Daylight Time)
+
+URL: /
+Timestamp: Sat Sep 16 2023 11:08:57 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies
+Timestamp: Sat Sep 16 2023 11:13:12 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies
+Timestamp: Sat Sep 16 2023 13:52:27 GMT-0700 (Pacific Daylight Time)
+
+URL: /
+Timestamp: Sat Sep 16 2023 13:55:59 GMT-0700 (Pacific Daylight Time)
+
+URL: /
+Timestamp: Sat Sep 16 2023 13:59:03 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies
+Timestamp: Sat Sep 16 2023 14:00:40 GMT-0700 (Pacific Daylight Time)
+
+URL: /
+Timestamp: Sat Sep 16 2023 14:28:54 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies
+Timestamp: Sat Sep 16 2023 14:37:47 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies
+Timestamp: Sat Sep 16 2023 14:43:05 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies
+Timestamp: Sat Sep 16 2023 14:46:08 GMT-0700 (Pacific Daylight Time)
+
+URL: /
+Timestamp: Sat Sep 16 2023 15:04:37 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies
+Timestamp: Sun Sep 17 2023 11:38:42 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies
+Timestamp: Sun Sep 17 2023 11:39:28 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies
+Timestamp: Sun Sep 17 2023 11:54:35 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies
+Timestamp: Sun Sep 17 2023 11:55:38 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies
+Timestamp: Sun Sep 17 2023 20:15:37 GMT-0700 (Pacific Daylight Time)
+
+URL: /
+Timestamp: Mon Sep 18 2023 19:18:25 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies/
+Timestamp: Mon Sep 18 2023 19:36:23 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies
+Timestamp: Mon Sep 18 2023 19:39:26 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies
+Timestamp: Tue Sep 19 2023 13:11:07 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies
+Timestamp: Tue Sep 19 2023 17:50:57 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies
+Timestamp: Tue Sep 19 2023 18:16:50 GMT-0700 (Pacific Daylight Time)
+
+URL: /movie
+Timestamp: Tue Sep 19 2023 18:59:12 GMT-0700 (Pacific Daylight Time)
+
+URL: /movie
+Timestamp: Tue Sep 19 2023 19:05:25 GMT-0700 (Pacific Daylight Time)
+
+URL: /movie
+Timestamp: Tue Sep 19 2023 19:08:07 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies
+Timestamp: Wed Sep 20 2023 12:27:22 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies
+Timestamp: Wed Sep 20 2023 15:12:24 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies
+Timestamp: Wed Sep 20 2023 15:12:51 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies/The%20Dark%20Knight
+Timestamp: Wed Sep 20 2023 15:13:33 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies/The%20Dark%20Knight.
+Timestamp: Wed Sep 20 2023 17:51:02 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies
+Timestamp: Wed Sep 20 2023 18:23:48 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies
+Timestamp: Wed Sep 20 2023 18:33:30 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies
+Timestamp: Wed Sep 20 2023 18:48:18 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies
+Timestamp: Wed Sep 20 2023 18:48:58 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies
+Timestamp: Wed Sep 20 2023 18:51:22 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies
+Timestamp: Wed Sep 20 2023 18:52:09 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies
+Timestamp: Wed Sep 20 2023 18:52:22 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies
+Timestamp: Wed Sep 20 2023 18:55:28 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies
+Timestamp: Wed Sep 20 2023 19:09:55 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies
+Timestamp: Wed Sep 20 2023 19:10:46 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies
+Timestamp: Wed Sep 20 2023 19:10:50 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies
+Timestamp: Wed Sep 20 2023 19:10:55 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies/The%20Dark%20Knight
+Timestamp: Wed Sep 20 2023 19:11:04 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies/The%20Dark%20Knight
+Timestamp: Wed Sep 20 2023 19:11:15 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies/The%20Dark%20Knight
+Timestamp: Wed Sep 20 2023 19:11:30 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies/The%20Dark%20Knight
+Timestamp: Wed Sep 20 2023 19:11:49 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies/The%20Dark%20Knight
+Timestamp: Wed Sep 20 2023 19:11:49 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies/The%20Dark%20Knight
+Timestamp: Wed Sep 20 2023 19:14:15 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies/The%20Dark%20Knight
+Timestamp: Wed Sep 20 2023 19:14:31 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies/The%20Dark%20Knight
+Timestamp: Wed Sep 20 2023 19:14:35 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies
+Timestamp: Wed Sep 20 2023 19:14:48 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies
+Timestamp: Wed Sep 20 2023 19:16:00 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies
+Timestamp: Wed Sep 20 2023 19:18:47 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies
+Timestamp: Wed Sep 20 2023 19:18:48 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies
+Timestamp: Wed Sep 20 2023 19:18:51 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies
+Timestamp: Wed Sep 20 2023 20:25:07 GMT-0700 (Pacific Daylight Time)
+
+URL: /movie
+Timestamp: Thu Sep 21 2023 16:50:21 GMT-0700 (Pacific Daylight Time)
+
+URL: /movie
+Timestamp: Thu Sep 21 2023 17:13:14 GMT-0700 (Pacific Daylight Time)
+
+URL: /movies
+Timestamp: Thu Sep 21 2023 17:14:46 GMT-0700 (Pacific Daylight Time)
+
+::1 - - [24/Sep/2023:00:44:10 +0000] "GET /movies HTTP/1.1" 200 10607 "-" "PostmanRuntime/7.33.0"
+::1 - - [24/Sep/2023:00:44:14 +0000] "GET /movies/directors/James%20Gunn HTTP/1.1" 500 1189 "-" "PostmanRuntime/7.33.0"
+::1 - - [24/Sep/2023:00:44:17 +0000] "GET /movies/directors/James%20Gunn HTTP/1.1" 500 1189 "-" "PostmanRuntime/7.33.0"
+::1 - - [24/Sep/2023:00:46:57 +0000] "GET /movies HTTP/1.1" 200 10607 "-" "PostmanRuntime/7.33.0"
+::1 - - [24/Sep/2023:00:47:05 +0000] "GET /movies HTTP/1.1" 200 10607 "-" "PostmanRuntime/7.33.0"
+::1 - - [24/Sep/2023:00:47:19 +0000] "GET /movies HTTP/1.1" 200 10607 "-" "PostmanRuntime/7.33.0"
+::1 - - [24/Sep/2023:00:47:20 +0000] "GET /movies3 HTTP/1.1" 404 146 "-" "PostmanRuntime/7.33.0"
+::1 - - [24/Sep/2023:00:47:21 +0000] "GET /movies HTTP/1.1" 200 10607 "-" "PostmanRuntime/7.33.0"
+::1 - - [24/Sep/2023:00:47:25 +0000] "GET /movies HTTP/1.1" 200 10607 "-" "PostmanRuntime/7.33.0"
+::1 - - [24/Sep/2023:00:47:34 +0000] "GET /movies HTTP/1.1" 200 10607 "-" "PostmanRuntime/7.33.0"
+::1 - - [24/Sep/2023:00:47:43 +0000] "GET /movies/genre HTTP/1.1" 400 13 "-" "PostmanRuntime/7.33.0"
+::1 - - [24/Sep/2023:00:47:50 +0000] "GET /movies/genre/Horror HTTP/1.1" 500 1189 "-" "PostmanRuntime/7.33.0"
+::1 - - [24/Sep/2023:00:57:42 +0000] "GET /movies/genre/Horror HTTP/1.1" 500 1189 "-" "PostmanRuntime/7.33.0"
+::1 - - [27/Sep/2023:17:51:34 +0000] "GET /movies/genre/Action HTTP/1.1" 500 16 "-" "PostmanRuntime/7.33.0"
+::1 - - [27/Sep/2023:17:51:40 +0000] "GET /movies/genre/action HTTP/1.1" 500 16 "-" "PostmanRuntime/7.33.0"
+::1 - - [27/Sep/2023:17:51:46 +0000] "GET /movies/genre/Horror HTTP/1.1" 500 16 "-" "PostmanRuntime/7.33.0"
+::1 - - [27/Sep/2023:17:51:49 +0000] "GET /movies/genre/%22horror HTTP/1.1" 500 16 "-" "PostmanRuntime/7.33.0"
+::1 - - [27/Sep/2023:17:51:50 +0000] "GET /movies/genre/%22horror%22 HTTP/1.1" 500 16 "-" "PostmanRuntime/7.33.0"
+::1 - - [27/Sep/2023:17:51:55 +0000] "GET /movies/genre/%22Horror%22 HTTP/1.1" 500 16 "-" "PostmanRuntime/7.33.0"
+::1 - - [27/Sep/2023:17:52:01 +0000] "GET /movies/genre/:Horror HTTP/1.1" 500 16 "-" "PostmanRuntime/7.33.0"
+::1 - - [27/Sep/2023:17:52:03 +0000] "GET /movies/genre/: HTTP/1.1" 500 16 "-" "PostmanRuntime/7.33.0"
+::1 - - [27/Sep/2023:17:52:13 +0000] "GET /movies/:genre/:action HTTP/1.1" 500 16 "-" "PostmanRuntime/7.33.0"
+::1 - - [27/Sep/2023:17:52:17 +0000] "GET /movies/:genre/Action HTTP/1.1" 500 16 "-" "PostmanRuntime/7.33.0"
+::1 - - [27/Sep/2023:17:52:18 +0000] "GET /movies/:genre/Action HTTP/1.1" 500 16 "-" "PostmanRuntime/7.33.0"
+::ffff:127.0.0.1 - - [28/Sep/2023:02:52:28 +0000] "GET /index.js HTTP/1.1" 404 147 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (HTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+::ffff:127.0.0.1 - - [28/Sep/2023:02:52:33 +0000] "GET / HTTP/1.1" 404 139 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (HTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+::ffff:127.0.0.1 - - [28/Sep/2023:22:58:55 +0000] "GET http://localhost:8080/movies/:Genres/Thriller HTTP/1.1" 404 162 "-" "PostmanRuntime/7.33.0"
+::ffff:127.0.0.1 - - [28/Sep/2023:23:00:28 +0000] "GET http://localhost:8080/movies/:Genres/Thriller HTTP/1.1" 404 162 "-" "PostmanRuntime/7.33.0"
+::ffff:127.0.0.1 - - [28/Sep/2023:23:00:40 +0000] "GET http://localhost:8080/movies/:Genres/Action HTTP/1.1" 404 160 "-" "PostmanRuntime/7.33.0"
+::ffff:127.0.0.1 - - [28/Sep/2023:23:01:28 +0000] "GET http://localhost:8080/movies/:Genres/Action HTTP/1.1" 404 160 "-" "PostmanRuntime/7.33.0"
+::ffff:127.0.0.1 - - [28/Sep/2023:23:01:47 +0000] "GET http://localhost:8080/movies/:genres/Action HTTP/1.1" 404 160 "-" "PostmanRuntime/7.33.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:00:29:12 +0000] "GET http://localhost:8080/movies/genres/Thriller HTTP/1.1" 404 161 "-" "PostmanRuntime/7.33.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:16:58:20 +0000] "GET http://localhost:8080/movies HTTP/1.1" 404 145 "-" "PostmanRuntime/7.34.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:16:58:41 +0000] "GET http://localhost:8080/movies/The%20Dark%20Knight HTTP/1.1" 500 84 "-" "PostmanRuntime/7.34.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:17:26:35 +0000] "GET http://localhost:8080/movies HTTP/1.1" 404 145 "-" "PostmanRuntime/7.34.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:17:26:47 +0000] "GET http://localhost:8080/movie HTTP/1.1" 404 144 "-" "PostmanRuntime/7.34.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:17:27:33 +0000] "GET / HTTP/1.1" 404 139 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+::ffff:127.0.0.1 - - [09/Nov/2023:17:28:41 +0000] "GET http://localhost:8080/movies HTTP/1.1" 404 145 "-" "PostmanRuntime/7.34.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:17:29:03 +0000] "GET http://localhost:8080/movies HTTP/1.1" 404 145 "-" "PostmanRuntime/7.34.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:17:29:04 +0000] "GET http://localhost:8080/movies HTTP/1.1" 404 145 "-" "PostmanRuntime/7.34.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:17:29:05 +0000] "GET http://localhost:8080/movies HTTP/1.1" 404 145 "-" "PostmanRuntime/7.34.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:19:29:30 +0000] "GET http://localhost:8080/movies HTTP/1.1" 404 145 "-" "PostmanRuntime/7.34.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:19:29:31 +0000] "GET http://localhost:8080/movies HTTP/1.1" 404 145 "-" "PostmanRuntime/7.34.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:19:29:33 +0000] "GET http://localhost:8080/movie HTTP/1.1" 404 144 "-" "PostmanRuntime/7.34.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:19:29:39 +0000] "GET http://localhost:8080/movies/genres/Thriller HTTP/1.1" 404 161 "-" "PostmanRuntime/7.34.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:19:30:13 +0000] "GET http://localhost:8080/movies/genres/Thriller HTTP/1.1" 404 161 "-" "PostmanRuntime/7.34.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:20:01:03 +0000] "GET http://localhost:8080/movies/genres/Thriller HTTP/1.1" 404 161 "-" "PostmanRuntime/7.34.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:20:01:08 +0000] "GET http://localhost:8080/movies/ HTTP/1.1" 404 146 "-" "PostmanRuntime/7.34.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:20:01:09 +0000] "GET http://localhost:8080/movies HTTP/1.1" 404 145 "-" "PostmanRuntime/7.34.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:20:01:41 +0000] "GET http://localhost:8080/movies HTTP/1.1" 404 145 "-" "PostmanRuntime/7.34.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:20:01:42 +0000] "GET http://localhost:8080/movies HTTP/1.1" 404 145 "-" "PostmanRuntime/7.34.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:20:01:52 +0000] "GET http://127.0.0.1:8080/movies HTTP/1.1" 404 145 "-" "PostmanRuntime/7.34.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:20:02:00 +0000] "GET http://127.0.0.1:8080/movies HTTP/1.1" 404 145 "-" "PostmanRuntime/7.34.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:20:02:02 +0000] "GET http://127.0.0.1:8080/movies HTTP/1.1" 404 145 "-" "PostmanRuntime/7.34.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:20:02:14 +0000] "GET http://localhost:8080/movie HTTP/1.1" 404 144 "-" "PostmanRuntime/7.34.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:20:02:16 +0000] "GET http://localhost:8080/movies HTTP/1.1" 404 145 "-" "PostmanRuntime/7.34.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:20:03:14 +0000] "GET http://localhost:8080/movies HTTP/1.1" 404 145 "-" "PostmanRuntime/7.34.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:20:03:42 +0000] "GET http://localhost:8080/movies HTTP/1.1" 404 145 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:20:15:04 +0000] "GET http://localhost:8080/movies HTTP/1.1" 404 145 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:20:15:05 +0000] "GET http://localhost:8080/movies HTTP/1.1" 404 145 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:20:15:09 +0000] "GET http://localhost:8080/movies/genre/Action HTTP/1.1" 200 233 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:20:57:31 +0000] "GET http://localhost:8080/users/ HTTP/1.1" 404 145 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:22:56:18 +0000] "GET http://localhost:8080/users/ HTTP/1.1" 404 145 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:22:56:21 +0000] "GET http://localhost:8080/users HTTP/1.1" 404 144 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:22:56:31 +0000] "POST http://localhost:8080/users/1/The%20Dark%20Knight HTTP/1.1" 404 167 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:22:56:34 +0000] "GET http://localhost:8080/movies HTTP/1.1" 404 145 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:22:57:15 +0000] "GET http://localhost:8080/movies HTTP/1.1" 404 145 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:22:57:28 +0000] "POST http://localhost:8080/users/1/The%20Dark%20Knight HTTP/1.1" 404 167 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:23:06:50 +0000] "GET http://localhost:8080/movies HTTP/1.1" 404 145 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:23:06:52 +0000] "GET http://localhost:8080/movies HTTP/1.1" 404 145 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:23:13:19 +0000] "GET http://localhost:8080/movies/directors/John%20Carpenter HTTP/1.1" 404 172 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:23:13:27 +0000] "GET http://localhost:8080/movies/directors/James%20Gunn HTTP/1.1" 404 168 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:23:13:30 +0000] "GET http://localhost:8080/movies/directors/James%20Gunn HTTP/1.1" 404 168 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:23:13:31 +0000] "GET http://localhost:8080/movies/directors/James%20Gunn HTTP/1.1" 404 168 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:23:13:31 +0000] "GET http://localhost:8080/movies/directors/James%20Gunn HTTP/1.1" 404 168 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:23:14:33 +0000] "GET http://localhost:8080/movies/genre/Action HTTP/1.1" 200 233 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:23:16:03 +0000] "GET http://localhost:5500/movi/es HTTP/1.1" 404 146 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:23:16:07 +0000] "GET http://localhost:5500/movi/es HTTP/1.1" 404 146 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:23:16:08 +0000] "GET http://localhost:5500/movi/es HTTP/1.1" 404 146 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:23:19:52 +0000] "GET http://localhost:8080/movies/directors/James%20Gunn HTTP/1.1" 404 168 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:23:19:53 +0000] "GET http://localhost:8080/movies/directors/James%20Gunn HTTP/1.1" 404 168 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:23:24:46 +0000] "GET http://localhost:8080/movies/directors/James%20Gunn HTTP/1.1" 404 168 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:23:24:52 +0000] "GET http://localhost:8080/movies HTTP/1.1" 404 145 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:23:24:56 +0000] "POST http://localhost:8080/users/1/The%20Dark%20Knight HTTP/1.1" 404 167 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:23:33:02 +0000] "GET http://localhost:8080/movies/genre/Action HTTP/1.1" 200 233 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:23:34:56 +0000] "GET http://localhost:8080/movies/directors/James%20Gunn HTTP/1.1" 404 168 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:23:35:21 +0000] "GET http://localhost:8080/movies/directors/James%20Gunn HTTP/1.1" 404 168 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:23:35:22 +0000] "GET http://localhost:8080/movies/directors/James%20Gunn HTTP/1.1" 404 168 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:23:35:23 +0000] "GET http://localhost:8080/movies/directors/James%20Gunn HTTP/1.1" 404 168 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:23:35:28 +0000] "GET http://localhost:8080/movies/directors/James%20Gunn HTTP/1.1" 404 168 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:23:35:29 +0000] "GET http://localhost:8080/movies/directors/James%20Gunn HTTP/1.1" 404 168 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:23:35:59 +0000] "GET http://localhost:8080/users HTTP/1.1" 404 144 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:23:36:02 +0000] "GET http://localhost:8080/user HTTP/1.1" 404 143 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:23:36:05 +0000] "GET http://localhost:8080/Users HTTP/1.1" 404 144 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:23:37:36 +0000] "GET http://localhost:8080/Users HTTP/1.1" 404 144 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [09/Nov/2023:23:38:18 +0000] "GET http://localhost:8080/Users HTTP/1.1" 404 144 "-" "PostmanRuntime/7.35.0"
+::1 - - [09/Nov/2023:23:38:37 +0000] "GET /Users HTTP/1.1" 404 144 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+::ffff:127.0.0.1 - - [10/Nov/2023:04:48:03 +0000] "GET http://localhost:8080/Users HTTP/1.1" 404 144 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [10/Nov/2023:04:48:04 +0000] "GET http://localhost:8080/Users HTTP/1.1" 404 144 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [10/Nov/2023:21:41:32 +0000] "GET http://localhost:8080/Users HTTP/1.1" 404 144 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [10/Nov/2023:21:43:40 +0000] "GET http://localhost:8080/movies HTTP/1.1" 404 145 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [10/Nov/2023:21:43:45 +0000] "GET http://localhost:8080/movies HTTP/1.1" 404 145 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [10/Nov/2023:21:59:08 +0000] "GET http://localhost:8080/movies HTTP/1.1" 201 6546 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [10/Nov/2023:22:00:52 +0000] "GET http://localhost:8080/movies/directors/James%20Gunn HTTP/1.1" 200 469 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [10/Nov/2023:22:01:30 +0000] "GET http://localhost:8080/users HTTP/1.1" 404 144 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [10/Nov/2023:22:01:41 +0000] "GET http://localhost:8080/user HTTP/1.1" 404 143 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [10/Nov/2023:22:02:13 +0000] "GET http://localhost:8080/movies/directors/John%20Carpenter HTTP/1.1" 500 69 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [10/Nov/2023:22:02:59 +0000] "GET http://localhost:8080/movies/directors/James%20Gunn HTTP/1.1" 200 469 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [10/Nov/2023:22:04:51 +0000] "GET http://localhost:8080/movies/genre/Action HTTP/1.1" 200 233 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [10/Nov/2023:22:18:34 +0000] "GET http://localhost:8080/movies/genre/Action HTTP/1.1" 200 233 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [10/Nov/2023:22:19:02 +0000] "GET http://localhost:8080/isers HTTP/1.1" 404 144 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [10/Nov/2023:22:19:07 +0000] "GET http://localhost:8080/users HTTP/1.1" 404 144 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [10/Nov/2023:22:19:12 +0000] "GET http://localhost:8080/users/ HTTP/1.1" 404 145 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [10/Nov/2023:22:19:15 +0000] "GET http://localhost:8080/user/ HTTP/1.1" 404 144 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [10/Nov/2023:22:19:19 +0000] "GET http://localhost:8080/Users/ HTTP/1.1" 404 145 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [10/Nov/2023:22:20:20 +0000] "GET http://localhost:8080/Users/ HTTP/1.1" 404 145 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [10/Nov/2023:22:20:28 +0000] "GET http://localhost:8080/users/1 HTTP/1.1" 404 146 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [10/Nov/2023:22:20:41 +0000] "GET http://localhost:8080/movies/The%20Dark%20Knight HTTP/1.1" 200 854 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [10/Nov/2023:22:22:10 +0000] "GET http://localhost:8080/movies/The%20Dark%20Knight HTTP/1.1" 200 854 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [10/Nov/2023:22:24:53 +0000] "GET http://localhost:8080/users HTTP/1.1" 404 144 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [10/Nov/2023:22:27:04 +0000] "GET http://localhost:8080/users/ HTTP/1.1" 404 145 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [10/Nov/2023:22:27:46 +0000] "GET http://localhost:8080/users/ HTTP/1.1" 404 145 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [10/Nov/2023:22:40:06 +0000] "GET http://localhost:8080/users/ HTTP/1.1" 404 145 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [10/Nov/2023:22:42:39 +0000] "GET http://localhost:8080/movies/genres/Action HTTP/1.1" 404 159 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [10/Nov/2023:22:51:16 +0000] "GET http://localhost:8080/ HTTP/1.1" 200 18 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [11/Nov/2023:00:26:26 +0000] "GET http://localhost:8080/movies HTTP/1.1" - - "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [11/Nov/2023:00:26:38 +0000] "GET http://localhost:8080/movies HTTP/1.1" 500 81 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [11/Nov/2023:19:12:42 +0000] "GET http://localhost:8080/movies HTTP/1.1" 201 6546 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [11/Nov/2023:19:19:19 +0000] "GET http://localhost:8080/movies/The%20Dark%20Knight HTTP/1.1" 200 854 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [11/Nov/2023:19:19:27 +0000] "GET http://localhost:8080/movies/title/The%20Dark%20Knight HTTP/1.1" 404 171 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [11/Nov/2023:19:19:29 +0000] "GET http://localhost:8080/movies/The%20Dark%20Knight HTTP/1.1" 200 854 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [11/Nov/2023:19:20:09 +0000] "GET http://localhost:8080/movies HTTP/1.1" 201 6546 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [11/Nov/2023:19:20:17 +0000] "GET http://localhost:8080/movies/genre/Action HTTP/1.1" 200 233 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [11/Nov/2023:19:20:22 +0000] "GET http://localhost:8080/movies/genre/Thriller HTTP/1.1" 200 177 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [11/Nov/2023:19:34:25 +0000] "GET http://localhost:8080/movies/directors/James%20Gunn HTTP/1.1" 200 469 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [11/Nov/2023:19:58:12 +0000] "GET http://localhost:8080/users HTTP/1.1" 404 144 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [11/Nov/2023:19:58:20 +0000] "GET http://localhost:8080/user HTTP/1.1" 404 143 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [11/Nov/2023:19:58:25 +0000] "GET http://localhost:8080/Users HTTP/1.1" 404 144 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [11/Nov/2023:20:42:49 +0000] "GET http://localhost:8080/Users HTTP/1.1" 404 144 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [11/Nov/2023:20:46:40 +0000] "GET http://localhost:8080/movies/genre/Thriller HTTP/1.1" 200 177 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [11/Nov/2023:20:54:21 +0000] "GET http://localhost:8080/movies/genre/Thriller HTTP/1.1" 200 177 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [11/Nov/2023:20:56:48 +0000] "GET http://localhost:8080/movies/genre/Thriller HTTP/1.1" 200 177 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [11/Nov/2023:20:58:42 +0000] "GET http://localhost:8080/users HTTP/1.1" 404 144 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [11/Nov/2023:21:01:23 +0000] "GET http://localhost:8080/users HTTP/1.1" 404 144 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [11/Nov/2023:21:03:08 +0000] "GET http://localhost:8080/users HTTP/1.1" 404 144 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [11/Nov/2023:21:03:14 +0000] "GET http://localhost:8080/users HTTP/1.1" 404 144 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [11/Nov/2023:21:03:15 +0000] "GET http://localhost:8080/users HTTP/1.1" 404 144 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [11/Nov/2023:21:12:24 +0000] "GET http://localhost:8080/users HTTP/1.1" 404 144 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [11/Nov/2023:21:38:50 +0000] "GET http://localhost:8080/users HTTP/1.1" 404 144 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [11/Nov/2023:21:39:07 +0000] "GET http://localhost:8080/users/1 HTTP/1.1" 404 146 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [11/Nov/2023:21:40:12 +0000] "GET http://localhost:8080/users/1 HTTP/1.1" 404 146 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [11/Nov/2023:21:46:44 +0000] "GET http://localhost:8080/users/1 HTTP/1.1" 404 146 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [11/Nov/2023:21:46:59 +0000] "GET http://localhost:8080/users/Guy HTTP/1.1" 404 148 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [11/Nov/2023:22:12:23 +0000] "GET http://localhost:8080/users/Guy HTTP/1.1" 404 148 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [11/Nov/2023:22:12:25 +0000] "GET http://localhost:8080/users/Guy HTTP/1.1" 404 148 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [11/Nov/2023:22:12:28 +0000] "GET http://localhost:8080/users HTTP/1.1" 404 144 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [11/Nov/2023:23:01:30 +0000] "GET http://localhost:8080/users HTTP/1.1" 404 144 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [11/Nov/2023:23:02:00 +0000] "GET http://localhost:8080/users HTTP/1.1" 500 154 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [11/Nov/2023:23:02:36 +0000] "GET http://localhost:8080/users HTTP/1.1" 500 154 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [11/Nov/2023:23:02:50 +0000] "GET http://localhost:8080/users HTTP/1.1" 201 1155 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [11/Nov/2023:23:05:37 +0000] "GET http://localhost:8080/movies/genre/Thriller HTTP/1.1" 200 177 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [11/Nov/2023:23:05:49 +0000] "GET http://localhost:8080/movies/genre/ScienceFiction HTTP/1.1" 500 66 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [11/Nov/2023:23:05:55 +0000] "GET http://localhost:8080/movies/genre/Science%20Fiction HTTP/1.1" 200 313 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [11/Nov/2023:23:09:55 +0000] "POST http://localhost:8080/users HTTP/1.1" 201 189 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [11/Nov/2023:23:32:02 +0000] "GET http://localhost:8080/movies HTTP/1.1" 201 6546 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [11/Nov/2023:23:32:31 +0000] "POST http://localhost:8080/users/RustyShackleford/movies/65329a661caa5050f653015a HTTP/1.1" 200 4 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [11/Nov/2023:23:36:53 +0000] "POST http://localhost:8080/users/RustyShackleford/movies/65329a661caa5050f653015a HTTP/1.1" 200 4 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [11/Nov/2023:23:36:57 +0000] "POST http://localhost:8080/users/RustyShackleford/movies HTTP/1.1" 404 169 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [12/Nov/2023:00:01:14 +0000] "POST http://localhost:8080/users/Rusty%20Shackleford/movies/65329a661caa5050f653015a HTTP/1.1" 200 215 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [12/Nov/2023:00:05:23 +0000] "GET http://localhost:8080/movies/The%20Dark%20Knight HTTP/1.1" 200 854 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [12/Nov/2023:00:14:02 +0000] "GET http://localhost:8080/movies/director_description/James%20Gunn HTTP/1.1" 404 179 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [12/Nov/2023:00:14:08 +0000] "GET http://localhost:8080/movies/director/James%20Gunn HTTP/1.1" 404 167 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [12/Nov/2023:00:14:20 +0000] "GET http://localhost:8080/movies/genre HTTP/1.1" 200 4 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [12/Nov/2023:00:14:22 +0000] "GET http://localhost:8080/movies/genres HTTP/1.1" 200 4 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [12/Nov/2023:00:14:33 +0000] "GET http://localhost:8080/movies/genre_description/Action HTTP/1.1" 404 170 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [12/Nov/2023:00:15:35 +0000] "GET http://localhost:8080/movies/genre/Thriller HTTP/1.1" 200 177 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [12/Nov/2023:00:17:01 +0000] "PUT http://localhost:8080/movies/users/Rusty%20Shackleford HTTP/1.1" 404 171 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [12/Nov/2023:00:17:11 +0000] "POST http://localhost:8080/users/RustyShackleford/movies HTTP/1.1" 404 169 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [12/Nov/2023:00:17:20 +0000] "POST http://localhost:8080/users/RustyShackleforrd HTTP/1.1" 404 163 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [12/Nov/2023:00:17:36 +0000] "GET http://localhost:8080/users/ HTTP/1.1" 201 1371 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [12/Nov/2023:00:20:45 +0000] "PUT http://localhost:8080/users/Rusty%20Shackleford HTTP/1.1" 200 215 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [12/Nov/2023:00:21:34 +0000] "PUT http://localhost:8080/users/Rusty%20Shackleford HTTP/1.1" 200 211 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [12/Nov/2023:00:24:20 +0000] "DELETE http://localhost:8080/users/RustyShackleford/movies/65329a661caa5050f653015a HTTP/1.1" 200 4 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [12/Nov/2023:00:24:25 +0000] "DELETE http://localhost:8080/users/RustyShackleford/movies/ HTTP/1.1" 404 172 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [12/Nov/2023:00:24:27 +0000] "DELETE http://localhost:8080/users/RustyShackleford/movies HTTP/1.1" 404 171 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [12/Nov/2023:00:24:49 +0000] "DELETE http://localhost:8080/movies/users/Rusty%20Shackleford HTTP/1.1" 404 174 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [12/Nov/2023:00:25:14 +0000] "DELETE http://localhost:8080/users/Rusty%20Shackleford/movies/65329a661caa5050f653015a HTTP/1.1" 200 185 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [12/Nov/2023:00:27:28 +0000] "DELETE http://localhost:8080/movies/users/Rusty%20Shackleford HTTP/1.1" 404 174 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [12/Nov/2023:00:27:55 +0000] "DELETE http://localhost:8080/users/Rusty%20Shackleford HTTP/1.1" 200 30 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [12/Nov/2023:00:28:55 +0000] "GET http://localhost:8080/movies/genre/Thriller HTTP/1.1" 200 177 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [16/Nov/2023:19:22:43 +0000] "GET http://localhost:8080/movies HTTP/1.1" 401 - "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [16/Nov/2023:19:24:49 +0000] "GET http://localhost:8080/movies HTTP/1.1" 401 - "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [16/Nov/2023:20:13:25 +0000] "GET http://localhost:8080/movies HTTP/1.1" 401 - "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [16/Nov/2023:20:15:04 +0000] "GET http://localhost:8080/movies HTTP/1.1" 401 - "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [16/Nov/2023:22:25:39 +0000] "GET http://localhost:8080/movies HTTP/1.1" 401 - "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [16/Nov/2023:22:26:04 +0000] "GET http://localhost:8080/movies HTTP/1.1" 401 - "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [16/Nov/2023:22:26:23 +0000] "GET http://localhost:8080/movies HTTP/1.1" 401 - "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [16/Nov/2023:22:28:33 +0000] "GET http://localhost:8080/movies HTTP/1.1" 401 - "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [16/Nov/2023:23:43:39 +0000] "POST http://localhost:8080/users HTTP/1.1" 201 176 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [17/Nov/2023:00:03:46 +0000] "POST http://localhost:8080/users HTTP/1.1" 400 23 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [17/Nov/2023:00:04:08 +0000] "POST http://localhost:8080/users HTTP/1.1" 500 136 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [17/Nov/2023:03:03:15 +0000] "GET http://localhost:8080/movies HTTP/1.1" 401 - "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [17/Nov/2023:03:06:30 +0000] "POST http://localhost:8080/users HTTP/1.1" 500 136 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [17/Nov/2023:03:16:10 +0000] "POST http://localhost:8080/users HTTP/1.1" 201 146 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [17/Nov/2023:03:18:22 +0000] "POST http://localhost:8080/users HTTP/1.1" 400 25 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [17/Nov/2023:03:21:02 +0000] "POST http://localhost:8080/users?%22Username%22%20redhead1329=&%22Password%22%20redbeard13= HTTP/1.1" 400 25 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [17/Nov/2023:03:21:49 +0000] "GET http://localhost:8080/users/ HTTP/1.1" 201 1479 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [17/Nov/2023:03:23:34 +0000] "POST http://localhost:8080/users?Username=redhead1329&Password=redbeard1329 HTTP/1.1" 400 25 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [17/Nov/2023:03:28:59 +0000] "POST http://localhost:8080/users?Username=redhead1329&Password=redbeard1329&Email=daddynandy1329@gmail.com HTTP/1.1" 400 25 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [17/Nov/2023:03:33:05 +0000] "POST http://localhost:8080/users?Username=redhead1329&Password=redbeard1329&Email=daddynandy1329@gmail.com HTTP/1.1" 400 25 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [17/Nov/2023:03:33:22 +0000] "POST http://localhost:8080/users?Username=redhead1329&Password=redbeard1329&Email=daddynandy1329@gmail.com HTTP/1.1" 400 25 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [17/Nov/2023:03:35:58 +0000] "POST http://localhost:8080/users?Username=redhead1329&Password=redbeard1329&Email=daddynandy1329@gmail.com HTTP/1.1" 500 136 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [17/Nov/2023:03:36:13 +0000] "POST http://localhost:8080/users?Username=redhead1329&Password=redbeard1329&Email=daddynandy1329@gmail.com HTTP/1.1" 500 136 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [17/Nov/2023:03:37:04 +0000] "POST http://localhost:8080/users?Username=redhead1329&Password=redbeard1329&Email=daddynandy1329@gmail.com HTTP/1.1" 400 25 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [17/Nov/2023:03:37:09 +0000] "POST http://localhost:8080/users?Username=redhead1329&Password=redbeard1329&Email=daddynandy1329@gmail.com HTTP/1.1" 400 25 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [17/Nov/2023:03:37:15 +0000] "POST http://localhost:8080/users?Username=redhead1329&Password=redbeard1329&Email=daddynandy1329@gmail.com HTTP/1.1" 400 25 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [17/Nov/2023:03:37:30 +0000] "POST http://localhost:8080/login?Username=redhead1329&Password=redbeard1329&Email=daddynandy1329@gmail.com HTTP/1.1" 200 514 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [17/Nov/2023:03:47:42 +0000] "GET http://localhost:8080/movies HTTP/1.1" 401 - "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [17/Nov/2023:03:49:40 +0000] "GET http://localhost:8080/movies HTTP/1.1" 401 - "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [17/Nov/2023:03:55:51 +0000] "POST http://localhost:8080/users HTTP/1.1" 500 136 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [17/Nov/2023:18:36:43 +0000] "POST http://localhost:8080/users?Username=redhead1329&Password=redbeard1329 HTTP/1.1" 500 136 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [17/Nov/2023:18:39:23 +0000] "POST http://localhost:8080/users?Username=redhead1329&Password=redbeard1329&Email=daddynandy13@gmail.com HTTP/1.1" 500 136 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [17/Nov/2023:18:39:24 +0000] "POST http://localhost:8080/users?Username=redhead1329&Password=redbeard1329&Email=daddynandy13@gmail.com HTTP/1.1" 500 136 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [17/Nov/2023:19:39:02 +0000] "POST http://localhost:8080/users?Username=redhead1329&Password=redbeard1329&Email=daddynandy13@gmail.com HTTP/1.1" 500 136 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [17/Nov/2023:19:53:19 +0000] "POST http://localhost:8080/login?Username=redhead1329&Password=redbeard1329&Email=daddynandy1329@gmail.com HTTP/1.1" 200 514 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [17/Nov/2023:19:55:20 +0000] "GET http://localhost:8080/movies HTTP/1.1" 401 - "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [17/Nov/2023:19:56:05 +0000] "POST http://localhost:8080/login?Username=redhead1329&Password=redbeard1329&Email=daddynandy1329@gmail.com HTTP/1.1" 200 514 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [17/Nov/2023:19:57:06 +0000] "POST http://localhost:8080/login?Username=redhead1329&Password=redbeard1329 HTTP/1.1" 200 514 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [17/Nov/2023:20:33:33 +0000] "PUT http://localhost:8080/users/Isy/movies/653819826d372e6341926277 HTTP/1.1" 404 180 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [17/Nov/2023:20:34:12 +0000] "PUT http://localhost:8080/users/:name/movies/:MovieID HTTP/1.1" 404 166 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [17/Nov/2023:20:34:16 +0000] "POST http://localhost:8080/users/:name/movies/:MovieID HTTP/1.1" 401 - "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [17/Nov/2023:20:35:38 +0000] "POST http://localhost:8080/users/Halloween/movies/653819826d372e6341926277 HTTP/1.1" 401 - "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [17/Nov/2023:20:35:48 +0000] "POST http://localhost:8080/users/Halloween/movies/:653819826d372e6341926277 HTTP/1.1" 401 - "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [17/Nov/2023:20:36:32 +0000] "POST http://localhost:8080/users/:redhead1329/movies/:653819826d372e6341926277 HTTP/1.1" 401 - "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [17/Nov/2023:20:37:23 +0000] "POST http://localhost:8080/users/?Username=redhead1329&FavoriteMovies=653819826d372e6341926277 HTTP/1.1" 500 136 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [17/Nov/2023:20:38:23 +0000] "POST http://localhost:8080/users/?Username=redhead1329&Password=redbeard1329&Email=daddynandy13@gmail.com&FavoriteMovie=653819826d372e6341926277 HTTP/1.1" 500 136 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:18:23:30 +0000] "POST http://localhost:8080/login?Username=redhead1329&Password=redbeard1329&Email=daddynandy1329@gmail.com HTTP/1.1" 200 514 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:18:28:10 +0000] "POST http://localhost:8080/login?Username=redhead1329&Password=redbeard1329&Email=daddynandy1329@gmail.com HTTP/1.1" 200 514 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:18:28:38 +0000] "POST http://localhost:8080/users/?Username=redhead1329&Password=redbeard1329&Email=daddynandy13@gmail.com&FavoriteMovie=653819826d372e6341926277 HTTP/1.1" 500 136 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:18:33:21 +0000] "POST http://localhost:8080/login?Username=redhead1329&Password=redbeard1329 HTTP/1.1" 200 514 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:18:43:10 +0000] "POST http://localhost:8080/redhead1329/movies/653819826d372e6341926277 HTTP/1.1" 404 183 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:18:43:40 +0000] "POST http://localhost:8080/login?Username=redhead1329&Password=redbeard1329/movies/653819826d372e6341926277 HTTP/1.1" 200 514 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:18:44:11 +0000] "POST http://localhost:8080/login?Username=redhead1329&Password=redbeard1329&Favoritemovie=653819826d372e6341926277 HTTP/1.1" 200 514 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:18:45:42 +0000] "POST http://localhost:8080/lusers/redhead1329/movies/653819826d372e6341926277 HTTP/1.1" 404 190 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:19:08:04 +0000] "POST http://localhost:8080/lusers/redhead1329/movies/653819826d372e6341926277 HTTP/1.1" 404 190 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:19:10:15 +0000] "POST http://localhost:8080/lusers/redhead1329/movies/653819826d372e6341926277 HTTP/1.1" 404 190 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:19:20:47 +0000] "POST http://localhost:8080/lusers/redhead1329/movies/653819826d372e6341926277 HTTP/1.1" 404 190 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:19:20:48 +0000] "POST http://localhost:8080/lusers/redhead1329/movies/653819826d372e6341926277 HTTP/1.1" 404 190 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:19:23:27 +0000] "POST http://localhost:8080/lusers/redhead1329/movies/653819826d372e6341926277? HTTP/1.1" 404 190 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:19:23:57 +0000] "POST http://localhost:8080/lusers/redhead1329/movies/653819826d372e6341926277? HTTP/1.1" 404 190 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:19:30:49 +0000] "POST http://localhost:8080/lusers/redhead1329/movies/653819826d372e6341926277? HTTP/1.1" 404 190 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:19:31:05 +0000] "POST http://localhost:8080/lusers/redhead1329/movies/653819826d372e6341926277? HTTP/1.1" 404 190 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:19:31:11 +0000] "POST http://localhost:8080/lusers/redhead1329/movies/653819826d372e6341926277 HTTP/1.1" 404 190 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:19:31:13 +0000] "POST http://localhost:8080/lusers/redhead1329/movies/653819826d372e6341926277 HTTP/1.1" 404 190 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:19:31:33 +0000] "POST http://localhost:8080/lusers/redhead1329/movies/653819826d372e6341926277 HTTP/1.1" 404 190 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:19:31:41 +0000] "POST http://localhost:8080/users/redhead1329/movies/653819826d372e6341926277 HTTP/1.1" 401 - "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:19:31:46 +0000] "POST http://localhost:8080/users/redhead1329/movies/653819826d372e6341926277 HTTP/1.1" 401 - "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:19:32:47 +0000] "POST http://localhost:8080/users/redhead1329/movies/653819826d372e6341926277? HTTP/1.1" 401 - "-" "PostmanRuntime/7.35.0"
+::1 - - [19/Nov/2023:19:33:18 +0000] "GET /users/redhead1329/movies/653819826d372e6341926277? HTTP/1.1" 404 188 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+::ffff:127.0.0.1 - - [19/Nov/2023:19:37:02 +0000] "POST http://localhost:8080/users/redhead1329/movies/653819826d372e6341926277? HTTP/1.1" 401 - "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:19:37:12 +0000] "POST http://localhost:8080/users/redhead1329/movies/653819826d372e6341926277? HTTP/1.1" 401 - "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:19:37:19 +0000] "POST http://localhost:8080/users/redhead1329/movies/653819826d372e6341926277? HTTP/1.1" 401 - "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:19:39:22 +0000] "POST http://localhost:8080/users/redhead1329/movies/653819826d372e6341926277? HTTP/1.1" 401 - "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:19:39:42 +0000] "POST http://localhost:8080/lusers/redhead1329/movies/653819826d372e6341926277? HTTP/1.1" 404 190 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:19:39:45 +0000] "POST http://localhost:8080/lusers/redhead1329/movies/653819826d372e6341926277? HTTP/1.1" 404 190 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:19:40:12 +0000] "POST http://localhost:8080/users/redhead1329/movies/653819826d372e6341926277? HTTP/1.1" 401 - "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:19:40:22 +0000] "POST http://localhost:8080/users/redhead1329/movies/653819826d372e6341926277? HTTP/1.1" 401 - "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:19:40:42 +0000] "POST http://localhost:8080/users/redhead1329/movies/653819826d372e6341926277? HTTP/1.1" 401 - "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:19:41:00 +0000] "POST http://localhost:8080/login?Username=redhead1329&Password=redbeard1329 HTTP/1.1" 400 49 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:19:41:14 +0000] "POST http://localhost:8080/login?Username=redhead1329&Password=redbeard1329 HTTP/1.1" 400 49 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:19:41:16 +0000] "POST http://localhost:8080/login?Username=redhead1329&Password=redbeard1329 HTTP/1.1" 400 49 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:19:41:22 +0000] "POST http://localhost:8080/login?Username=redhead1329&Password=redbeard1329 HTTP/1.1" 400 49 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:19:41:32 +0000] "POST http://localhost:8080/login?Username=redhead1329&Password=redbeard1329&Email=daddynandy1329@gmail.com HTTP/1.1" 400 49 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:19:41:33 +0000] "POST http://localhost:8080/login?Username=redhead1329&Password=redbeard1329&Email=daddynandy1329@gmail.com HTTP/1.1" 400 49 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:21:35:49 +0000] "POST http://localhost:8080/login?Username=redhead1329&Password=redbeard1329&Email=daddynandy1329@gmail.com HTTP/1.1" 400 49 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:21:36:36 +0000] "POST http://localhost:8080/login?Username=redhead1329&Password=redbeard1329 HTTP/1.1" 400 49 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:21:37:30 +0000] "GET http://localhost:8080/movies HTTP/1.1" 401 - "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:21:37:49 +0000] "GET http://localhost:8080/movies HTTP/1.1" 401 - "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:21:38:20 +0000] "POST http://localhost:8080/login?Username=redhead1329&Password=redbeard1329&Email=daddynandy1329@gmail.com HTTP/1.1" 400 49 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:21:38:23 +0000] "POST http://localhost:8080/login?Username=redhead1329&Password=redbeard1329 HTTP/1.1" 400 49 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:21:41:30 +0000] "POST http://localhost:8080/login?Username=redhead1329&Password=redbeard1329 HTTP/1.1" 400 49 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:21:42:31 +0000] "GET http://localhost:8080/movies HTTP/1.1" 401 - "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:21:43:29 +0000] "POST http://localhost:8080/users HTTP/1.1" 400 25 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:21:45:13 +0000] "POST http://localhost:8080/login?Username=redhead1329&Password=redbeard1329 HTTP/1.1" 400 49 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:21:45:33 +0000] "POST http://localhost:8080/login?Username=redhead1329&Password=redbeard1329&Email=daddynandy13@gmail.com HTTP/1.1" 400 49 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:21:53:30 +0000] "POST http://localhost:8080/login?Username=redhead1329&Password=redbeard1329 HTTP/1.1" 200 514 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:21:57:50 +0000] "GET http://localhost:8080/movies HTTP/1.1" 201 6546 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:22:09:47 +0000] "POST http://localhost:8080/login?Username=redhead1329&Password=redbeard1329 HTTP/1.1" 200 514 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:22:12:55 +0000] "PUT http://localhost:8080/users/redhead1329 HTTP/1.1" 401 - "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:22:13:06 +0000] "PUT http://localhost:8080/users/redhead1329 HTTP/1.1" 200 146 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:22:16:52 +0000] "PUT http://localhost:8080/users/redhead1329 HTTP/1.1" 200 144 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:22:17:59 +0000] "PUT http://localhost:8080/users/redhead1329 HTTP/1.1" 400 17 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:22:26:43 +0000] "POST http://localhost:8080/users/redhead1329/movies/653819826d372e6341926277 HTTP/1.1" 401 - "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [19/Nov/2023:22:26:49 +0000] "POST http://localhost:8080/users/redhead1329/movies/653819826d372e6341926277 HTTP/1.1" 200 4 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [20/Nov/2023:18:30:43 +0000] "PUT http://localhost:8080/users/redhead1329 HTTP/1.1" 400 17 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [20/Nov/2023:18:45:28 +0000] "POST http://localhost:8080/users/redhead1329 HTTP/1.1" 404 157 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [20/Nov/2023:18:45:49 +0000] "POST http://localhost:8080/users/redhead1329/movies/653819826d372e6341926277 HTTP/1.1" 200 4 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [20/Nov/2023:18:45:53 +0000] "POST http://localhost:8080/users/redhead1329/movies/653819826d372e6341926277 HTTP/1.1" 200 4 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [20/Nov/2023:18:48:10 +0000] "POST http://localhost:8080/users/redhead1329 HTTP/1.1" 404 157 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [20/Nov/2023:18:54:28 +0000] "POST http://localhost:8080/users/redhead1329/movies/653819826d372e6341926277 HTTP/1.1" 401 - "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [20/Nov/2023:18:54:34 +0000] "POST http://localhost:8080/users/redhead1329/movies/653819826d372e6341926277 HTTP/1.1" 200 4 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [20/Nov/2023:18:58:05 +0000] "POST http://localhost:8080/users/redhead1329/movies/653819826d372e6341926277 HTTP/1.1" 401 - "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [20/Nov/2023:18:58:15 +0000] "POST http://localhost:8080/users/redhead1329/movies/653819826d372e6341926277 HTTP/1.1" 200 4 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [20/Nov/2023:18:58:44 +0000] "POST http://localhost:8080/users/redhead1329/movies/653819826d372e6341926277 HTTP/1.1" 200 4 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [20/Nov/2023:19:18:36 +0000] "DELETE http://localhost:8080/users/redhead1329/movies/653819826d372e6341926277 HTTP/1.1" 401 - "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [20/Nov/2023:19:18:50 +0000] "DELETE http://localhost:8080/users/redhead1329/movies/653819826d372e6341926277 HTTP/1.1" 200 4 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [20/Nov/2023:22:27:22 +0000] "DELETE http://localhost:8080/users/redhead1329/movies/653819826d372e6341926277 HTTP/1.1" 200 4 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [20/Nov/2023:22:27:31 +0000] "DELETE http://localhost:8080/users/redhead1329/movies/653819826d372e6341926277 HTTP/1.1" 401 - "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [20/Nov/2023:23:12:42 +0000] "DELETE http://localhost:8080/users/redhead1329/movies/653819826d372e6341926277 HTTP/1.1" 200 4 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [20/Nov/2023:23:22:07 +0000] "POST http://localhost:8080/login/?Username=redhead1320&Password=redbeard1329 HTTP/1.1" 400 49 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [20/Nov/2023:23:22:18 +0000] "POST http://localhost:8080/users/redhead1329/movies/653819826d372e6341926277 HTTP/1.1" 200 4 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [20/Nov/2023:23:22:22 +0000] "POST http://localhost:8080/users/redhead1329/movies/653819826d372e6341926277 HTTP/1.1" 200 4 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [20/Nov/2023:23:32:07 +0000] "POST http://localhost:8080/users/redhead1329/movies/653819826d372e6341926277 HTTP/1.1" 200 4 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [20/Nov/2023:23:37:58 +0000] "POST http://localhost:8080/login?Username=redhead1329&Password=redbeard1329&Email=daddynandy1329@gmail.com HTTP/1.1" 400 49 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [20/Nov/2023:23:52:48 +0000] "POST http://localhost:8080/login?Username=redhead1329&Password=redbeard1329&Email=daddynandy1329@gmail.com HTTP/1.1" 400 49 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [20/Nov/2023:23:52:54 +0000] "POST http://localhost:8080/login?Username=redhead1329&Password=redbeard1329 HTTP/1.1" 400 49 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [20/Nov/2023:23:53:09 +0000] "POST http://localhost:8080/login?Username=redhead1329&Password=redbeard1329 HTTP/1.1" 400 49 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [20/Nov/2023:23:53:15 +0000] "POST http://localhost:8080/login?Username=redhead1329&Password=redbeard1329 HTTP/1.1" 400 49 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [20/Nov/2023:23:53:18 +0000] "POST http://localhost:8080/login?Username=redhead1329&Password=redbeard1329 HTTP/1.1" 400 49 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [20/Nov/2023:23:57:47 +0000] "POST http://localhost:8080/login?Username=redhead1329&Password=redbeard1329 HTTP/1.1" 400 49 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [20/Nov/2023:23:58:00 +0000] "POST http://localhost:8080/login?Username=redhead1329&Password=redbeard1329 HTTP/1.1" 400 49 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [20/Nov/2023:23:58:06 +0000] "POST http://localhost:8080/login?Username=redhead1329&Password=redbeard1329 HTTP/1.1" 400 49 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [20/Nov/2023:23:58:26 +0000] "POST http://localhost:8080/login?Username=redhead1329&Password=redbeard1329&Email=daddynandy1329@gmail.com HTTP/1.1" 400 49 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [20/Nov/2023:23:58:46 +0000] "POST http://localhost:8080/login?Username=redhead1329&Password=redbeard1329 HTTP/1.1" 400 49 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [20/Nov/2023:23:59:53 +0000] "POST http://localhost:8080/login?Username=redhead1329&Password=redbeard1329 HTTP/1.1" 400 49 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [21/Nov/2023:00:08:35 +0000] "POST http://localhost:8080/luser HTTP/1.1" 404 145 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [21/Nov/2023:00:08:40 +0000] "POST http://localhost:8080/luser/updated HTTP/1.1" 404 153 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [21/Nov/2023:00:09:08 +0000] "POST http://localhost:8080/login?Username=updated&Password=redbeard1329 HTTP/1.1" 200 504 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [21/Nov/2023:00:16:01 +0000] "PUT http://localhost:8080/users/updated HTTP/1.1" 200 144 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [21/Nov/2023:00:16:36 +0000] "PUT http://localhost:8080/users/updated HTTP/1.1" 200 148 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [21/Nov/2023:00:18:22 +0000] "POST http://localhost:8080/users/redhead1329/movies/653819826d372e6341926277 HTTP/1.1" 401 - "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [21/Nov/2023:00:18:33 +0000] "POST http://localhost:8080/users/redhead1329/movies/653819826d372e6341926277 HTTP/1.1" 200 174 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [21/Nov/2023:00:20:48 +0000] "DELETE http://localhost:8080/users/redhead1329/movies/653819826d372e6341926277 HTTP/1.1" 401 - "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [21/Nov/2023:00:21:00 +0000] "DELETE http://localhost:8080/users/redhead1329/movies/653819826d372e6341926277 HTTP/1.1" 200 148 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [21/Nov/2023:00:22:20 +0000] "DELETE http://localhost:8080/users/nickis1329 HTTP/1.1" 400 24 "-" "PostmanRuntime/7.35.0"
+::ffff:127.0.0.1 - - [21/Nov/2023:00:22:57 +0000] "DELETE http://localhost:8080/users/redhead1329 HTTP/1.1" 200 24 "-" "PostmanRuntime/7.35.0"
+127.0.0.1 - - [29/Nov/2023:19:24:22 +0000] "GET http://localhost:8080/users HTTP/1.1" 201 1332 "-" "PostmanRuntime/7.35.0"
+127.0.0.1 - - [12/Dec/2023:18:57:30 +0000] "POST http://localhost:8080/login?Username=HiImGuy&Password=test123&Email=hiimguy@gmail.com HTTP/1.1" 400 49 "-" "PostmanRuntime/7.35.0"
+127.0.0.1 - - [12/Dec/2023:19:06:37 +0000] "POST http://localhost:8080/login?Username=Jimothy43&Password=32bananas&Email=bananas4life@gmail.com HTTP/1.1" 400 49 "-" "PostmanRuntime/7.35.0"
+127.0.0.1 - - [12/Dec/2023:19:06:45 +0000] "POST http://localhost:8080/login HTTP/1.1" 400 49 "-" "PostmanRuntime/7.35.0"
+127.0.0.1 - - [12/Dec/2023:19:06:46 +0000] "POST http://localhost:8080/login HTTP/1.1" 400 49 "-" "PostmanRuntime/7.35.0"
+127.0.0.1 - - [12/Dec/2023:19:06:47 +0000] "POST http://localhost:8080/login HTTP/1.1" 400 49 "-" "PostmanRuntime/7.35.0"
+127.0.0.1 - - [12/Dec/2023:19:08:01 +0000] "POST http://localhost:8080/login HTTP/1.1" 400 49 "-" "PostmanRuntime/7.35.0"
+127.0.0.1 - - [12/Dec/2023:19:09:06 +0000] "POST http://localhost:8080/login HTTP/1.1" 400 49 "-" "PostmanRuntime/7.35.0"
+127.0.0.1 - - [12/Dec/2023:19:10:05 +0000] "POST http://localhost:8080/login HTTP/1.1" 400 49 "-" "PostmanRuntime/7.35.0"
+127.0.0.1 - - [12/Dec/2023:19:11:37 +0000] "GET http://localhost:8080/movies HTTP/1.1" 401 - "-" "PostmanRuntime/7.35.0"
+127.0.0.1 - - [12/Dec/2023:19:11:45 +0000] "GET http://localhost:8080/movies HTTP/1.1" 401 - "-" "PostmanRuntime/7.35.0"
+127.0.0.1 - - [12/Dec/2023:19:12:12 +0000] "POST http://localhost:8080/login?Username=Jimothy43&Password=32bananas&Email=bananas4life@gmail.com HTTP/1.1" 400 49 "-" "PostmanRuntime/7.35.0"
+127.0.0.1 - - [12/Dec/2023:19:13:13 +0000] "POST http://localhost:8080/login?Username=Jimothy43&Password=32bananas&Email=bananas4life@gmail.com HTTP/1.1" 400 49 "-" "PostmanRuntime/7.35.0"
+127.0.0.1 - - [14/Dec/2023:22:35:34 +0000] "GET http://localhost:8080/movies HTTP/1.1" 401 - "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [14/Dec/2023:22:35:59 +0000] "POST http://localhost:8080/login?Username=redhead1329&Password=redbeard1329&Email=daddynandy1329@gmail.com HTTP/1.1" 400 49 "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [14/Dec/2023:23:49:04 +0000] "POST http://localhost:8080/users HTTP/1.1" 500 25 "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [14/Dec/2023:23:49:07 +0000] "POST http://localhost:8080/users HTTP/1.1" 500 25 "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [14/Dec/2023:23:49:30 +0000] "GET http://localhost:8080/movies HTTP/1.1" 401 - "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [16/Dec/2023:01:03:08 +0000] "GET /movies HTTP/1.1" 401 - "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [16/Dec/2023:11:37:05 +0000] "GET /movies HTTP/1.1" 401 - "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [16/Dec/2023:21:13:05 +0000] "GET /login HTTP/1.1" 404 144 "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [19/Dec/2023:22:42:50 +0000] "GET /movies/ HTTP/1.1" 401 - "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [19/Dec/2023:22:43:00 +0000] "POST /login HTTP/1.1" 400 49 "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [19/Dec/2023:22:50:37 +0000] "POST /login?Username=redhead1329&Password=redbeard1329 HTTP/1.1" 400 49 "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [19/Dec/2023:22:52:22 +0000] "POST /login?Username=ilovecake12&Pasword=321test HTTP/1.1" 400 49 "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [19/Dec/2023:22:52:56 +0000] "POST /users/updated HTTP/1.1" 404 153 "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [19/Dec/2023:22:53:00 +0000] "POST /users/ HTTP/1.1" 500 25 "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [19/Dec/2023:22:55:35 +0000] "POST /users/ HTTP/1.1" 500 25 "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [19/Dec/2023:22:56:59 +0000] "POST /users/ HTTP/1.1" 500 25 "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [19/Dec/2023:22:58:10 +0000] "POST /users/ HTTP/1.1" 500 25 "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [19/Dec/2023:22:58:43 +0000] "POST /users/ HTTP/1.1" 500 25 "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [19/Dec/2023:23:07:25 +0000] "POST /login?Username=thedude&Password=dude321&Email=dude@dude.com HTTP/1.1" 400 49 "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [19/Dec/2023:23:08:08 +0000] "POST /login?Username=Thedude&Password=dude1&Email=dude@dude.com HTTP/1.1" 400 49 "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [19/Dec/2023:23:08:21 +0000] "POST /login?Username=Thedude&Password=dude1&Email=dude@dude.com HTTP/1.1" 400 49 "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [19/Dec/2023:23:22:34 +0000] "POST /users HTTP/1.1" 500 25 "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [19/Dec/2023:23:22:37 +0000] "POST /users HTTP/1.1" 500 25 "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [20/Dec/2023:22:36:08 +0000] "GET /movies/ HTTP/1.1" 401 - "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [20/Dec/2023:22:36:23 +0000] "GET /movies/genre/Science%20Fiction HTTP/1.1" 401 - "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [20/Dec/2023:23:11:05 +0000] "POST /users HTTP/1.1" 500 25 "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [20/Dec/2023:23:13:11 +0000] "POST /users HTTP/1.1" 500 25 "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [20/Dec/2023:23:13:13 +0000] "POST /users HTTP/1.1" 500 25 "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [20/Dec/2023:23:13:46 +0000] "POST /users/ HTTP/1.1" 500 25 "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [20/Dec/2023:23:13:52 +0000] "POST /users/ HTTP/1.1" 500 25 "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [20/Dec/2023:23:13:57 +0000] "POST /users HTTP/1.1" 500 25 "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [20/Dec/2023:23:14:02 +0000] "POST /movies HTTP/1.1" 404 146 "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [20/Dec/2023:23:14:05 +0000] "POST /movie HTTP/1.1" 404 145 "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [20/Dec/2023:23:14:08 +0000] "POST /movies HTTP/1.1" 404 146 "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [20/Dec/2023:23:14:50 +0000] "POST /movies HTTP/1.1" 404 146 "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [20/Dec/2023:23:15:11 +0000] "POST /login?Username=redhead1329&Password=redbeard1329&Email=daddynandy1329@gmail.com HTTP/1.1" 400 36 "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [20/Dec/2023:23:30:59 +0000] "POST /login?Username=redhead1329&Password=redbeard1329 HTTP/1.1" 400 36 "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [20/Dec/2023:23:31:52 +0000] "POST /login HTTP/1.1" 400 49 "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [20/Dec/2023:23:33:10 +0000] "POST /users HTTP/1.1" 500 25 "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [20/Dec/2023:23:34:04 +0000] "POST /users HTTP/1.1" 500 25 "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [20/Dec/2023:23:35:28 +0000] "POST /users HTTP/1.1" 404 145 "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [20/Dec/2023:23:37:03 +0000] "POST /users HTTP/1.1" 404 145 "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [20/Dec/2023:23:37:16 +0000] "POST /users HTTP/1.1" 404 145 "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [20/Dec/2023:23:37:17 +0000] "POST /users HTTP/1.1" 404 145 "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [20/Dec/2023:23:47:04 +0000] "POST /users HTTP/1.1" 404 145 "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [20/Dec/2023:23:47:12 +0000] "PUT /users HTTP/1.1" 404 144 "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [20/Dec/2023:23:47:16 +0000] "GET /users HTTP/1.1" 404 144 "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [20/Dec/2023:23:47:29 +0000] "POST /users HTTP/1.1" 404 145 "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [20/Dec/2023:23:48:11 +0000] "POST /users HTTP/1.1" 404 145 "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [20/Dec/2023:23:48:25 +0000] "POST /users HTTP/1.1" 404 145 "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [20/Dec/2023:23:48:32 +0000] "POST /users HTTP/1.1" 404 145 "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [20/Dec/2023:23:50:09 +0000] "POST /login?Username=Jimothy43&Password=32bananas&Email=bananas4life@gmail.com HTTP/1.1" 400 36 "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [21/Dec/2023:18:04:54 +0000] "POST /login?Username=Jimothy43&Password=32bananas&Email=bananas4life@gmail.com HTTP/1.1" - - "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [21/Dec/2023:18:04:55 +0000] "POST /login HTTP/1.1" 400 49 "-" "PostmanRuntime/7.36.0"
