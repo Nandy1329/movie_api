@@ -36,8 +36,10 @@ let auth = require('./auth')(app);
 const passport = require('passport');
 require('./passport');
 
+
+
 //  Connect to a database on Mongodb Atlas
-mongoose.connect('mongodb+srv://nickis1329:Nandyham1329!@myflixdb.2bvsnhv.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb+srv://nickis1329:Nandyham1329@myflixdb.2bvsnhv.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
 
 
 // Set up logging
