@@ -41,7 +41,6 @@ require('./passport');
 //  Connect to a database on Mongodb Atlas
 mongoose.connect('mongodb+srv://nickis1329:Nandyham1329@myflixdb.2bvsnhv.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
 
-
 // Set up logging
 const accessLogStream = fs.createWriteStream( // create a write stream
     path.join(__dirname, 'log.text'), //a 'log.txt' file is created in the root directory
@@ -158,19 +157,15 @@ async (req, res) => {
 }
 );
 // Allow users to update their user info (username, password, email, date of birth)
-app.put('/users/:Username', 
-passport.authenticate('jwt', { session: false }), 
-[
-  // validation logic here for request
+app.put('/users/:Username', [
   check('Username', 'Username is required').isLength({min:5}),
   check('Username', 'Username contains non alphanumeric characters - not allowed').isAlphanumeric(),
   check('Password', 'Password is required').not().isEmpty(),
   check('Email', 'Email does not appear to be valid').isEmail()
   ], 
-
- async (req, res) => {
-  // checks validation object for errors
-    let errors = validationResult(req);
+  passport.authenticate('jwt', { session: false }), 
+  (req, res) => {
+    let errors = validationResults(req);
     if (!errors.isEmpty()) {
       return res.status(422).json({errors: errors.array()});
     }
