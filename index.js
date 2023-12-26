@@ -8,7 +8,7 @@ const express = require('express'),
     mongoose = require('mongoose')
    
 
-const {check, validationResults} = require('express-validator'); 
+const {check, validationResult } = require('express-validator'); 
 
 const Models = require('./models.js');
 const Movies = Models.Movie;
@@ -113,85 +113,81 @@ app.get('/movies/directors/:directorName', passport.authenticate('jwt', { sessio
 });
 
 //  Allow new users to register
-app.post('/users', 
-[
-  // requests validation
-  check('Username', 'The user name is required and must be at least 5 characters long').isLength({ min: 5 }),
-check('Username', 'Username contains non alphanumeric characters - not allowed.').isAlphanumeric(),
-check('Password', 'Please type a password').not().isEmpty(),
-check('Email', 'Please type a valid email').isEmail(),
-], 
-async (req, res) => {
- 
+// Add a user
+/* We’ll expect JSON in this format
+{
+  Username: String,
+  Password: String,
+  Email: String,
+  Birthday: Date
+}*/
+app.post(
+	"/users",
+	[
+		check("username", "Username is required").isLength({ min: 5 }),
+		check("username", "Username contains non alphanumeric characters - not allowed.").isAlphanumeric(),
+		check("password", "Password is required").not().isEmpty(),
+		check("email", "Email does not appear to be valid").isEmail(),
+	],
+	async (req, res) => {
+		// check the validation object for errors
+		let errors = validationResult(req);
 
-    let hashedPassword = Users.hashPassword(req.body.Password);
-    await Users.findOne({ Username: req.body.Username })  // checks to see if the requested username already exists
+		if (!errors.isEmpty()) {
+			return res.status(422).json({ errors: errors.array() });
+		}
 
-        .then((user) => {
-            if (user) { // if the user is found, send a response that it already exists 
-              return res.status(400)
-              .send('User with ' + req.body.Username + ' already exist');
-            } else { // if it doesn't exist, it will create a user with the given username
-                Users.create({
-                    Username: req.body.Username,
-                    Password: hashedPassword,
-                    Email: req.body.Email,
-                    Birthday: req.body.Birthday
-                })
-                    .then((user) => {
-                      res.status(201)
-                      .json(user)
-              })
-              .catch((error) => {
-                  console.error(error);
-                  res.status(500)
-                      .send('Error: ' + error);
-              });
-      }
-  })
-  .catch((error) => {
-      console.error(error);
-      res.status(500)
-          .send('Error: ' + error);
-  });
-}
+		let hashedPassword = Users.hashPassword(req.body.password);
+		await Users.findOne({ username: req.body.username })
+			.then((user) => {
+				if (user) {
+					return res.status(400).send(req.body.username + "already exists");
+				} else {
+					Users.create({
+						username: req.body.username,
+						password: hashedPassword,
+						email: req.body.email,
+						birthday: req.body.birthday,
+					})
+						.then((user) => {
+							res.status(201).json(user);
+						})
+						.catch((error) => {
+							console.error(error);
+							res.status(500).send("Error: " + error);
+						});
+				}
+			})
+			.catch((error) => {
+				console.error(error);
+				res.status(500).send("Error: " + error);
+			});
+	}
 );
 // Allow users to update their user info (username, password, email, date of birth)
-app.put('/users/:Username', [
-  check('Username', 'Username is required').isLength({min:5}),
-  check('Username', 'Username contains non alphanumeric characters - not allowed').isAlphanumeric(),
-  check('Password', 'Password is required').not().isEmpty(),
-  check('Email', 'Email does not appear to be valid').isEmail()
-  ], 
-  passport.authenticate('jwt', { session: false }), 
-  (req, res) => {
-    let errors = validationResults(req);
-    if (!errors.isEmpty()) {
-      return res.status(422).json({errors: errors.array()});
-    }
-
-    let hashedPassword = Users.hashPassword(req.body.Password);
-    
-    if(req.user.Username !== req.params.Username){
-      return res.status(400).send('Permission denied.');
-    }
-
-    Users.findOneAndUpdate({ Username: req.params.Username }, { $set:
-      {
-        Username: req.body.Username,
-        Password: hashedPassword,
-        Email: req.body.Email,
-        Birthday: req.body.Birthday
-      }
-    },
-    { new: true }) 
-    .then(updatedUser => {
-        res.json(updatedUser);
-    })
-    .catch(err => {
-      console.error(err);
-      res.status(500).send('Error: ' + err);
-    });
+app.put("/users/:username", passport.authenticate("jwt", { session: false }), async (req, res) => {
+	if (req.user.username !== req.params.username) {
+		return res.status(400).send("Permission denied");
+	}
+	await Users.findOneAndUpdate(
+		{ username: req.params.username },
+		{
+			$set: {
+				username: req.body.username,
+				password: req.body.password,
+				email: req.body.email,
+				birthday: req.body.birthday,
+			},
+		},
+		{ new: true }
+	)
+		.then((updatedUser) => {
+			res.json(updatedUser);
+		})
+		.catch((err) => {
+			console.error(err);
+			res.status(500).send("Error: " + err);
+		});
 });
 
 //  Allow users to add a movie to their list of favorites
