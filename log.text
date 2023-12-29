@@ -16,3 +16,7 @@
 127.0.0.1 - - [27/Dec/2023:18:32:33 +0000] "GET /movies HTTP/1.1" 401 - "-" "PostmanRuntime/7.36.0"
 127.0.0.1 - - [27/Dec/2023:18:32:39 +0000] "GET /movies HTTP/1.1" 201 2 "-" "PostmanRuntime/7.36.0"
 127.0.0.1 - - [27/Dec/2023:18:33:48 +0000] "POST /login?Username=test2&Password=test123 HTTP/1.1" 404 145 "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [27/Dec/2023:21:09:35 +0000] "GET /movies HTTP/1.1" 401 - "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [27/Dec/2023:21:58:05 +0000] "GET /movies HTTP/1.1" 401 - "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [28/Dec/2023:19:55:30 +0000] "GET /movies HTTP/1.1" 401 - "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [28/Dec/2023:19:55:39 +0000] "GET /movies HTTP/1.1" 401 - "-" "PostmanRuntime/7.36.0"
