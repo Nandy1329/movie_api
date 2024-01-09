@@ -1,4 +1,4 @@
-root: "C:\Users\nicki\movie_api" 
+root: "C:\Users\nickis\movie_api" 
 path: C:\Program Files\nodejs 
 arch: 64 
 proxy: none

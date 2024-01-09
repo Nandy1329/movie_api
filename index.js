@@ -1,34 +1,29 @@
-const express = require ('express');
-const bodyParser = require('body-parser');
-uuid = require('uuid');
-  
-const morgan = require('morgan');
-const app = express();
-const mongoose = require('mongoose');
-const Models = require('./models.js');
+// setup requirements and constants
+const express = require('express'),
+    morgan = require('morgan'),
+    fs = require('fs'),
+    bodyParser = require('body-parser'),
+    uuid = require('uuid'),
+    mongoose = require('mongoose'),
+    Models = require('./models.js');
+    path = require('path');
 
-// Models 
+    const jwt = require('jsonwebtoken');
+    const expressJwt = require('express-jwt');
+
+    
+const { check, validationResult } = require('express-validator');
+
 const Movies =Models.Movie;
-const Users = Models.Users;
+const Users = Models.User;
 
-// MongoDB connection via Mongoose 
-mongoose.connect("mongodb+srv://nickis1329:nickis1329@myflixdb.fwieytj.mongodb.net/?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true });
+const app = express();
 
-// log requests to server
-app.use(morgan('common'));
-
-// importing body parser
 app.use(bodyParser.json());
-
-// middleware for parsing requests
-app.use(express.json());
-// app.use(express.urlencoded({ extended: true }));
-
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Enable CORS
+// Import auth.js
 const cors = require('cors');
-
 // CORS access 
 let allowedOrigins = ['http://localhost:8080',];
 
@@ -43,23 +38,49 @@ app.use(cors({
   }
 }));
 
-const { check, validationResult } = require('express-validator');
 
-// Import auth.js
-let auth = require('./auth')(app);
-
-// require passport authentication
+let auth = require('./auth.js')(app);
 const passport = require('passport');
-require('./passport');
+require('./passport.js');
 
-// auto-sends all files requested from the public folder
-app.use(express.static('public'));
 
-app.get('/', (req, res) => {
-  res.send('Welcome to my movie app!');
+// MongoDB connection via Mongoose 
+require('dotenv').config(); // This line is needed to load the variables from your .env file
+mongoose.connect('mongodb+srv://nickis1329:nickis1329@myflixdb.fwieytj.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
+  .catch(err => {
+    console.error('There was a problem connecting to MongoDB:', err);
+  });
+mongoose.connection.on('connected', () => {
+    console.log('Mongoose is connected!!');
 });
 
-// #1 Return a list of ALL movies
+// middleware for parsing requests
+app.use(express.json());
+
+// setup morgan logging
+    const accessLogStream = fs.createWriteStream(
+      path.join(__dirname, 'log.txt'), 
+      { flags: 'a' } // append to the file 'log.txt'
+   
+);
+
+app.use(
+    morgan('combined', { stream: accessLogStream }) // enable morgan logging to 'log.txt'
+);
+
+// setup Static Files
+app.use(
+    express.static('public') // routes all requests for static files to the 'public' folder
+);
+
+// setup Routes
+app.get('/', (req, res) => {
+    res.send('Welcome to myFlix!');
+});
+
+
+
+// #1 Return a list of ALL movies to the user
 app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
   Movies.find()
     .then((movies) => {
@@ -115,6 +136,7 @@ app.post('/users',[
   check('Email', 'Email is not valid').isEmail()
 ], async (req, res) => {
   let errors = validationResult(req);
+
   if (!errors.isEmpty()) {
     return res.status(422).json({ errors: errors.array() });
 }
@@ -126,12 +148,16 @@ app.post('/users',[
       } else {
         Users
           .create({
-            FirstName: req.body.FirstName,
-            LastName: req.body.LastName,
             Username: req.body.Username,
             Password: hashedPassword,
-            Email: req.body.Email
+            Email: req.body.Email,
+            Birthday: req.body.Birthday
           })
+          .then((user) =>{res.status(201).json(user) })
+          .catch
+
+
+
           .then((user) =>{res.status(201).json(user) })
         .catch((error) => {
           console.error(error);
@@ -145,37 +171,54 @@ app.post('/users',[
     });
 }); 
 
-// Allow users to update their info only via passport with token
-  app.put(
-    "/users/:Username", passport.authenticate("jwt", { session: false }),
-    async (req, res) => {
-      // CONDITION TO CHECK ADDED HERE
-      if (req.user.Username !== req.params.Username) {
-        return res.status(400).send("Permission denied");
+// #6 Allow users to update their user info 
+/* We’ll expect JSON in this format
+{
+  Username: String, (required)
+  Password: String, (required)
+  Email: String, (required)
+  Birthday: Date
+}*/
+
+
+app.put('/users/:Username', [
+  check('Username', 'Username is required').isLength({min: 5}),
+  check('Username', 'Username contains non alphanumeric characters').isAlphanumeric(),
+  check('Password', 'Password is required').not().isEmpty(),
+  check('Email', 'Email is not valid').isEmail()
+], 
+passport.authenticate('jwt', { session: false }), 
+(req, res) => {
+  let errors = validationResult(req);
+
+  if (!errors.isEmpty()) {
+    return res.status(422).json({ errors: errors.array() });
+}
+  let hashedPassword = Users.hashPassword(req.body.Password);
+  Users.findOneAndUpdate({ Username: req.params.Username }, 
+    {
+      $set:
+      {
+
+        Username: req.body.Username,
+        Password: hashedPassword,
+        Email: req.body.Email,
+        Birthday: req.body.Birthday
       }
-      // CONDITION ENDS
-      let hashedPassword = Users.hashPassword(req.body.Password);
-      await Users.findOneAndUpdate(
-        { Username: req.params.Username },
-        {
-          $set: {
-            Username: req.body.Username,
-            Password: hashedPassword,
-            Email: req.body.Email,
-            Birthday: req.body.Birthday
-          },
-        },
-        { new: true }
-      ) // This line makes sure that the updated document is returned
-        .then((updatedUser) => {
-          res.json(updatedUser);
-        })
-        .catch((err) => {
-          console.log(err);
-          res.status(500).send("Error: " + err);
-        });
+  },
+  { new: true }) // this makes sure that the updated document is returned
+            // .populate('Favorite_Movies', 'Title')
+            .then((updatedUser) => {
+                res.status(201)
+                    .json(updatedUser);
+            })
+            .catch((err) => {
+                console.error(err);
+                res.status(500)
+                    .send('Error: ' + err);
+            });
     }
-  );
+);
 
 // #7 Allow users to add a movie to their list of favorites
 app.post('/users/:Username/movies/:MovieID', passport.authenticate('jwt', { session: false }), (req, res) => {
@@ -226,14 +269,14 @@ app.delete('/users/:Username', passport.authenticate('jwt', { session: false }),
 });
 
 
-// Create error-handling
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).send('something is not working!');
-});
-
 // listen for requests
 const port = process.env.PORT || 8080;
 app.listen(port, '0.0.0.0', () => {
   console.log('Listening on Port ' + port);
+});
+
+// Create error-handling
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('something is not working!');
 });
