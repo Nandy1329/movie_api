@@ -44,15 +44,17 @@ const passport = require('passport');
 require('./passport.js');
 
 
+
 // MongoDB connection via Mongoose 
 require('dotenv').config(); // This line is needed to load the variables from your .env file
-mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .catch(err => {
-    console.error('There was a problem connecting to MongoDB:', err);
-  });
-mongoose.connection.on('connected', () => {
-    console.log('Mongoose is connected!!');
-});
+
+const connectionString = process.env.MONGODB_URI;
+
+mongoose.connect('mongodb+srv://nickis1329:nickis1329@myflixdb.fwieytj.mongodb.net/?retryWrites=true&w=majority'
+, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('Database connection successful'))
+  .catch(err => console.error('Database connection error', err));
+
 
 // middleware for parsing requests
 app.use(express.json());
