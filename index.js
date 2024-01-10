@@ -11,7 +11,7 @@ const express = require('express'),
     const jwt = require('jsonwebtoken');
     const expressJwt = require('express-jwt');
 
-    
+
 const { check, validationResult } = require('express-validator');
 
 const Movies =Models.Movie;
@@ -46,7 +46,7 @@ require('./passport.js');
 
 // MongoDB connection via Mongoose 
 require('dotenv').config(); // This line is needed to load the variables from your .env file
-mongoose.connect('mongodb+srv://nickis1329:nickis1329@myflixdb.fwieytj.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .catch(err => {
     console.error('There was a problem connecting to MongoDB:', err);
   });
@@ -129,7 +129,7 @@ app.get('/movies/directors/:directorName', passport.authenticate('jwt', { sessio
 });
 
 // #5 Allow new users to register
-app.post('/users',[
+app.post('/users',[ 
   check('Username', 'Username is required').isLength({min: 5}),
   check('Username', 'Username contains non alphanumeric characters').isAlphanumeric(),
   check('Password', 'Password is required').not().isEmpty(),
@@ -139,7 +139,7 @@ app.post('/users',[
 
   if (!errors.isEmpty()) {
     return res.status(422).json({ errors: errors.array() });
-}
+  }
   let hashedPassword = Users.hashPassword(req.body.Password);
   await Users.findOne({ Username: req.body.Username })
     .then((user) => {
@@ -154,15 +154,10 @@ app.post('/users',[
             Birthday: req.body.Birthday
           })
           .then((user) =>{res.status(201).json(user) })
-          .catch
-
-
-
-          .then((user) =>{res.status(201).json(user) })
-        .catch((error) => {
-          console.error(error);
-          res.status(500).send('Error: ' + error);
-        })
+          .catch((error) => {
+            console.error(error);
+            res.status(500).send('Error: ' + error);
+          })
       }
     })
     .catch((error) => {

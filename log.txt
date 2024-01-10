@@ -609,3 +609,4 @@ Timestamp: Thu Sep 21 2023 17:14:46 GMT-0700 (Pacific Daylight Time)
 127.0.0.1 - nickis1329 [09/Jan/2024:21:35:34 +0000] "POST /login/?Username=test&Password=test123 HTTP/1.1" 404 146 "-" "PostmanRuntime/7.36.0"
 127.0.0.1 - nickis1329 [09/Jan/2024:21:35:49 +0000] "POST /login/?Username=test&Password=test123 HTTP/1.1" 404 146 "-" "PostmanRuntime/7.36.0"
 127.0.0.1 - nickis1329 [09/Jan/2024:21:36:02 +0000] "POST /login/?Username=test&Password=test123 HTTP/1.1" 404 146 "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [09/Jan/2024:22:47:24 +0000] "GET /movies HTTP/1.1" 401 - "-" "PostmanRuntime/7.36.0"
