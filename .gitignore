@@ -1,2 +1,4 @@
-/node_modules
-/.env
+node_moduels/
+log.text
+.env
+node_modules

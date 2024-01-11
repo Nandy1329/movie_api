@@ -48,10 +48,10 @@ require('./passport.js');
 // MongoDB connection via Mongoose 
 require('dotenv').config(); // This line is needed to load the variables from your .env file
 
+
 const connectionString = process.env.MONGODB_URI;
 
-mongoose.connect('mongodb+srv://nickis1329:nickis1329@myflixdb.fwieytj.mongodb.net/?retryWrites=true&w=majority'
-, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Database connection successful'))
   .catch(err => console.error('Database connection error', err));
 
@@ -131,6 +131,7 @@ app.get('/movies/directors/:directorName', passport.authenticate('jwt', { sessio
 });
 
 // #5 Allow new users to register
+// #5 Allow new users to register
 app.post('/users',[ 
   check('Username', 'Username is required').isLength({min: 5}),
   check('Username', 'Username contains non alphanumeric characters').isAlphanumeric(),
@@ -149,24 +150,23 @@ app.post('/users',[
         return res.status(400).send(req.body.Username + 'already exists');
       } else {
         Users
-          .create({
-            Username: req.body.Username,
-            Password: hashedPassword,
-            Email: req.body.Email,
-            Birthday: req.body.Birthday
-          })
-          .then((user) =>{res.status(201).json(user) })
-          .catch((error) => {
-            console.error(error);
-            res.status(500).send('Error: ' + error);
-          })
+        .create({
+          Username: req.body.Username,
+          Password: hashedPassword,
+          Email: req.body.Email,
+          Birthday: req.body.Birthday
+        })
+        .then((user) => {
+          res.status(201).json(user);
+          // Add additional operations here
+        })
+        .catch((error) => {
+          console.error(error);
+          res.status(500).send('Error: ' + error);
+        });
       }
-    })
-    .catch((error) => {
-      console.error(error);
-      res.status(500).send('Error: ' + error);
     });
-}); 
+}); // This is where the closing parenthesis and bracket should be
 
 // #6 Allow users to update their user info 
 /* We’ll expect JSON in this format
