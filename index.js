@@ -1,3 +1,6 @@
+// Load environment variables from .env file
+require('dotenv').config();
+
 // setup requirements and constants
 const express = require('express'),
     morgan = require('morgan'),
@@ -5,16 +8,14 @@ const express = require('express'),
     bodyParser = require('body-parser'),
     uuid = require('uuid'),
     mongoose = require('mongoose'),
-    Models = require('./models.js');
-    path = require('path');
+    Models = require('./models.js'),
+    path = require('path'),
+    jwt = require('jsonwebtoken'),
+    expressJwt = require('express-jwt'),
+    { check, validationResult } = require('express-validator'),
+    cors = require('cors');
 
-    const jwt = require('jsonwebtoken');
-    const expressJwt = require('express-jwt');
-
-
-const { check, validationResult } = require('express-validator');
-
-const Movies =Models.Movie;
+const Movies = Models.Movie;
 const Users = Models.User;
 
 const app = express();
@@ -22,8 +23,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Import auth.js
-const cors = require('cors');
+
 // CORS access 
 let allowedOrigins = ['http://localhost:8080',];
 
@@ -44,14 +44,9 @@ const passport = require('passport');
 require('./passport.js');
 
 
+const connectionString = process.env.CONNECTION_URI;
 
-// MongoDB connection via Mongoose 
-require('dotenv').config(); // This line is needed to load the variables from your .env file
-
-
-const connectionString = process.env.MONGODB_URI;
-
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Database connection successful'))
   .catch(err => console.error('Database connection error', err));
 
