@@ -114,14 +114,24 @@ app.get('/movies/genre/:genreName', passport.authenticate('jwt', { session: fals
 });
 
 // #4 Return data about a director (bio, birth year, death year) by name
-app.get('/movies/directors/:directorName', passport.authenticate('jwt', { session: false }), (req, res) => {
-  Movies.findOne({ 'Director.Name': req.params.directorName })
-    .then((movie) => {
-      res.status(200).json(movie.Director);
+
+app.get('/directors', passport.authenticate('jwt', { session: false }), async (req, res) => {
+  try {
+    const directors = await Directors.find();
+    res.json(directors);
+  } catch (error){
+    console.error('Error',error);
+    res.status(500).json({error: 'Error'});
+  }
+});
+app.get('/directors/:Name', passport.authenticate('jwt', { session: false }), (req, res)=>{
+  Directors.findOne({Name: req.params.Name})
+    .then((directors) =>{
+      res.json(directors);
     })
-    .catch((err) => {
+    .catch((err) =>{
       console.error(err);
-      res.status(500).send('Error: ' + err);
+      res.status(500).send('Error: '+ err);
     });
 });
 
