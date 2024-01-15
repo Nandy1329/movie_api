@@ -1,6 +1,14 @@
 // Load environment variables from .env file
 require('dotenv').config();
 
+const result = require('dotenv').config();
+
+if (result.error) {
+  throw result.error;
+}
+
+console.log(result.parsed);
+
 // setup requirements and constants
 const express = require('express'),
     morgan = require('morgan'),
@@ -125,9 +133,9 @@ app.get('/movies/directors/:directorName', passport.authenticate('jwt', { sessio
     });
 });
 
+
 // #5 Allow new users to register
-// #5 Allow new users to register
-app.post('/users',[ 
+app.post('/users', [ 
   check('Username', 'Username is required').isLength({min: 5}),
   check('Username', 'Username contains non alphanumeric characters').isAlphanumeric(),
   check('Password', 'Password is required').not().isEmpty(),
@@ -138,30 +146,30 @@ app.post('/users',[
   if (!errors.isEmpty()) {
     return res.status(422).json({ errors: errors.array() });
   }
+
   let hashedPassword = Users.hashPassword(req.body.Password);
-  await Users.findOne({ Username: req.body.Username })
+  let user = await Users.findOne({ Username: req.body.Username });
+
+  if (user) {
+    return res.status(400).send(req.body.Username + ' already exists');
+  } else {
+    Users.create({
+      Username: req.body.Username,
+      Password: hashedPassword,
+      Email: req.body.Email,
+      Birthday: req.body.Birthday
+    })
     .then((user) => {
-      if (user) {
-        return res.status(400).send(req.body.Username + 'already exists');
-      } else {
-        Users
-        .create({
-          Username: req.body.Username,
-          Password: hashedPassword,
-          Email: req.body.Email,
-          Birthday: req.body.Birthday
-        })
-        .then((user) => {
-          res.status(201).json(user);
-          // Add additional operations here
-        })
-        .catch((error) => {
-          console.error(error);
-          res.status(500).send('Error: ' + error);
-        });
-      }
+      res.status(201).json(user);
+      // Add additional operations here
+    })
+    .catch((error) => {
+      console.error(error);
+      res.status(500).send('Error: ' + error);
     });
-}); // This is where the closing parenthesis and bracket should be
+  }
+});
+ // This is where the closing parenthesis and bracket should be
 
 // #6 Allow users to update their user info 
 /* We’ll expect JSON in this format
@@ -171,45 +179,26 @@ app.post('/users',[
   Email: String, (required)
   Birthday: Date
 }*/
+app.put('/users/:Username', 
+  passport.authenticate('jwt', { session: false }), 
+  (req, res) => {
+    let updatedUserData = {};
+    if (req.body.Username) updatedUserData.Username = req.body.Username;
+    if (req.body.Password) updatedUserData.Password = Users.hashPassword(req.body.Password);
+    if (req.body.Email) updatedUserData.Email = req.body.Email;
+    if (req.body.Birthday) updatedUserData.Birthday = req.body.Birthday;
 
-
-app.put('/users/:Username', [
-  check('Username', 'Username is required').isLength({min: 5}),
-  check('Username', 'Username contains non alphanumeric characters').isAlphanumeric(),
-  check('Password', 'Password is required').not().isEmpty(),
-  check('Email', 'Email is not valid').isEmail()
-], 
-passport.authenticate('jwt', { session: false }), 
-(req, res) => {
-  let errors = validationResult(req);
-
-  if (!errors.isEmpty()) {
-    return res.status(422).json({ errors: errors.array() });
-}
-  let hashedPassword = Users.hashPassword(req.body.Password);
-  Users.findOneAndUpdate({ Username: req.params.Username }, 
-    {
-      $set:
-      {
-
-        Username: req.body.Username,
-        Password: hashedPassword,
-        Email: req.body.Email,
-        Birthday: req.body.Birthday
-      }
-  },
-  { new: true }) // this makes sure that the updated document is returned
-            // .populate('Favorite_Movies', 'Title')
-            .then((updatedUser) => {
-                res.status(201)
-                    .json(updatedUser);
-            })
-            .catch((err) => {
-                console.error(err);
-                res.status(500)
-                    .send('Error: ' + err);
-            });
-    }
+    Users.findOneAndUpdate({ Username: req.params.Username }, 
+      { $set: updatedUserData },
+      { new: true }) // this makes sure that the updated document is returned
+      .then((updatedUser) => {
+        res.status(201).json(updatedUser);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.status(500).send('Error: ' + err);
+      });
+  }
 );
 
 // #7 Allow users to add a movie to their list of favorites
