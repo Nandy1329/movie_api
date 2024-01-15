@@ -1,14 +1,6 @@
 // Load environment variables from .env file
 require('dotenv').config();
 
-const result = require('dotenv').config();
-
-if (result.error) {
-  throw result.error;
-}
-
-console.log(result.parsed);
-
 // setup requirements and constants
 const express = require('express'),
     morgan = require('morgan'),
