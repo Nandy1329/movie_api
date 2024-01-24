@@ -86,8 +86,10 @@ app.get('/movies',
     .catch((err) => {
       console.error(err);
       res.status(500).send('Error: ' + err);
-    });
-});
+    }
+  )
+);
+    
 
 // #2 Return data about a single movie by title 
 app.get('/movies/:Title', passport.authenticate('jwt', { session: false }), (req, res) => {
