@@ -6,26 +6,24 @@ const express = require('express'),
     morgan = require('morgan'),
     fs = require('fs'),
     bodyParser = require('body-parser'),
-    uuid = require('uuid'),
     mongoose = require('mongoose'),
     Models = require('./models.js'),
     path = require('path'),
-    jwt = require('jsonwebtoken'),
-    expressJwt = require('express-jwt'),
     { check, validationResult } = require('express-validator'),
     cors = require('cors');
 
 const Movies = Models.Movie;
 const Users = Models.User;
+const Directors = Models.Director;
+
 
 const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-
 // CORS access 
-let allowedOrigins = ['http://localhost:8080',];
+let allowedOrigins = ['http://localhost:8080', 'http://localhost:1234'];
 
 app.use(cors({
   origin: (origin, callback) => {
@@ -38,18 +36,12 @@ app.use(cors({
   }
 }));
 
-
-let auth = require('./auth.js')(app);
+require('./auth.js')(app);
 const passport = require('passport');
 require('./passport.js');
 
-
-const connectionString = process.env.CONNECTION_URI;
-
 mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Database connection successful'))
-  .catch(err => console.error('Database connection error', err));
-
 
 // middleware for parsing requests
 app.use(express.json());
@@ -260,7 +252,7 @@ app.listen(port, '0.0.0.0', () => {
 });
 
 // Create error-handling
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).send('something is not working!');
+app.use((req, res, next) => {
+  // your code here
+  next();
 });
