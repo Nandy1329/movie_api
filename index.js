@@ -87,12 +87,9 @@ app.get('/movies',
       console.error(err);
       res.status(500).send('Error: ' + err);
     }
-  )
-);
-    
 
 // #2 Return data about a single movie by title 
-app.get('/movies/:Title', passport.authenticate('jwt', { session: false }), (req, res) => {
+app.get('/movies/:Title',  (req, res) => {
   Movies.findOne({ Title: req.params.Title })
     .then((movie) => {
       res.status(200).json(movie);
@@ -100,8 +97,9 @@ app.get('/movies/:Title', passport.authenticate('jwt', { session: false }), (req
     .catch((err) => {
       console.error(err);
       res.status(500).send('Error: ' + err);
-    });
-});
+    }
+);
+
 
 // # 3 Return data about a genre (description) by name
 app.get('/movies/genre/:genreName', passport.authenticate('jwt', { session: false }), (req, res) => {
@@ -264,4 +262,5 @@ app.listen(port, '0.0.0.0', () => {
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send('something is not working!');
-});
+} 
+);
