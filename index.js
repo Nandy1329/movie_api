@@ -20,9 +20,6 @@ const Directors = Models.Director;
 const app = express();
 
 
-// allows Mongoose to connect to 
-mongoose.connect( process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true });
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -74,64 +71,50 @@ app.get('/', (req, res) => {
 
 
 // #1 Return a list of ALL movies to the user
-app.get('/movies', (req, res) => {
+app.get('/movies', (req, res, next) => {
   Movies.find()
     .then((movies) => {
       res.status(200).json(movies);
     })
     .catch((err) => {
-      console.error(err);
-      res.status(500).send('Error: ' + err);
-    } );
+      next(err); // Pass the error to the next middleware function
+    });
 });
 
 
 // #2 Return data about a single movie by title 
-app.get('/movies/:Title', passport.authenticate('jwt', { session: false }), (req, res) => {
+app.get('/movies/:Title', passport.authenticate('jwt', { session: false }), (req, res, next) => {
   Movies.findOne({ Title: req.params.Title })
     .then((movie) => {
       res.status(200).json(movie);
     })
     .catch((err) => {
-      console.error(err);
-      res.status(500).send('Error: ' + err);
+      next(err); // Pass the error to the next middleware function
     });
 });
 
 // # 3 Return data about a genre (description) by name
-app.get('/movies/genre/:genreName', passport.authenticate('jwt', { session: false }), (req, res) => {
+app.get('/movies/genre/:genreName', passport.authenticate('jwt', { session: false }), (req, res, next) => {
   Movies.findOne({ 'Genre.Name': req.params.genreName })
     .then((movie) => {
       res.status(200).json(movie.Genre);
     })
     .catch((err) => {
-      console.error(err);
-      res.status(500).send('Error: ' + err);
+      next(err); // Pass the error to the next middleware function
     });
 });
+
 
 // #4 Return data about a director (bio, birth year, death year) by name
-
-app.get('/directors', passport.authenticate('jwt', { session: false }), async (req, res) => {
-  try {
-    const directors = await Directors.find();
-    res.json(directors);
-  } catch (error){
-    console.error('Error',error);
-    res.status(500).json({error: 'Error'});
-  }
-});
-app.get('/directors/:Name', passport.authenticate('jwt', { session: false }), (req, res)=>{
+app.get('/directors/:Name', passport.authenticate('jwt', { session: false }), (req, res, next) => {
   Directors.findOne({Name: req.params.Name})
-    .then((directors) =>{
+    .then((directors) => {
       res.json(directors);
     })
-    .catch((err) =>{
-      console.error(err);
-      res.status(500).send('Error: '+ err);
+    .catch((err) => {
+      next(err); // Pass the error to the next middleware function
     });
 });
-
 
 // #5 Allow new users to register
 app.post('/users', [ 
@@ -248,15 +231,14 @@ app.delete('/users/:Username', passport.authenticate('jwt', { session: false }),
     });
 });
 
+// Create error-handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack); // Log error stack trace to the console
+  res.status(500).send('Something broke!'); // Send a 500 response to the client
+});
 
 // listen for requests
 const port = process.env.PORT || 8080;
 app.listen(port, '0.0.0.0', () => {
   console.log('Listening on Port ' + port);
-});
-
-// Create error-handling
-app.use((req, res, next) => {
-  // your code here
-  next();
 });
