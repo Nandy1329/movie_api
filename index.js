@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // CORS access 
-let allowedOrigins = ['http://localhost:8080'];
+let allowedOrigins = ['http://localhost:8080, http://testsite.com, http://localhost:1234, https://myflixapp.herokuapp.com/'];
 
 app.use(cors({
   origin: (origin, callback) => {
@@ -216,12 +216,25 @@ app.delete('/users/:Username', passport.authenticate('jwt', { session: false }),
     });
 });
 
-const port = process.env.PORT || 8080;
-app.listen(port, '0.0.0.0', () => {
-  console.log('Listening on Port ' + port);
+function isAdmin(req, res, next) {
+  if (req.user.role === 'admin') {
+    next();
+  } else {
+    res.status(403).send('Forbidden');
+  }
+}
+
+app.get('/admin', passport.authenticate('jwt', { session: false }), isAdmin, function(req, res) {
+  res.send('Welcome, admin!');
 });
 
 app.use((err, _, res) => {
   console.error(err.stack);
   res.status(500).send('something is not working!');
 });
+
+const port = process.env.PORT || 8080;
+app.listen(port, '0.0.0.0', () => {
+  console.log('Listening on Port ' + port);
+}
+);
