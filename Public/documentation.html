@@ -22,11 +22,25 @@
     </p>
   </div>
   <div class="container">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  <div class="container">
     <h2 class = "title">myFlix API Documentation</h2>
   </div>
 
   <div class="container">
-   <table id="example" class="table table-striped table-bordered" style="width:100%">
+  <table id="example" class="table table-striped table-bordered">
     <thead>
       <tr>
         <th class="w-20">Request</th>
@@ -209,6 +223,30 @@
   </table>
 
 </div>
+<script>
+  document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+
+    fetch('/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ username: username, password: password }),
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Success:', data);
+      // Here you can handle the response, for example, save the JWT to localStorage
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+  });
+</script>
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
