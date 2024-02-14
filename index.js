@@ -1,7 +1,3 @@
-// Load environment variables from .env file
-import dotenv from 'dotenv';
-dotenv.config();
-
 const express = require('express'),
     morgan = require('morgan'),
     fs = require('fs'),
@@ -19,13 +15,17 @@ const Users = Models.User;
 
 const app = express();
 
+require('dotenv').config();
+require('./auth.js');
+require('./passport.js');
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // CORS access 
 let allowedOrigins = ['http://localhost:8080', 'http://testsite.com', 'http://localhost:1234', 'https://myflixapp.herokuapp.com/'];
 
-import cors from 'cors';
+const cors = require('cors');
 
 app.use(cors({
     origin: (origin, callback) => {
@@ -38,9 +38,9 @@ app.use(cors({
     }
 }));
 
-require('/auth.js') //import the auth.js file from the same directory as index.js
-    const passport = require('passport');
+require('./auth.js') //import the auth.js file from the same directory as index.js
 require('./passport.js');
+const passport = require('passport');
 
 // Connect to local database
 // mongoose.connect('mongodb://localhost:27017/myFlixDB', {
@@ -99,7 +99,7 @@ app.get('/genres', (req, res) => {
       .then(genres => { res.status(200).json(genres) })
       .catch(error => {
         console.error(error);
-        res.status(500).send("Error: " + error);
+        res.status(500).send('Error: ' + error);
       });
   });
   
@@ -119,7 +119,7 @@ app.get('/directors', (req, res) => {
       .then(directors => { res.status(200).json(directors) })
       .catch(error => {
         console.error(error);
-        res.status(500).send("Error: " + error);
+        res.status(500).send('Error: ' + error);
       });
   });
 

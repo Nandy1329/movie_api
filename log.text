@@ -20,3 +20,5 @@
 127.0.0.1 - - [27/Dec/2023:21:58:05 +0000] "GET /movies HTTP/1.1" 401 - "-" "PostmanRuntime/7.36.0"
 127.0.0.1 - - [28/Dec/2023:19:55:30 +0000] "GET /movies HTTP/1.1" 401 - "-" "PostmanRuntime/7.36.0"
 127.0.0.1 - - [28/Dec/2023:19:55:39 +0000] "GET /movies HTTP/1.1" 401 - "-" "PostmanRuntime/7.36.0"
+127.0.0.1 - - [14/Feb/2024:18:45:37 +0000] "GET / HTTP/1.1" 200 18 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
+127.0.0.1 - - [14/Feb/2024:18:45:37 +0000] "GET /favicon.ico HTTP/1.1" 500 1134 "http://localhost:8080/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
