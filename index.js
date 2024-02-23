@@ -1,18 +1,17 @@
-// Load environment variables from .env file
-import dotenv from 'dotenv';
+const dotenv = require('dotenv');
 dotenv.config();
 
 // setup requirements and constants
-import express from 'express';
-import morgan from 'morgan';
-import fs from 'fs';
-import bodyParser from 'body-parser';
-import mongoose from 'mongoose';
-import Models from './models.js';
-import path from 'path';
-import passport from 'passport';
-import { check, validationResult } from 'express-validator';
-import cors from 'cors';
+const express = require('express');
+const morgan = require('morgan');
+const fs = require('fs');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const Models = require('./models.js');
+const path = require('path');
+const passport = require('passport');
+const { check, validationResult } = require('express-validator');
+const cors = require('cors');
 
 const { Movies, Users } = Models;
 
@@ -227,14 +226,12 @@ function isAdmin(req, res, next) {
 app.get('/admin', passport.authenticate('jwt', { session: false }), isAdmin, function(req, res) {
   res.send('Welcome, admin!');
 });
-
-app.use((err, _, res) => {
+app.use(function(err, req, res) {
   console.error(err.stack);
-  res.status(500).send('something is not working!');
+  res.status(500).send('Something broke!');
 });
 
 const port = process.env.PORT || 8080;
 app.listen(port, '0.0.0.0', () => {
   console.log('Listening on Port ' + port);
-}
-);
+});
