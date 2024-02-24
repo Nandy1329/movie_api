@@ -34,11 +34,12 @@ app.use(cors({
       let message = 'The CORS policy for this application doesn’t allow access from origin ' + origin;
       return callback(new Error(message), false);
     }
+  } // Add a closing parenthesis here
 }));
 
 require('./auth.js')(app);
-require('./passport.js');
 const passport = require('passport');
+require('./passport.js');
 
 mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Database connection successful'))
