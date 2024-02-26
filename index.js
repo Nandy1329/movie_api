@@ -1,5 +1,8 @@
 const dotenv = require('dotenv');
 dotenv.config();
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
 
 // setup requirements and constants
 const express = require('express');
@@ -31,13 +34,14 @@ app.use(cors({
     }
     return callback(null, true);
   }
-}));
+}))
 
 
 require('./auth.js')(app);
 require('./passport.js');
 
 mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+
   .then(() => console.log('Database connection successful'))
   .catch(err => console.error('Database connection error', err));
 
@@ -223,13 +227,16 @@ function isAdmin(req, res, next) {
   }
 }
 
-app.get('/admin', passport.authenticate('jwt', { session: false }), isAdmin, function(req, res) {
+app.get('/admin', passport.authenticate('jwt', { session: false }), isAdmin, function (req, res) {
   res.send('Welcome, admin!');
 });
-app.use(function(err, req, res) {
+
+// eslint-disable-next-line no-unused-vars
+app.use(function (err, req, res, next) {
   console.error(err.stack);
   res.status(500).send('Something broke!');
 });
+
 
 const port = process.env.PORT || 8080;
 app.listen(port, '0.0.0.0', () => {
