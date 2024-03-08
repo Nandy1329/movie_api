@@ -66,6 +66,7 @@ app.get('/', (_, res) => {
 
 app.get('/movies', (_, res) => {
   Movie.find()
+    .populate('Director') 
     .then((movies) => {
       res.status(200).json(movies);
     })
@@ -73,7 +74,6 @@ app.get('/movies', (_, res) => {
       console.error(err);
       res.status(500).send('Error: ' + err);
     });
-});
 
 app.get('/movies/:Title', (req, res) => {
   Movie.findOne({ Title: req.params.Title })
@@ -107,14 +107,14 @@ app.get('/directors', passport.authenticate('jwt', { session: false }), async (_
   }
 });
 
-app.get('/directors/:Name', passport.authenticate('jwt', { session: false }), (req, res) => {
-  Movie.findOne({ Name: req.params.Name })
-    .then((directors) => {
-      res.json(directors);
+app.get("/movies/directors/:directorName", passport.authenticate('jwt', { session: false }), async (req, res) => {
+  await Movies.findOne({ "Director.Name": req.params.directorName })
+    .then((movies) => {
+      res.json(movies);
     })
     .catch((err) => {
       console.error(err);
-      res.status(500).send('Error: ' + err);
+      res.status(500).send("Error: " + err);
     });
 });
 
