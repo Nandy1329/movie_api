@@ -74,6 +74,7 @@ app.get('/movies', (_, res) => {
       console.error(err);
       res.status(500).send('Error: ' + err);
     });
+});
 
 app.get('/movies/:Title', (req, res) => {
   Movie.findOne({ Title: req.params.Title })
@@ -236,7 +237,6 @@ app.use(function (err, req, res, next) {
   console.error(err.stack);
   res.status(500).send('Something broke!');
 });
-
 
 const port = process.env.PORT || 8080;
 app.listen(port, '0.0.0.0', () => {
