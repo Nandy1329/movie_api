@@ -1,38 +1,41 @@
-const jwtSecret = 'your_jwt_secret'; // This has to be the same key used in the JWTStrategy
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
+const User = require('./models/User'); // replace with your User model path
+const passportJWT = require("passport-jwt");
+const JWTStrategy   = passportJWT.Strategy;
+const ExtractJWT = passportJWT.ExtractJwt;
 
-const jwt = require('jsonwebtoken'),
-  passport = require('passport');
-
-require('./passport'); // Your local passport file
-
-
-let generateJWTToken = (user) => {
-  return jwt.sign(user, jwtSecret, {
-    subject: user.Username, // This is the username you’re encoding in the JWT
-    expiresIn: '7d', // This specifies that the token will expire in 7 days
-    algorithm: 'HS256' // This is the algorithm used to “sign” or encode the values of the JWT
+// Local strategy
+passport.use(new LocalStrategy({
+  usernameField: 'username',    // define the parameter in req.body that passport can use as username and password
+  passwordField: 'password'
+}, (username, password, done) => {
+  User.findOne({ username: username }, (err, user) => {
+    if (err) { 
+      return done(err);
+    }
+    if (!user) {
+      return done(null, false, { message: 'Incorrect username.' });
+    }
+    if (!user.validatePassword(password)) { 
+      return done(null, false, { message: 'Incorrect password.' });
+    }
+    return done(null, user);
   });
-}
+}));
 
-
-/* POST login. */
-module.exports = (router) => {
-  router.post('/login', (req, res) => {
-    // eslint-disable-next-line no-unused-vars
-    passport.authenticate('local', { session: false }, (error, user, info) => {
-      if (error || !user) {
-        return res.status(400).json({
-          message: 'Something is not right',
-          user: user
-        });
-      }
-      req.login(user, { session: false }, (error) => {
-        if (error) {
-          res.send(error);
-        }
-        let token = generateJWTToken(user.toJSON());
-        return res.json({ user, token });
+// JWT strategy
+passport.use(new JWTStrategy({
+    jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
+    secretOrKey   : 'your_jwt_secret'
+  },
+  function (jwtPayload, cb) {
+    return User.findById(jwtPayload.id)
+      .then(user => {
+        return cb(null, user);
+      })
+      .catch(err => {
+        return cb(err);
       });
-    })(req, res);
-  });
-}
+  }
+));

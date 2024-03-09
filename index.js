@@ -90,11 +90,15 @@ app.get('/movies/:Title', (req, res) => {
 app.get('/movies/genre/:genreName', passport.authenticate('jwt', { session: false }), (req, res) => {
   Movie.findOne({ 'Genre.Name': req.params.genreName })
     .then((movie) => {
-      res.status(200).json(movie.Genre);
+      if (movie) {
+        res.status(200).json(movie.Genre);
+      } else {
+        res.status(404).send('No movie found with that genre');
+      }
     })
     .catch((err) => {
       console.error(err);
-      res.status(500).send('Error: ' + err);
+      res.status(500).send('Error: ' + err.message);
     });
 });
 
@@ -109,7 +113,7 @@ app.get('/directors', passport.authenticate('jwt', { session: false }), async (_
 });
 
 app.get("/movies/directors/:directorName", passport.authenticate('jwt', { session: false }), async (req, res) => {
-  await Movies.findOne({ "Director.Name": req.params.directorName })
+  await Movies.find({ "Director.Name": req.params.directorName })
     .then((movies) => {
       res.json(movies);
     })
