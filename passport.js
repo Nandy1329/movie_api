@@ -1,10 +1,9 @@
 const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
-const User = require('./models/User'); // replace with your User model path
+const LocalStrategy = require('passport-local').Strategy; // replace with your User model path
 const passportJWT = require("passport-jwt");
 const JWTStrategy   = passportJWT.Strategy;
 const ExtractJWT = passportJWT.ExtractJwt;
-
+const User = require('./models.js');
 // Local strategy
 passport.use(new LocalStrategy({
   usernameField: 'username',    // define the parameter in req.body that passport can use as username and password

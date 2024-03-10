@@ -10,14 +10,11 @@ const morgan = require('morgan');
 const fs = require('fs');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const Models = require('./models.js');
 const path = require('path');
 const passport = require('passport');
 const { check, validationResult } = require('express-validator');
 const cors = require('cors');
-
-const { Movie, User } = Models;
-
+const { Movie, User } = require('./models.js');
 const app = express();
 
 app.use(bodyParser.json());
@@ -113,7 +110,7 @@ app.get('/directors', passport.authenticate('jwt', { session: false }), async (_
 });
 
 app.get("/movies/directors/:directorName", passport.authenticate('jwt', { session: false }), async (req, res) => {
-  await Movies.find({ "Director.Name": req.params.directorName })
+  await Movie.find({ "Director.Name": req.params.directorName })
     .then((movies) => {
       res.json(movies);
     })
