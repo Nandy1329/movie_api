@@ -23,24 +23,22 @@ let userSchema = mongoose.Schema({
     Password: { type: String, required: true },
     Email: { type: String, required: true },
     Birthday: Date,
-    FavoriteMovies: [{ type: String, required: true }],
-
-});
+    FavoriteMovies: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Movie' }]});
 
 userSchema.statics.hashPassword = (password) => {
     return bcrypt.hashSync(password, 10);
 };
+
 userSchema.methods.validatePassword = function (password) {
     return bcrypt.compareSync(password, this.Password);
 };
 
 let User = mongoose.model('User', userSchema);
 
-
 let directorSchema = mongoose.Schema({
     Name: { type: String, required: true },
     Bio: { type: String, required: true },
-    Birth: String,
+    Birth: Date, // use Date type
 });
 
 let genreSchema = mongoose.Schema({
@@ -52,4 +50,4 @@ let Movie = mongoose.model('Movie', movieSchema);
 let Director = mongoose.model('Director', directorSchema);
 let Genre = mongoose.model('Genre', genreSchema);
 
-module.exports = { Movie, Director, Genre, User};
+module.exports = { Movie, Director, Genre, User };

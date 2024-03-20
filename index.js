@@ -16,6 +16,7 @@ const { check, validationResult } = require('express-validator');
 const cors = require('cors');
 const { Movie, User } = require('./models.js');
 const app = express();
+const bcrypt = require('bcrypt');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -154,6 +155,23 @@ app.post('/users', [
   }
 });
 
+app.post('/users/login', async (req, res) => {
+  const { Username, Password } = req.body;
+  if (!Username || !Password) {
+    return res.status(400).send('Both Username and Password are required');
+  }
+  const user = await User.findOne({ Username });
+  if (!user) {
+    return res.status(400).send('No user found with that username');
+  }
+  const passwordIsValid = bcrypt.compareSync(Password, user.Password);
+  if (!passwordIsValid) {
+    return res.status(400).send('Incorrect password');
+  }
+
+  res.send('You are now logged in');
+});
+
 app.put('/users/:Username',
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
@@ -176,14 +194,11 @@ app.put('/users/:Username',
   }
 );
 
-app.post('/users/:Username/movies/:MovieID', passport.authenticate('jwt', { session: false }), (req, res) => {
-  User.findOneAndUpdate(
-    { Username: req.params.Username },
-    { $push: { FavoriteMovies: req.params.MovieID } },
-    { new: true }
-  )
-    .then(updatedUser => {
-      res.json(updatedUser);
+app.get('/users/:Username', passport.authenticate('jwt', { session: false }), (req, res) => {
+  User.findOne({ Username: req.params.Username })
+    .populate('FavoriteMovies') 
+    .then(user => {
+      res.json(user);
     })
     .catch(err => {
       console.error(err);
