@@ -9,11 +9,7 @@ passport.use(new LocalStrategy({
   usernameField: 'username',    // define the parameter in req.body that passport can use as username and password
   passwordField: 'password'
 }, (username, password, done) => {
-<<<<<<< Updated upstream
-  User.findOne({ username: username }, (err, user) => {
-=======
   User.findOne({ Username: username }, (err, user) => {
->>>>>>> Stashed changes
     if (err) { 
       return done(err);
     }
