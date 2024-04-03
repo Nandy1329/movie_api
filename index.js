@@ -155,21 +155,36 @@ app.post('/users', [
   }
 });
 
-app.post('/users/login', async (req, res) => {
-  const { Username, Password } = req.body;
-  if (!Username || !Password) {
-    return res.status(400).send('Both Username and Password are required');
-  }
-  const user = await User.findOne({ Username });
-  if (!user) {
-    return res.status(400).send('No user found with that username');
-  }
-  const passwordIsValid = bcrypt.compareSync(Password, user.Password);
-  if (!passwordIsValid) {
-    return res.status(400).send('Incorrect password');
-  }
+const jwt = require('jsonwebtoken');
 
-  res.send('You are now logged in');
+function generateToken(user) {
+  return jwt.sign({ id: user._id }, 'your-secret-key', { expiresIn: '1h' });
+}
+
+app.post('/users/login', async (req, res) => {
+  try {
+    const { Username, Password } = req.body;
+    if (!Username || !Password) {
+      return res.status(400).json({ message: 'Both Username and Password are required' });
+    }
+    const user = await User.findOne({ Username });
+    if (!user) {
+      return res.status(401).json({ message: 'No user found with that username' });
+    }
+    const passwordIsValid = bcrypt.compareSync(Password, user.Password);
+    if (!passwordIsValid) {
+      return res.status(401).json({ message: 'Incorrect password' });
+    }
+
+    // Generate a token
+    const token = generateToken(user);
+
+    // Send the user data and token
+    res.json({ user: user, token: token });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'An error occurred' });
+  }
 });
 
 app.put('/users/:Username',
@@ -251,7 +266,7 @@ app.get('/admin', passport.authenticate('jwt', { session: false }), isAdmin, fun
 // eslint-disable-next-line no-unused-vars
 app.use(function (err, req, res, next) {
   console.error(err.stack);
-  res.status(500).send('Something broke!');
+  res.status(500).send('Something broke! ' + err.stack);
 });
 
 const port = process.env.PORT || 8080;
