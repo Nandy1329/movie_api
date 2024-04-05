@@ -1,14 +1,13 @@
 const dotenv = require('dotenv');
-dotenv.config();
+
 if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config();
+  dotenv.config();
 }
 
 // setup requirements and constants
 const express = require('express');
 const morgan = require('morgan');
 const fs = require('fs');
-const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const path = require('path');
 const passport = require('passport');
@@ -18,8 +17,8 @@ const { Movie, User } = require('./models.js');
 const app = express();
 const bcrypt = require('bcrypt');
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(express.urlencoded({ extended: true }));
 
 // CORS access 
 let allowedOrigins = ['http://localhost:8080', 'http://testsite.com', 'http://localhost:1234', 'https://myflixapp.herokuapp.com/'];
@@ -34,12 +33,10 @@ app.use(cors({
   }
 }))
 
-
 require('./auth.js')(app);
 require('./passport.js');
 
 mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-
   .then(() => console.log('Database connection successful'))
   .catch(err => console.error('Database connection error', err));
 
