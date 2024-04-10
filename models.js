@@ -5,9 +5,15 @@ const bcrypt = require('bcrypt');
 let movieSchema = mongoose.Schema({
     Title: { type: String, required: true },
     Description: { type: String, required: true },
-    Genre: [String],
-    Director: { type: String, required: true },
+    Genre: { 
+        Name: { type: String, required: true }
+    },
+    Director: { 
+        Name: { type: String, required: true }
+    },
     Featured: Boolean,
+    ImagePath: String,
+    Year: String
 });
 
 let userSchema = mongoose.Schema({

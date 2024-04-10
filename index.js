@@ -1,8 +1,5 @@
-const dotenv = require('dotenv');
+require('dotenv').config();
 
-if (process.env.NODE_ENV !== 'production') {
-  dotenv.config();
-}
 
 // setup requirements and constants
 const express = require('express');
