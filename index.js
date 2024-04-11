@@ -19,6 +19,8 @@ const Users = Models.User;
 
 const app = express();
 const passport = require('passport');
+const { generateToken } = require('./auth');
+const bcrypt = require('bcrypt');
 
 require('./passport.js');
 
@@ -169,7 +171,7 @@ app.put('/users/:Username', passport.authenticate('jwt', { session: false }),
             Birthday: req.body.Birthday || oldData.Birthday
         }
     },
-    { new: true }) // This line makes sure that the updated document is returned
+    { new: true }) 
     .then((updatedUser) => {
         res.json(updatedUser);
     })
@@ -179,6 +181,37 @@ app.put('/users/:Username', passport.authenticate('jwt', { session: false }),
     })
 });
 
+app.post('/users/login', async (req, res) => {
+  try {
+    const { Username, Password } = req.body;
+
+    // Check if username and password are provided
+    if (!Username || !Password) {
+      return res.status(400).json({ message: 'Both Username and Password are required' });
+    }
+
+    // Find the user in the database
+    const user = await Users.findOne({ Username });
+    if (!user) {
+      return res.status(401).json({ message: 'No user found with that username' });
+    }
+
+    // Check if the provided password matches the hashed password in the database
+    const passwordIsValid = bcrypt.compareSync(Password, user.Password);
+    if (!passwordIsValid) {
+      return res.status(401).json({ message: 'Incorrect password' });
+    }
+
+    // Generate a token
+    const token = generateToken(user);
+
+    // Send the user data and token
+    res.json({ user: user, token: token });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'An error occurred' });
+  }
+});
 
 // CREATE new favorite movie for user
 app.post('/users/:Username/movies/:MovieID', passport.authenticate('jwt', { session: false }), async (req, res) => {
@@ -297,16 +330,15 @@ app.get('/movies/directors/:directorName', passport.authenticate('jwt', { sessio
 
 app.use(express.static('public'));
 
-// error handling
-app.use((err, req, res) => {
-  console.error(err.stack);
-  res.status(500).send('Something broke!');
-});
-
-// listen for request
-
 const port = process.env.PORT || 8080;
 
 app.listen(port, '0.0.0.0', () => {
   console.log(`Server is running on port ${port}`);
+});
+
+// listen for request
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
+  next(err);
 });
