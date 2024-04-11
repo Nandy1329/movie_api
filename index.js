@@ -19,15 +19,14 @@ const Users = Models.User;
 
 const app = express();
 const passport = require('passport');
-const { generateToken } = require('./auth');
+const { generateJWTToken } = require('./auth');
 const bcrypt = require('bcrypt');
 
 require('./passport.js');
 
 app.use(express.urlencoded({ extended: true }));
 
-// import auth.js
-require('./auth')(app);
+
 
 // CORS access 
 let allowedOrigins = ['http://localhost:8080', 'http://testsite.com', 'http://localhost:1234', 'https://myflixapp.herokuapp.com/'];
@@ -203,7 +202,7 @@ app.post('/users/login', async (req, res) => {
     }
 
     // Generate a token
-    const token = generateToken(user);
+    const token = generateJWTToken(user);
 
     // Send the user data and token
     res.json({ user: user, token: token });
