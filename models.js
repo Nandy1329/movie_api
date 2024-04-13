@@ -1,38 +1,37 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
+let genreSchema = mongoose.Schema({
+    Name: { type: String, required: true },
+    Description: { type: String, required: true },
+});
 
 let movieSchema = mongoose.Schema({
     Title: { type: String, required: true },
     Description: { type: String, required: true },
-    Genre: { 
-        Name: { type: String, required: true }
-    },
-    Director: { 
-        Name: { type: String, required: true }
-    },
+    Genre: { type: mongoose.Schema.Types.ObjectId, ref: 'Genre' },
+    Director: { type: mongoose.Schema.Types.ObjectId, ref: 'Director' },
     Featured: Boolean,
     ImagePath: String,
     Year: String
 });
 
+
 let userSchema = mongoose.Schema({
-    Username: { type: String, required: true },
+    Username: { type: String, required: true, lowercase: true },
     Password: { type: String, required: true },
     Email: { type: String, required: true },
     Birthday: Date,
-    FavoriteMovies: [{ type: String, required: true }],
+    FavoriteMovies: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Movie' }],
 });
 
-userSchema.statics.hashPassword = (password) => {
-    return bcrypt.hashSync(password, 10);
+userSchema.statics.hashPassword = async (password) => {
+    return await bcrypt.hash(password, 10);
 };
 
-userSchema.methods.validatePassword = function (password) {
-    return bcrypt.compareSync(password, this.Password);
+userSchema.methods.validatePassword = async function (password) {
+    return await bcrypt.compare(password, this.Password);
 };
-
-
 
 let directorSchema = mongoose.Schema({
     Name: { type: String, required: true },
@@ -42,9 +41,9 @@ let directorSchema = mongoose.Schema({
 });
 
 
-
+let Genre = mongoose.model('Genre', genreSchema);
 let Movie = mongoose.model('Movie', movieSchema);
 let User = mongoose.model('User', userSchema);
 let Director = mongoose.model('Director', directorSchema);
 
-module.exports = { Movie, Director, User };
+module.exports = { Genre, Movie, Director, User };
