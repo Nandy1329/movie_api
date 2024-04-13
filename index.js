@@ -11,8 +11,8 @@ const { check, validationResult } = require('express-validator');
 const cors = require('cors');
 
 // Import 'Movies' along with 'Movie' and 'User'
-const Models = require("./models");
 
+const Models = require("./models.js");
 const Movies = Models.Movie;
 const Users = Models.User;
 
