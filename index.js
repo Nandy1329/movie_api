@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 require('dotenv').config();
 
 const mongoose = require('mongoose');
@@ -46,7 +47,7 @@ app.get('/', (req, res) => {
 
 // Return a list of all movies to the user
 app.get('/movies',
-// passport.authenticate('jwt', {session: false}), 
+passport.authenticate('jwt', {session: false}), 
 (req, res) => {
     Movies.find()
     .then((movies) =>
