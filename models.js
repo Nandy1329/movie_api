@@ -14,9 +14,11 @@ let movieSchema = mongoose.Schema({
         Bio: String,
     },
     ImagePath: String,
-    Featured: Boolean
+    Featured: Boolean,
+    Year: { type: Number, required: true }
 });
 
+const Movie = mongoose.model('Movie', movieSchema);
 
 let userSchema = mongoose.Schema({
     Username: { type: String, required: true },
@@ -34,8 +36,7 @@ userSchema.methods.validatePassword = function (password) {
     return bcrypt.compareSync(password, this.Password);
 };
 
-let Movie = mongoose.model('Movie', movieSchema);
-let User = mongoose.model('User', userSchema);
+const User = mongoose.model('User', userSchema);
 
 module.exports.Movie = Movie;
 module.exports.User = User;
