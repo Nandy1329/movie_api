@@ -126,6 +126,7 @@ app.post('/users',[check('Username', 'Username is required').isLength({min: 5}),
                     Password: hashedPassword, 
                     Email: req.body.Email, 
                     Birthday: req.body.Birthday
+                    FavoriteMovies: []
                 })
                 .then((user) => {res.status(201).json(user)})
                 .catch((error) => {console.error(error);
