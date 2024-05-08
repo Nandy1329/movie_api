@@ -1,38 +1,35 @@
-const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
-const Models = require('./models.js');
-const passportJWT = require('passport-jwt');
+const jwtSecret = 'your_jwt_secret'; // This has to be the same key used in the JWTStrategy
 
-const Users = Models.User;
-const JWTStrategy = passportJWT.Strategy;
-const ExtractJWT = passportJWT.ExtractJwt;
+const jwt = require('jsonwebtoken'),
+  passport = require('passport');
 
-passport.use(new LocalStrategy({
-  usernameField: 'Username',
-  passwordField: 'Password'
-}, (username, password, callback) => {
-  Users.findOne({ Username: username })
-    .then(user => {
-      if (!user || !user.validatePassword(password)) {
-        return callback(null, false, { message: 'Incorrect username or password.' });
+require('./passport'); // Your local passport file
+
+let generateJWTToken = (user) => {
+  return jwt.sign(user, jwtSecret, {
+    subject: user.Username, // This is the username you’re encoding in the JWT
+    expiresIn: '7d', // This specifies that the token will expire in 7 days
+    algorithm: 'HS256' // This is the algorithm used to “sign” or encode the values of the JWT
+  });
+}
+
+module.exports = (router) => {
+  router.post('/login', (req, res) => {
+    // eslint-disable-next-line no-unused-vars
+    passport.authenticate('local', { session: false }, (error, user, info) => {
+      if (error || !user) {
+        return res.status(400).json({
+          message: 'Something is not right',
+          user: user
+        });
       }
-      return callback(null, user);
-    })
-    .catch(error => callback(error));
-}));
-
-passport.use(new JWTStrategy({
-  jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
-  secretOrKey: 'your_jwt_secret'
-}, (jwtPayload, callback) => {
-  Users.findById(jwtPayload._id)
-    .then(user => {
-      if (!user) {
-        return callback(null, false);
-      }
-      return callback(null, user);
-    })
-    .catch(error => callback(error));
-}));
-
-module.exports = passport;
+      req.login(user, { session: false }, (error) => {
+        if (error) {
+          res.send(error);
+        }
+        let token = generateJWTToken(user.toJSON());
+        return res.json({ user, token });
+      });
+    })(req, res);
+  });
+}

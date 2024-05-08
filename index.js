@@ -4,7 +4,7 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 const Models = require('./models.js');
 const { check, validationResult } = require('express-validator');
-
+const cors = require('cors');
 
 const Movies = Models.Movie;
 const Users = Models.User;
@@ -35,7 +35,7 @@ mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnified
     .catch(err => console.error('Database connection error', err));
 
 // eslint-disable-next-line no-unused-vars
-let auth = require('./auth')(app);
+let auth = require('./auth');
 const passport = require('passport');
 require('./passport');
 
@@ -134,7 +134,7 @@ check('Email', 'Email does not appear to be valid').isEmail()
                         Password: hashedPassword,
                         Email: req.body.Email,
                         Birthday: req.body.Birthday,
-                        FavoriteMovies: []
+                        FavoriteMovies: req.body.FavoriteMovies
                     })
                     .then((user) => { res.status(201).json(user) })
                     .catch((error) => {
