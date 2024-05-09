@@ -1,20 +1,20 @@
 /* eslint-disable no-undef */
 require('dotenv').config();
 
+const express = require('express');
 const mongoose = require('mongoose');
 const Models = require('./models.js');
 const { check, validationResult } = require('express-validator');
 const cors = require('cors');
+const passport = require('passport');
+
 
 const Movies = Models.Movie;
 const Users = Models.User;
 
-const express = require('express'),
-    app = express(),
-    morgan = require('morgan'),
-    bodyParser = require('body-parser'),
-    // eslint-disable-next-line no-unused-vars
-    uuid = require('uuid');
+const app = express();
+const morgan = require('morgan');
+const bodyParser = require('body-parser');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -29,20 +29,15 @@ app.use(cors({
         }
         return callback(null, true);
     }
-}))
+}));
+
 mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('Database connection successful'))
     .catch(err => console.error('Database connection error', err));
 
-// eslint-disable-next-line no-unused-vars
-let auth = require('./auth');
-const passport = require('passport');
 require('./passport');
 
-//use morgan to log requests
 app.use(morgan('common'));
-
-//endpoint with documentation
 app.use(express.static('public'));
 
 
