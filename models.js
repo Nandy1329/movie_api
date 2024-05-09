@@ -15,7 +15,7 @@ let movieSchema = mongoose.Schema({
     },
     ImagePath: String,
     Featured: Boolean,
-    Year: { type: Number, required: true }
+    Year: Number
 });
 
 const Movie = mongoose.model('Movie', movieSchema);
