@@ -1,14 +1,15 @@
 /* eslint-disable no-undef */
 require('dotenv').config();
 
-const express = require('express');
 const mongoose = require('mongoose');
 const Models = require('./models.js');
 const { check, validationResult } = require('express-validator');
 const cors = require('cors');
 const passport = require('passport');
 const bcrypt = require('bcrypt');
-const generateJWTToken = require('./auth');
+const { generateJWTToken } = require('./auth');
+const express = require('express');
+const router = express.Router();
 
 const Movies = Models.Movie;
 const Users = Models.User;
@@ -263,6 +264,7 @@ app.get('/admin', passport.authenticate('jwt', { session: false }), isAdmin, (re
 app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).send('Internal Server Error: ' + err.message);
+    next(err); // Forward the error to the next middleware
 });
 
 // Server listening
