@@ -8,6 +8,7 @@ const { check, validationResult } = require('express-validator');
 const cors = require('cors');
 const passport = require('passport');
 const bcrypt = require('bcrypt');
+const generateJWTToken = require('./auth');
 
 const Movies = Models.Movie;
 const Users = Models.User;
@@ -115,7 +116,7 @@ app.post('/users', [
         if (!errors.isEmpty()) {
             return res.status(422).json({ errors: errors.array() });
         }
-        
+
         const hashedPassword = await bcrypt.hash(req.body.Password, 10);
         const existingUser = await Users.findOne({ Username: req.body.Username });
         if (existingUser) {
@@ -136,27 +137,25 @@ app.post('/users', [
 });
 
 // User login
-app.post('/login', async (req, res) => {
-    try {
-        const { Username, Password } = req.body;
-        if (!Username || !Password) {
-            return res.status(400).json({ message: 'Both Username and Password are required' });
-        }
-        const user = await Users.findOne({ Username });
-        if (!user) {
-            return res.status(401).json({ message: 'No user found with that username' });
-        }
-        const passwordIsValid = await bcrypt.compare(Password, user.Password);
-        if (!passwordIsValid) {
-            return res.status(401).json({ message: 'Incorrect password' });
-        }
-        const token = generateToken(user);
-        res.json({ user, token });
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ message: 'An error occurred' });
-    }
-});
+module.exports = (router) => {
+    router.post('/login', (req, res) => {
+        passport.authenticate('local', { session: false }, (error, user, info) => {
+            if (error || !user) {
+                return res.status(400).json({
+                    message: 'Something is not right' + info + " " + error,
+                    user: user
+                });
+            }
+            req.login(user, { session: false }, (error) => {
+                if (error) {
+                    res.send(error);
+                }
+                let token = generateJWTToken(user.toJSON());
+                return res.json({ user, token });
+            });
+        })(req, res);
+    });
+};
 
 // Get all users
 app.get('/users', passport.authenticate('jwt', { session: false }), async (req, res) => {
