@@ -12,7 +12,7 @@ const generateJWTToken = (user) => {
     });
 };
 
-module.exports = (req, res) => {
+module.exports = function(req, res) {
     passport.authenticate('local', { session: false }, (error, user, info) => {
         if (error || !user) {
             return res.status(400).json({
