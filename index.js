@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const dotenv = require('dotenv');
 dotenv.config();
 if (process.env.NODE_ENV !== 'production') {
@@ -15,7 +16,7 @@ const passport = require('passport');
 const { check, validationResult } = require('express-validator');
 const { Movies, Users } = require('./models.js');
 const cors = require('cors');
-
+const { generateJWTToken } = require('./auth.js');
 const app = express();
 
 app.use(bodyParser.json());
@@ -62,12 +63,22 @@ app.get('/', (_, res) => {
   res.send('Welcome to myFlix!');
 });
 
-const auth = require('./auth');
-
-app.post('/login', auth, (req, res) => {
-  // Handle successful authentication here
-  // For example, you might send a success message:
-  res.json({ message: 'Logged in successfully' });
+app.post('/login', (req, res) => {
+  passport.authenticate('local', { session: false }, (error, user, info) => {
+    if (error || !user) {
+      return res.status(400).json({
+        message: 'Something is not right',
+        user: user
+      });
+    }
+    req.login(user, { session: false }, (error) => {
+      if (error) {
+        res.send(error);
+      }
+      let token = generateJWTToken(user.toJSON());
+      return res.json({ user, token });
+    });
+  })(req, res);
 });
 
 // Returns a list of ALL movies to the user
