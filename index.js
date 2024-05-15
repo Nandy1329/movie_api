@@ -1,9 +1,5 @@
 /* eslint-disable no-unused-vars */
 const dotenv = require('dotenv');
-dotenv.config();
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config();
-}
 
 // setup requirements and constants
 const express = require('express');
@@ -65,24 +61,31 @@ app.get('/', (_, res) => {
 
 app.post('/login', (req, res) => {
   passport.authenticate('local', { session: false }, (error, user, info) => {
-    if (error || !user) {
-      return res.status(400).json({
-        message: 'Something is not right',
-        user: user
-      });
-    }
-    req.login(user, { session: false }, (error) => {
-      if (error) {
-        res.send(error);
+      console.log("Error:", error);
+      console.log("User:", user);
+      console.log("Info:", info);
+
+      if (error || !user) {
+          return res.status(400).json({
+              message: 'Something is not right',
+              user: user
+          });
       }
-      let token = generateJWTToken(user.toJSON());
-      return res.json({ user, token });
-    });
+      req.login(user, { session: false }, (error) => {
+          if (error) {
+              console.error("Login error:", error);
+              res.send(error);
+          }
+          let token = generateJWTToken(user.toJSON());
+          return res.json({ user, token });
+      });
   })(req, res);
 });
 
+
 // Returns a list of ALL movies to the user
 app.get('/movies',
+passport.authenticate('jwt', { session: false }), 
   // passport.authenticate('jwt', {session: false}), 
   (req, res) => {
     Movies.find()
