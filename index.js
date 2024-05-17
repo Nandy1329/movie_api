@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const Models = require('./models.js');
 const { check, validationResult } = require('express-validator');
 const cors = require('cors');
+const authRouter = require('./auth');
 
 const Movies = Models.Movie;
 const Users = Models.User;
@@ -44,6 +45,9 @@ app.use(morgan('common'));
 
 //endpoint with documentation
 app.use(express.static('public'));
+
+//importing auth.js
+app.use('/', authRouter);
 
 
 
