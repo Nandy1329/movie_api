@@ -3,10 +3,8 @@ require('dotenv').config();
 
 const express = require('express');
 const mongoose = require('mongoose');
-const Models = require('./models.js');
-const { check, validationResult } = require('express-validator');
-const cors = require('cors');
-const passport = require('passport');
+const Models = require('./models.js'); 
+const { check, validationResult} = require('express-validator');
 
 
 const Movies = Models.Movie;
@@ -19,26 +17,23 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-let allowedOrigins = ['http://localhost:8080', 'http://testsite.com', 'http://localhost:1234', 'https://myflixapp.herokuapp.com/'];
-app.use(cors({
-    origin: (origin, callback) => {
-        if (!origin) return callback(null, true);
-        if (allowedOrigins.indexOf(origin) === -1) {
-            let message = 'The CORS policy for this application doesn’t allow access from origin ' + origin;
-            return callback(new Error(message), false);
-        }
-        return callback(null, true);
-    }
-}));
+mongoose.connect( process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true}); 
 
-mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => console.log('Database connection successful'))
-    .catch(err => console.error('Database connection error', err));
+//allow all CORS access
+const cors = require('cors'); 
+app.use(cors());
 
-require('./passport');
+
+// eslint-disable-next-line no-unused-vars
+let auth = require('./auth')(app);
+const passport = require('passport');
+require('./passport'); 
 
 app.use(morgan('common'));
 app.use(express.static('public'));
+
+//importing auth.js
+app.use('/', authRouter);
 
 
 
