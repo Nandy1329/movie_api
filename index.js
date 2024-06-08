@@ -25,17 +25,28 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // CORS access
-let allowedOrigins = ['http://localhost:8080', 'http://testsite.com', 'http://localhost:1234', 'https://myflixapp.herokuapp.com/'];
+const cors = require('cors');
+
+let allowedOrigins = [
+  'http://localhost:8080',
+  'http://testsite.com',
+  'http://localhost:1234',
+  'https://myflixapp.herokuapp.com'
+];
 
 app.use(cors({
   origin: (origin, callback) => {
+    console.log(`CORS origin request: ${origin}`);
     if (!origin) return callback(null, true);
     if (allowedOrigins.indexOf(origin) === -1) { // If a specific origin isn’t found on the list of allowed origins
       let message = 'The CORS policy for this application doesn’t allow access from origin ' + origin;
+      console.error(message);
       return callback(new Error(message), false);
     }
     return callback(null, true);
-  }
+  },
+  optionsSuccessStatus: 200,
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 // Preflight request handling
@@ -240,15 +251,16 @@ app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) 
 });
 
 // Get movie info by specific title
-app.get('/movies/:Title', passport.authenticate('jwt', { session: false }), (req, res) => {
-  Movies.findOne({ Title: req.params.Title })
-    .then((movie) => {
-      res.json(movie);
-    })
-    .catch((err) => {
-      console.error(err);
-      res.status(500).send('Error: ' + err);
-    });
+app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
+  Movies.find()
+      .then((movies) => {
+          console.log('Movies retrieved from database:', movies);
+          res.status(201).json(movies);
+      })
+      .catch((err) => {
+          console.error('Error retrieving movies:', err);
+          res.status(500).send('Error: ' + err);
+      });
 });
 
 // GET movie by genre

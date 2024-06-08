@@ -7,6 +7,7 @@ const LocalStrategy = require('passport-local').Strategy;
 const Models = require('./models.js');
 const passportJWT = require('passport-jwt');
 const ExtractJWT = passportJWT.ExtractJwt;
+const JWTStrategy = passportJWT.Strategy;
 
 require('./passport.js'); // Your local passport file
 
@@ -14,30 +15,30 @@ let Users = Models.User;
 
 // Local Strategy
 passport.use(
-    new LocalStrategy(
+    new JWTStrategy(
         {
-            usernameField: 'Username',
-            passwordField: 'Password',
+            jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
+            secretOrKey: process.env.JWT_SECRET,
         },
-        async (username, password, callback) => {
-            console.log(`Authenticating user: ${username}`);
-            try {
-                const user = await Users.findOne({ Username: username });
-                if (!user || !user.validatePassword(password)) {
-                    console.log('Incorrect username or password.');
-                    return callback(null, false, {
-                        message: 'Incorrect username or password.'
-                    });
-                }
-                console.log('Authentication successful.');
-                return callback(null, user);
-            } catch (error) {
-                console.error('Error during authentication:', error);
-                return callback(error);
-            }
+        async (jwtPayload, callback) => {
+            console.log(`Verifying token for user ID: ${jwtPayload._id}`); // Add this line
+            return await Users.findById(jwtPayload._id)
+                .then((user) => {
+                    if (!user) {
+                        console.log('User not found.');
+                        return callback(null, false);
+                    }
+                    console.log('Token verification successful.');
+                    return callback(null, user);
+                })
+                .catch((error) => {
+                    console.error('Error during token verification:', error);
+                    return callback(error);
+                });
         }
     )
 );
+
 
 // JWT Strategy
 passport.use(
