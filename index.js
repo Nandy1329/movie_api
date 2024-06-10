@@ -8,15 +8,11 @@ const express = require('express'),
   fs = require('fs'),
   bodyParser = require('body-parser'),
   mongoose = require('mongoose'),
-  Models = require('./models.js'),
   path = require('path'),
   jwt = require('jsonwebtoken'),
   expressJwt = require('express-jwt'),
   { check, validationResult } = require('express-validator'),
   cors = require('cors');
-
-const Movies = Models.Movie;
-const Users = Models.User;
 
 const app = express();
 
@@ -46,13 +42,16 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
-// Preflight request handling
-app.options('*', cors());
 
 // Authentication setup
 let auth = require('./auth.js')(app);
 const passport = require('passport');
 require('./passport.js');
+
+const Models = require('./models.js');
+
+const Movies = Models.Movie;
+const Users = Models.User;
 
 // Connect to MongoDB
 const connectionString = process.env.CONNECTION_URI;
@@ -76,6 +75,13 @@ app.get('/', (req, res) => {
   res.send('Welcome to myFlix!');
 });
 
+app.get('/documentation', (req, res) => {
+  res.sendFile('public/documentation.html', { root: __dirname });
+});
+
+
+
+
 // Route for returning a list of ALL movies to the user
 app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
   Movies.find()
@@ -88,9 +94,6 @@ app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) 
     });
 });
 
-app.get('/documentation', (req, res) => {
-  res.sendFile('public/documentation.html', { root: __dirname });
-});
 
 // Add a user
 app.post('/users',
