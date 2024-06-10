@@ -25,8 +25,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // CORS access
-const cors = require('cors');
-
 let allowedOrigins = [
   'http://localhost:8080',
   'http://testsite.com',
@@ -253,14 +251,14 @@ app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) 
 // Get movie info by specific title
 app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
   Movies.find()
-      .then((movies) => {
-          console.log('Movies retrieved from database:', movies);
-          res.status(201).json(movies);
-      })
-      .catch((err) => {
-          console.error('Error retrieving movies:', err);
-          res.status(500).send('Error: ' + err);
-      });
+    .then((movies) => {
+      console.log('Movies retrieved from database:', movies);
+      res.status(201).json(movies);
+    })
+    .catch((err) => {
+      console.error('Error retrieving movies:', err);
+      res.status(500).send('Error: ' + err);
+    });
 });
 
 // GET movie by genre
