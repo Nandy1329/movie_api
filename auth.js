@@ -5,6 +5,7 @@ const passport = require('passport');
 
 require('./passport'); // Your local passport file
 
+// Function to generate JWT token
 let generateJWTToken = (user) => {
   return jwt.sign(user, jwtSecret, {
     subject: user.Username, // This is the username you’re encoding in the JWT
@@ -13,20 +14,21 @@ let generateJWTToken = (user) => {
   });
 }
 
-module.exports = (router) => {
-  router.post('/login', (req, res) => {
-    // eslint-disable-next-line no-unused-vars
+module.exports = function(app) {
+  app.post('/login', (req, res) => {
     passport.authenticate('local', { session: false }, (error, user, info) => {
       if (error || !user) {
         return res.status(400).json({
-          message: 'Something is not right' + info + " " + error,
+          message: 'Login failed. ' + (info ? info.message : '') + (error ? error.message : ''),
           user: user
         });
       }
+
       req.login(user, { session: false }, (error) => {
         if (error) {
-          res.send(error);
+          return res.status(500).json({ message: 'Error during login process', error: error.message });
         }
+
         let token = generateJWTToken(user.toJSON());
         return res.json({ user, token });
       });
