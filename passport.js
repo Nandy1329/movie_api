@@ -7,6 +7,7 @@ const Users = Models.User;
 const JWTStrategy = passportJWT.Strategy;
 const ExtractJWT = passportJWT.ExtractJwt;
 
+// Local Strategy for username and password authentication
 passport.use(new LocalStrategy({
   usernameField: 'Username',
   passwordField: 'Password'
@@ -21,9 +22,10 @@ passport.use(new LocalStrategy({
     .catch(error => callback(error));
 }));
 
+// JWT Strategy for verifying JWT tokens
 passport.use(new JWTStrategy({
   jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
-  secretOrKey: 'your_jwt_secret'
+  secretOrKey: process.env.JWT_SECRET || 'your_jwt_secret' // Use environment variable for security
 }, (jwtPayload, callback) => {
   Users.findById(jwtPayload._id)
     .then(user => {

@@ -5,23 +5,23 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const Models = require('./models.js');
 const path = require('path');
+const cors = require('cors');
 const passport = require('passport');
 const { check, validationResult } = require('express-validator');
-const cors = require('cors');
 
 const { Movie, User } = Models;
+const auth = require('./auth'); // Import the auth module
 
 const app = express();
 
 require('dotenv').config();
-require('./auth.js')(app);
-require('./passport.js');
+require('./passport'); // Ensure passport configuration is required
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // CORS access 
-let allowedOrigins = ['http://localhost:8080', 'http://testsite.com', 'http://localhost:1234', 'https://myflixapp.herokuapp.com/'];
+let allowedOrigins = ['http://localhost:8080', 'http://testsite.com', 'http://localhost:1234', 'https://myflixapp.herokuapp.com'];
 
 app.use(cors({
   origin: (origin, callback) => {
@@ -49,6 +49,8 @@ app.use(express.static('public'));
 app.get('/', (req, res) => {
   res.send('Welcome to myFlix!');
 });
+
+auth(app); // Import the auth.js module
 
 app.get('/movies', (req, res) => {
   Movie.find()

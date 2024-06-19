@@ -1,9 +1,9 @@
-const jwtSecret = 'your_jwt_secret'; // This has to be the same key used in the JWTStrategy
+const jwtSecret = process.env.JWT_SECRET || 'your_jwt_secret'; // Use environment variable for security
 
 const jwt = require('jsonwebtoken');
 const passport = require('passport');
 
-require('./passport'); // Your local passport file
+require('./passport'); // Ensure the passport configuration is imported
 
 // Function to generate JWT token
 let generateJWTToken = (user) => {
