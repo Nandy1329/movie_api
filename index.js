@@ -254,27 +254,33 @@ app.get('/', (req, res) => {
 
 // READ movie list
 app.get('/movies', passport.authenticate('jwt', { session: false }), async (req, res) => {
-    await Movies.find()
-        .then((movies) => {
-            res.status(201).json(movies);
-        })
-        .catch((err) => {
-            console.error(err);
-            res.status(500).send('Error: ' + err);
-        });
+  try {
+    const movies = await Movies.find();
+    res.status(200).json(movies);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Error: ' + err);
+  }
 });
 
+
 // READ movie by name
-app.get('/movies/:title', passport.authenticate('jwt', { session: false }), async (req, res) => {
-    await Movies.findOne({ Title: req.params.title })
-        .then((movie) => {
-            res.json(movie);
-        })
-        .catch((err) => {
-            console.error(err);
-            res.status(500).send('Error: ' + err);
-        });
+app.get('/movies', passport.authenticate('jwt', { session: false }), async (req, res) => {
+  try {
+    console.log('Fetching movies...');
+    const movies = await movies.find();
+    if (movies.length === 0) {
+      console.log('No movies found');
+    } else {
+      console.log('Movies fetched:', movies);
+    }
+    res.status(200).json(movies);
+  } catch (err) {
+    console.error('Error fetching movies:', err);
+    res.status(500).send('Error: ' + err);
+  }
 });
+
 
 // READ genre by name
 app.get('/movies/genres/:genreName', passport.authenticate('jwt', { session: false }), async (req, res) => {
