@@ -254,13 +254,14 @@ app.get('/', (req, res) => {
 
 // READ movie list
 app.get('/movies', passport.authenticate('jwt', { session: false }), async (req, res) => {
-  try {
-    const movies = await Movies.find();
-    res.status(200).json(movies);
-  } catch (err) {
-    console.error(err);
-    res.status(500).send('Error: ' + err);
-  }
+  await Movies.find()
+  .then((users) => {
+      res.status(201).json(users);
+  })
+  .catch((err) => {
+      console.error(err);
+      res.status(500).send('Error: ' + err);
+  });
 });
 
 
