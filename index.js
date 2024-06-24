@@ -264,23 +264,6 @@ app.get('/movies', passport.authenticate('jwt', { session: false }), async (req,
 });
 
 
-// READ movie by name
-app.get('/movies', passport.authenticate('jwt', { session: false }), async (req, res) => {
-  try {
-    console.log('Fetching movies...');
-    const movies = await movies.find();
-    if (movies.length === 0) {
-      console.log('No movies found');
-    } else {
-      console.log('Movies fetched:', movies);
-    }
-    res.status(200).json(movies);
-  } catch (err) {
-    console.error('Error fetching movies:', err);
-    res.status(500).send('Error: ' + err);
-  }
-});
-
 
 // READ genre by name
 app.get('/movies/genres/:genreName', passport.authenticate('jwt', { session: false }), async (req, res) => {
