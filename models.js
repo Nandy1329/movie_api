@@ -16,19 +16,12 @@ let directorSchema = mongoose.Schema({
 let movieSchema = mongoose.Schema({
   Title: { type: String, required: true },
   Description: { type: String, required: true },
-  Genre: {
-    Name: { type: String, required: true },
-    Description: { type: String, required: true }
-  },
-  Director: {
-    Name: { type: String, required: true },
-    Bio: { type: String, required: true },
-    Birth: { type: String, required: true }
-  },
+  Genre: { type: mongoose.Schema.Types.ObjectId, ref: 'Genre', required: true },
+  Director: { type: mongoose.Schema.Types.ObjectId, ref: 'Director', required: true },
   Featured: { type: Boolean, required: true },
   Year: { type: Number, required: true },
   ImagePath: { type: String, required: true }
-});
+}, { collection: 'movies' });
 
 let userSchema = mongoose.Schema({
   Username: { type: String, required: true },
@@ -40,6 +33,7 @@ let userSchema = mongoose.Schema({
     ref: 'Movie'
   }]
 });
+
 
 // Hash & Validate user passwords
 userSchema.statics.hashPassword = (password) => {
