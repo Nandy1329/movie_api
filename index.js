@@ -10,21 +10,13 @@ const mongoose = require('mongoose');
 const path = require('path');
 const { check, validationResult } = require('express-validator');
 const cors = require('cors');
-const Models = require("./models.js");
-const Movies = Models.Movie;
-const Users = Models.User;
-const Genres = Models.Genre;
-const Directors = Models.Director;
+const passport = require('./passport');
 const auth = require('./auth.js');
-
+const bcrypt = require('bcrypt');
+const { Movies, Genres, Directors, Users } = require('./models.js');
 const app = express();
 
-// Remove the unused import statement for 'bcrypt'
-// const bcrypt = require('bcrypt');
-const passport = require('./passport');
-
 app.use(passport.initialize());
-
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -43,9 +35,7 @@ app.use(cors({
 
 mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
-    const movies = mongoose.connection.db.collection('movies')
-    movies.find().toArray((err, m) => { console.log(m) })
-    console.log('Database connection successful')
+    console.log('Database connection successful');
   })
   .catch(err => console.error('Database connection error', err));
 
@@ -64,23 +54,65 @@ app.use(
 
 auth(app);
 
+// Schema Definitions
+const genreSchema = new mongoose.Schema({
+  Name: { type: String, required: true },
+  Description: { type: String, required: true }
+});
+
+const directorSchema = new mongoose.Schema({
+  Name: { type: String, required: true },
+  Bio: { type: String, required: true },
+  Birth: { type: String, required: true },
+  Year: { type: String, required: true }
+});
+
+const movieSchema = new mongoose.Schema({
+  Title: { type: String, required: true },
+  Description: { type: String, required: true },
+  Genre: { type: mongoose.Schema.Types.ObjectId, ref: 'Genre', required: true },
+  Director: { type: mongoose.Schema.Types.ObjectId, ref: 'Director', required: true },
+  Featured: { type: Boolean, required: true },
+  Year: { type: Number, required: true },
+  ImagePath: { type: String, required: true }
+}, { collection: 'movies' });
+
+const userSchema = new mongoose.Schema({
+  Username: { type: String, required: true },
+  Password: { type: String, required: true },
+  Email: { type: String, required: true },
+  Birth_Date: Date,
+  Favorite_Movies: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Movie'
+  }]
+});
+
+// Hash & Validate user passwords
+userSchema.statics.hashPassword = (password) => {
+  return bcrypt.hashSync(password, 10);
+};
+
+userSchema.methods.validatePassword = function (password) {
+  return bcrypt.compareSync(password, this.Password);
+};
+
+
+// Routes
 app.get('/', (req, res) => {
   res.send('Welcome to my movie page!');
 });
+
 // READ all movies
 app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
-  console.log('Received request to get all movies');
   Movies.find()
     .then((movies) => {
       if (movies.length === 0) {
-        console.log('No movies found');
         return res.status(200).json([]);
       }
-      console.log('Movies found:', movies);
       res.status(200).json(movies);
     })
     .catch((err) => {
-      console.error('Error retrieving movies:', err);
       res.status(500).send('Error: ' + err);
     });
 });
@@ -88,25 +120,20 @@ app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) 
 // READ a movie by title
 app.get('/movies/:Title', passport.authenticate('jwt', { session: false }), (req, res) => {
   const title = req.params.Title.trim();
-  console.log(`Searching for movie title: '${title}'`);
   Movies.findOne({ Title: new RegExp('^' + title + '$', 'i') })
     .then((movie) => {
       if (!movie) {
-        console.log('Movie not found');
         return res.status(404).send('Movie not found');
       }
-      console.log('Movie found:', movie);
       res.status(200).json(movie);
     })
     .catch((err) => {
-      console.error('Error searching for movie:', err);
       res.status(500).send('Error: ' + err);
     });
 });
 
 // Return data about a genre by name
 app.get('/movies/genre/:genreName', passport.authenticate('jwt', { session: false }), (req, res) => {
-  console.log('Received request to get genre:', req.params.genreName);
   Genres.findOne({ 'Name': req.params.genreName })
     .then((genre) => {
       if (!genre) {
@@ -115,7 +142,6 @@ app.get('/movies/genre/:genreName', passport.authenticate('jwt', { session: fals
       res.status(200).json(genre);
     })
     .catch((err) => {
-      console.error('Error retrieving genre:', err);
       res.status(500).send('Error: ' + err);
     });
 });
@@ -126,7 +152,6 @@ app.get('/directors', passport.authenticate('jwt', { session: false }), async (r
     const directors = await Directors.find();
     res.json(directors);
   } catch (error) {
-    console.error('Error retrieving directors:', error);
     res.status(500).json({ error: 'Error retrieving directors' });
   }
 });
@@ -140,7 +165,6 @@ app.get('/directors/:Name', passport.authenticate('jwt', { session: false }), (r
       res.json(director);
     })
     .catch((err) => {
-      console.error('Error retrieving director:', err);
       res.status(500).send('Error: ' + err);
     });
 });
@@ -172,7 +196,6 @@ app.post('/users', [
       res.status(201).json(newUser);
     }
   } catch (error) {
-    console.error('Error registering user:', error);
     res.status(500).send('Error: ' + error);
   }
 });
@@ -184,7 +207,6 @@ app.get('/users', passport.authenticate('jwt', { session: false }), (req, res) =
       res.status(200).json(users);
     })
     .catch((err) => {
-      console.error('Error retrieving users:', err);
       res.status(500).send('Error: ' + err);
     });
 });
@@ -199,7 +221,6 @@ app.get('/users/:Username', passport.authenticate('jwt', { session: false }), (r
       res.json(user);
     })
     .catch((err) => {
-      console.error('Error retrieving user:', err);
       res.status(500).send('Error: ' + err);
     });
 });
@@ -234,7 +255,6 @@ app.put('/users/:Username', passport.authenticate('jwt', { session: false }), [
 
     res.json(updatedUser);
   } catch (err) {
-    console.error('Error updating user:', err);
     res.status(500).send('Error: ' + err);
   }
 });
@@ -242,13 +262,12 @@ app.put('/users/:Username', passport.authenticate('jwt', { session: false }), [
 // Add a movie to user's favorites
 app.post('/users/:Username/movies/:MovieID', passport.authenticate('jwt', { session: false }), (req, res) => {
   Users.findOneAndUpdate({ Username: req.params.Username }, {
-    $push: { FavoriteMovies: req.params.MovieID }
+    $push: { Favorite_Movies: req.params.MovieID }
   }, { new: true })
     .then((updatedUser) => {
       res.json(updatedUser);
     })
     .catch((err) => {
-      console.error('Error adding favorite movie:', err);
       res.status(500).send('Error: ' + err);
     });
 });
@@ -256,13 +275,12 @@ app.post('/users/:Username/movies/:MovieID', passport.authenticate('jwt', { sess
 // Remove a movie from user's favorites
 app.delete('/users/:Username/movies/:MovieID', passport.authenticate('jwt', { session: false }), (req, res) => {
   Users.findOneAndUpdate({ Username: req.params.Username }, {
-    $pull: { FavoriteMovies: req.params.MovieID }
+    $pull: { Favorite_Movies: req.params.MovieID }
   }, { new: true })
     .then((updatedUser) => {
       res.json(updatedUser);
     })
     .catch((err) => {
-      console.error('Error removing favorite movie:', err);
       res.status(500).send('Error: ' + err);
     });
 });
@@ -278,14 +296,12 @@ app.delete('/users/:Username', passport.authenticate('jwt', { session: false }),
       }
     })
     .catch((err) => {
-      console.error('Error deleting user:', err);
       res.status(500).send('Error: ' + err);
     });
 });
 
 // Error handling
 app.use((err, req, res, next) => {
-  console.error(err);
   res.status(500).send("Something broke!");
 });
 
