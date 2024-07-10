@@ -756,3 +756,5 @@ Timestamp: Thu Sep 21 2023 17:14:46 GMT-0700 (Pacific Daylight Time)
 127.0.0.1 - - [28/Jun/2024:20:33:33 +0000] "GET /directors HTTP/1.1" 200 2031 "-" "PostmanRuntime/7.39.0"
 127.0.0.1 - - [01/Jul/2024:21:11:59 +0000] "GET / HTTP/1.1" 200 25 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
 127.0.0.1 - - [01/Jul/2024:21:11:59 +0000] "GET /favicon.ico HTTP/1.1" 404 150 "http://localhost:8080/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+127.0.0.1 - - [07/Jul/2024:18:28:16 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+127.0.0.1 - - [07/Jul/2024:18:28:16 +0000] "GET /favicon.ico HTTP/1.1" 404 150 "http://localhost:8080/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
