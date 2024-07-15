@@ -10,7 +10,8 @@ let genreSchema = mongoose.Schema({
 let directorSchema = mongoose.Schema({
   Name: { type: String, required: true },
   Bio: { type: String, required: true },
-  Birth: { type: String, required: true }
+  Birth: { type: String, required: true },
+  Death: { type: String }
 });
 
 const movieSchema = new mongoose.Schema({
