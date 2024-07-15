@@ -13,7 +13,7 @@ let directorSchema = mongoose.Schema({
   Birth: { type: String, required: true }
 });
 
-let movieSchema = mongoose.Schema({
+const movieSchema = new mongoose.Schema({
   Title: { type: String, required: true },
   Description: { type: String, required: true },
   Genre: { type: mongoose.Schema.Types.ObjectId, ref: 'Genre', required: true },
@@ -33,7 +33,6 @@ let userSchema = mongoose.Schema({
     ref: 'Movie'
   }]
 });
-
 
 // Hash & Validate user passwords
 userSchema.statics.hashPassword = (password) => {

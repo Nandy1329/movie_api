@@ -19,8 +19,6 @@ const auth = require('./auth.js');
 
 const app = express();
 
-// Remove the unused import statement for 'bcrypt'
-// const bcrypt = require('bcrypt');
 const passport = require('./passport');
 
 app.use(passport.initialize());
@@ -67,16 +65,20 @@ auth(app);
 app.get('/', (req, res) => {
   res.send('Welcome to my movie page!');
 });
-// READ all movies
+
+// READ all movies with populated Genre and Director
 app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
   console.log('Received request to get all movies');
+
   Movies.find()
+    .populate('Genre')
+    .populate('Director')
     .then((movies) => {
       if (movies.length === 0) {
         console.log('No movies found');
         return res.status(200).json([]);
       }
-      console.log('Movies found:', movies);
+      console.log('Movies found:', movies.length);
       res.status(200).json(movies);
     })
     .catch((err) => {
