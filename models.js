@@ -1,54 +1,30 @@
 const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
+const Schema = mongoose.Schema;
 
-// Defining the Schemas
-let genreSchema = mongoose.Schema({
+const genreSchema = new Schema({
   Name: { type: String, required: true },
-  Description: { type: String, required: true }
+  Description: { type: String }
 });
 
-let directorSchema = mongoose.Schema({
+const directorSchema = new Schema({
   Name: { type: String, required: true },
-  Bio: { type: String, required: true },
-  Birth: { type: String, required: true },
-  Death: { type: String }
+  Bio: { type: String },
+  Birth: { type: Date },
+  Death: { type: Date }
 });
 
-const movieSchema = new mongoose.Schema({
+const movieSchema = new Schema({
   Title: { type: String, required: true },
   Description: { type: String, required: true },
-  Genre: { type: mongoose.Schema.Types.ObjectId, ref: 'Genre', required: true },
-  Director: { type: mongoose.Schema.Types.ObjectId, ref: 'Director', required: true },
-  Featured: { type: Boolean, required: true },
-  Year: { type: Number, required: true },
-  ImagePath: { type: String, required: true }
-}, { collection: 'movies' });
-
-let userSchema = mongoose.Schema({
-  Username: { type: String, required: true },
-  Password: { type: String, required: true },
-  Email: { type: String, required: true },
-  Birth_Date: Date,
-  Favorite_Movies: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Movie'
-  }]
+  Genre: { type: mongoose.Schema.Types.ObjectId, ref: 'Genre' },
+  Director: { type: mongoose.Schema.Types.ObjectId, ref: 'Director' },
+  Featured: Boolean,
+  Year: Number,
+  ImagePath: String
 });
 
-// Hash & Validate user passwords
-userSchema.statics.hashPassword = (password) => {
-  return bcrypt.hashSync(password, 10);
-};
+const Genre = mongoose.model('Genre', genreSchema);
+const Director = mongoose.model('Director', directorSchema);
+const Movie = mongoose.model('Movie', movieSchema);
 
-userSchema.methods.validatePassword = function (password) {
-  return bcrypt.compareSync(password, this.Password);
-};
-
-// The Creation of the Models
-let Genre = mongoose.model('Genre', genreSchema);
-let Director = mongoose.model('Director', directorSchema);
-let Movie = mongoose.model('Movie', movieSchema);
-let User = mongoose.model('User', userSchema);
-
-// Exporting the Models
-module.exports = { Genre, Director, Movie, User };
+module.exports = { Genre, Director, Movie };

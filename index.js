@@ -136,20 +136,6 @@ app.get('/directors', passport.authenticate('jwt', { session: false }), async (r
   }
 });
 
-// Return data about a director by name
-app.get('/directors/:Name', passport.authenticate('jwt', { session: false }), (req, res) => {
-  Directors.findOne({ Name: req.params.Name })
-    .then((director) => {
-      if (!director) {
-        return res.status(404).send('Director not found');
-      }
-      res.json(director);
-    })
-    .catch((err) => {
-      console.error('Error retrieving director:', err);
-      res.status(500).send('Error: ' + err);
-    });
-});
 
 // Register a new user
 app.post('/users', [
