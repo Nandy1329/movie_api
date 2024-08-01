@@ -8,8 +8,9 @@ const morgan = require('morgan');
 const fs = require('fs');
 const mongoose = require('mongoose');
 const path = require('path');
-const { check, validationResult } = require('express-validator');
 const cors = require('cors');
+
+const { check, validationResult } = require('express-validator');
 const Models = require("./models.js");
 const Movies = Models.Movie;
 const Users = Models.User;
@@ -26,10 +27,17 @@ app.use(passport.initialize());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// CORS access 
-let allowedOrigins = ['http://localhost:8080', 'http://testsite.com', 'http://localhost:1234', 'https://myflixapp.herokuapp.com/', 'https://nickis1329-myflixdb.netlify.app'];
+let allowedOrigins = [
+  'http://localhost:8080',
+  'http://testsite.com',
+  'http://localhost:1234',
+  'https://myflixapp.herokuapp.com',
+  'https://nickis1329-myflixdb.netlify.app'
+];
+
 app.use(cors({
   origin: (origin, callback) => {
+    console.log('Origin:', origin); // Log the origin for debugging
     if (!origin) return callback(null, true);
     if (allowedOrigins.indexOf(origin) === -1) {
       let message = 'The CORS policy for this application doesn’t allow access from origin ' + origin;
@@ -40,6 +48,8 @@ app.use(cors({
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
+
+app.options('*', cors());
 
 mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
@@ -69,7 +79,17 @@ app.get('/', (req, res) => {
 });
 
 app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
-  console.log('Received request to get all movies');
+  Movies.find()
+    .populate('Genre')
+    .populate('Director')
+    .then((movies) => {
+      res.status(200).json(movies);
+    })
+    .catch((error) => {
+      console.error(error);
+      res.status(500).send('Error: ' + error);
+    });
+});
 
   Movies.find()
     .populate('Genre')
@@ -86,7 +106,6 @@ app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) 
       console.error('Error retrieving movies:', err);
       res.status(500).send('Error: ' + err);
     });
-});
 
 
 // READ a movie by title
@@ -252,14 +271,14 @@ app.put('/users/:Username', passport.authenticate('jwt', { session: false }), [
 // Add a movie to user's favorites
 app.post('/users/:Username/movies/:MovieID', passport.authenticate('jwt', { session: false }), (req, res) => {
   Users.findOneAndUpdate({ Username: req.params.Username }, {
-    $push: { FavoriteMovies: req.params.MovieID }
+    $push: { Favorite_Movies: req.params.MovieID }
   }, { new: true })
     .then((updatedUser) => {
       res.json(updatedUser);
     })
-    .catch((err) => {
-      console.error('Error adding favorite movie:', err);
-      res.status(500).send('Error: ' + err);
+    .catch((error) => {
+      console.error(error);
+      res.status(500).send('Error: ' + error);
     });
 });
 
