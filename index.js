@@ -1,15 +1,11 @@
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
 require('dotenv').config();
-
-// Setup requirements and constants
 const express = require('express');
 const morgan = require('morgan');
 const fs = require('fs');
 const mongoose = require('mongoose');
 const path = require('path');
 const cors = require('cors');
-
+const passport = require('passport');
 const { check, validationResult } = require('express-validator');
 const Models = require("./models.js");
 const Movies = Models.Movie;
@@ -17,13 +13,10 @@ const Users = Models.User;
 const Genres = Models.Genre;
 const Directors = Models.Director;
 const auth = require('./auth.js');
+require('./passport');
 
 const app = express();
-
-const passport = require('./passport');
-
 app.use(passport.initialize());
-
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -53,24 +46,20 @@ app.options('*', cors());
 
 mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
-    const movies = mongoose.connection.db.collection('movies')
-    movies.find().toArray((err, m) => { console.log(m) })
-    console.log('Database connection successful')
+    console.log('Database connection successful');
   })
-  .catch(err => console.error('Database connection error', err));
+  .catch(err => {
+    console.error('Database connection error:', err);
+    process.exit(1); // Exit the process with an error code
+  });
 
 const accessLogStream = fs.createWriteStream(
   path.join(__dirname, 'log.txt'),
   { flags: 'a' }
 );
 
-app.use(
-  morgan('combined', { stream: accessLogStream })
-);
-
-app.use(
-  express.static('public')
-);
+app.use(morgan('combined', { stream: accessLogStream }));
+app.use(express.static('public'));
 
 auth(app);
 
@@ -91,21 +80,6 @@ app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) 
     });
 });
 
-  Movies.find()
-    .populate('Genre')
-    .populate('Director')
-    .then((movies) => {
-      if (movies.length === 0) {
-        console.log('No movies found');
-        return res.status(200).json([]); // Return empty array if no movies
-      }
-      console.log('Movies found:', movies.length);
-      res.status(200).json(movies); // Return movies directly as array
-    })
-    .catch((err) => {
-      console.error('Error retrieving movies:', err);
-      res.status(500).send('Error: ' + err);
-    });
 
 
 // READ a movie by title
@@ -271,14 +245,14 @@ app.put('/users/:Username', passport.authenticate('jwt', { session: false }), [
 // Add a movie to user's favorites
 app.post('/users/:Username/movies/:MovieID', passport.authenticate('jwt', { session: false }), (req, res) => {
   Users.findOneAndUpdate({ Username: req.params.Username }, {
-    $push: { Favorite_Movies: req.params.MovieID }
+    $push: { FavoriteMovies: req.params.MovieID }
   }, { new: true })
     .then((updatedUser) => {
       res.json(updatedUser);
     })
-    .catch((error) => {
-      console.error(error);
-      res.status(500).send('Error: ' + error);
+    .catch((err) => {
+      console.error('Error adding favorite movie:', err);
+      res.status(500).send('Error: ' + err);
     });
 });
 

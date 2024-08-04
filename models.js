@@ -12,8 +12,7 @@ let directorSchema = mongoose.Schema({
   Name: { type: String, required: true },
   Bio: { type: String, required: true },
   Birth: { type: String, required: true },
-  Death: { type: String }
-});
+}, { collection: 'directors' });
 
 const movieSchema = new mongoose.Schema({
   Title: { type: String, required: true },
@@ -25,12 +24,13 @@ const movieSchema = new mongoose.Schema({
   ImagePath: { type: String, required: true }
 }, { collection: 'movies' });
 
+
 let userSchema = mongoose.Schema({
   Username: { type: String, required: true },
   Password: { type: String, required: true },
   Email: { type: String, required: true },
   Birth_Date: Date,
-  Favorite_Movies: [{
+  FavoriteMovies: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Movie'
   }]
