@@ -795,3 +795,4 @@ Timestamp: Thu Sep 21 2023 17:14:46 GMT-0700 (Pacific Daylight Time)
 127.0.0.1 - - [03/Aug/2024:23:09:06 +0000] "GET /users/ HTTP/1.1" 401 - "-" "PostmanRuntime/7.40.0"
 127.0.0.1 - - [03/Aug/2024:23:09:12 +0000] "POST /login?Username=test123&Password=test123 HTTP/1.1" 200 660 "-" "PostmanRuntime/7.40.0"
 127.0.0.1 - - [03/Aug/2024:23:09:45 +0000] "POST /login?Username=test123&Password=test123 HTTP/1.1" 200 660 "-" "PostmanRuntime/7.40.0"
+127.0.0.1 - - [07/Aug/2024:21:41:25 +0000] "GET /director HTTP/1.1" 404 147 "-" "PostmanRuntime/7.40.0"
