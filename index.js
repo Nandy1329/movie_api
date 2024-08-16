@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
@@ -67,27 +68,13 @@ app.get('/', (req, res) => {
   res.send('Welcome to my movie page!');
 });
 
-const jwt = require('jsonwebtoken');
-
-app.get('/movies', (req, res, next) => {
-  const token = req.headers['authorization'];
-  if (!token) {
-    return res.status(401).send('Access denied. No token provided.');
-  }
-
-  const tokenValue = token.split(' ')[1]; // Remove 'Bearer ' from the token
-  jwt.verify(tokenValue, process.env.JWT_SECRET, (err, decoded) => {
-    if (err) {
-      return res.status(401).send('Invalid token.');
-    }
-
-    console.log('Token is valid:', decoded);
-    next();
-  });
-}, passport.authenticate('jwt', { session: false }), (req, res) => {
+app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
   Movies.find()
-    .populate('Genre')`23M,.0-\DWFERT
-    `
+    .populate('Genre')
+    .populate('Director')
+    .then((movies) => {
+      res.status(200).json(movies);
+    })
     .catch((error) => {
       console.error(error);
       res.status(500).send('Error: ' + error);
