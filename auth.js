@@ -14,10 +14,13 @@ let generateJWTToken = (user) => {
   });
 }
 
-module.exports = function(app) {
+module.exports = function (app) {
   app.post('/login', (req, res) => {
+    console.log('Login route hit'); // Log when route is hit
+
     passport.authenticate('local', { session: false }, (error, user, info) => {
       if (error || !user) {
+        console.log('Authentication failed', { error, info, user }); // Log failure details
         return res.status(400).json({
           message: 'Login failed. ' + (info ? info.message : '') + (error ? error.message : ''),
           user: user
@@ -26,12 +29,15 @@ module.exports = function(app) {
 
       req.login(user, { session: false }, (error) => {
         if (error) {
+          console.log('Login process error', error); // Log error during login process
           return res.status(500).json({ message: 'Error during login process', error: error.message });
         }
 
         let token = generateJWTToken(user.toJSON());
+        console.log('Token generated:', token); // Log the generated token
         return res.json({ user, token });
       });
     })(req, res);
-  });
+  }
+  );
 }
